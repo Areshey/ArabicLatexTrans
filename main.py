@@ -1,4 +1,4 @@
-import toml
+﻿import toml
 import argparse
 import os
 import sys
