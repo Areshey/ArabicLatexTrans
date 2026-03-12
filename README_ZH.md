@@ -143,6 +143,20 @@ latextrans --project D:\\path\\to\\paper_project_dir
 latextrans --all-existing
 ```
 
+### Streamlit GUI
+
+如果你想使用带有进度显示、日志和可配置参数的图形界面，可以运行：
+
+```bash
+latextrans-gui
+```
+
+也可以直接使用 Streamlit：
+
+```bash
+streamlit run src/gui/streamlit_app.py
+```
+
 该命令将：
 
 1. 从 arXiv 下载 LaTeX 源码并解压

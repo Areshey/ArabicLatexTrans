@@ -99,4 +99,21 @@ class _CliProgress:
         print(message)
 
 
-st = _CliProgress()
+_backend = _CliProgress()
+
+
+class _ProgressProxy:
+    def __getattr__(self, name):
+        return getattr(_backend, name)
+
+
+def set_progress_backend(backend):
+    global _backend
+    _backend = backend
+
+
+def get_progress_backend():
+    return _backend
+
+
+st = _ProgressProxy()
