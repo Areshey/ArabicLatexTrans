@@ -1,6 +1,8 @@
-sys_name = "LaTeXTrans"
+#sys_name = "LaTeXTrans" 
+sys_name = "ArabicLatexTrans"  # # Renamed from LaTeXTrans (updated by Ali)
 version = "0.1.0"
-target_language = "ch"
+#target_language = "ch" #"ch" # "ar" # "he" # "tr" # "es" 
+target_language = "ar" ## Default language set to Arabic (updated by Ali)
 source_language = "en"
 paper_list = []
 tex_sources_dir = "tex source"
@@ -11,6 +13,12 @@ mode = 0
 user_term = ""
 
 [llm_config]
-model = ""
-api_key = ""
-base_url = ""
+
+model = "gpt-4o-mini"
+api_key = "[your_api_key_here]" 
+base_url = "https://api.openai.com/v1/chat/completions"
+
+#############################################################
+
+
+
