@@ -14,7 +14,8 @@ from src.utils.progress import get_progress_backend, set_progress_backend
 
 def _collect_result_pdfs(result: Dict[str, Any]) -> List[str]:
     output_dir = Path(result["output_dir"])
-    target_language = result["config"].get("target_language", "ch")
+    #target_language = result["config"].get("target_language", "ch") #Set default target language to Arabic ("ar") instead of Chinese ("ch") (updated by Ali)
+    target_language = result["config"].get("target_language", "ar") 
     selected: List[str] = []
 
     for project_dir in result["projects"]:
@@ -143,7 +144,8 @@ def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
     streamlit_backend.sidebar.header("Run Configuration")
     config_path = streamlit_backend.sidebar.text_input("Config Path", "config/default.toml")
     source_language = streamlit_backend.sidebar.text_input("Source Language", defaults.get("source_language", "en"))
-    target_language = streamlit_backend.sidebar.text_input("Target Language", defaults.get("target_language", "ch"))
+    #target_language = streamlit_backend.sidebar.text_input("Target Language", defaults.get("target_language", "ch")) Set default target language to Arabic ("ar")  (updated by Ali)
+    target_language = streamlit_backend.sidebar.text_input("Target Language", defaults.get("target_language", "ar"))
     model = streamlit_backend.sidebar.text_input("Model", llm_defaults.get("model", ""))
     base_url = streamlit_backend.sidebar.text_input("Base URL", llm_defaults.get("base_url", ""))
     api_key = streamlit_backend.sidebar.text_input("API Key", llm_defaults.get("api_key", ""), type="password")
@@ -166,7 +168,8 @@ def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "config_path": config_path,
         "source_language": source_language.strip() or "en",
-        "target_language": target_language.strip() or "ch",
+        #"target_language": target_language.strip() or "ch", Set default target language to Arabic ("ar")  (updated by Ali)
+        "target_language": target_language.strip() or "ar",
         "model": model.strip(),
         "url": base_url.strip(),
         "key": api_key.strip(),
