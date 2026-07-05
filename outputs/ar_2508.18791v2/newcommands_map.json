@@ -1,0 +1,12 @@
+[
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_0>",
+        "name": "thefootnote",
+        "content": "\\renewcommand{\\thefootnote}{\\fnsymbol{footnote}}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_NEWCOMMAND_1>",
+        "name": "wang",
+        "content": "\\newcommand{\\wang}[1]{\\textcolor{red}{[wangcl: #1]}}"
+    }
+]

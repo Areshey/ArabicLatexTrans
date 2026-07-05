@@ -1,0 +1,266 @@
+[
+    {
+        "placeholder": "<PLACEHOLDER_CAP_1>",
+        "cap_type": "title",
+        "content": "\\title{LaTeXTrans: Structured LaTeX Translation \\\\ with Multi-Agent Coordination}",
+        "trans_content": "\\title{LaTeXTrans: الترجمة المنظمة لـ LaTeX \\\\ مع تنسيق متعدد الوكلاء}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_2>",
+        "cap_type": "caption",
+        "content": "\\caption{The architecture of our LaTeXTrans system.}",
+        "trans_content": "\\caption{بنية نظام LaTeXTrans الخاص بنا.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_3>",
+        "cap_type": "caption",
+        "content": "\\caption{The pipeline of our placeholder substitution strategy. The mapping files are the mapping of placeholders and the replaced content, and they are also translation units of different granularities.}",
+        "trans_content": "\\caption{خط الأنابيب لاستراتيجية استبدال العناصر النائبة لدينا. ملفات الربط هي الربط بين العناصر النائبة والمحتوى المستبدل، وهي أيضًا وحدات ترجمة بمستويات تجزئة مختلفة.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_4>",
+        "cap_type": "caption",
+        "content": "\\caption{\nCOMETkiwi, FC-score, and LLM-score comparisons across different systems. We also report the cost incurred when using the official API to translate each paper on average in the test set, as shown in the “Cost” column. \\textbf{Bold} indicates the best result in each group.\n}",
+        "trans_content": "\\caption{\nمقارنات COMETkiwi و FC-score و LLM-score عبر أنظمة مختلفة. كما نبلغ عن التكلفة المتكبدة عند استخدام واجهة برمجة التطبيقات الرسمية لترجمة كل ورقة في المتوسط في مجموعة الاختبار، كما هو موضح في عمود \"التكلفة\". \\textbf{Bold} يشير إلى أفضل نتيجة في كل مجموعة.\n}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_5>",
+        "cap_type": "caption",
+        "content": "\\caption{\n    Comparison of translation quality in two representative cases between the baseline and LaTeXTrans.\n    In the LaTeX source, \\textbf{\\color{myblue}{blue}} text marks labels that should be preserved. A red question mark (``\\textbf{\\color{red}{?}}'') indicates label loss during translation.\n    \\textbf{\\color{red}{Red}} highlights inconsistent translations, \\textbf{\\color{teal}{green}} indicates consistent ones, and \\textbf{\\color{orange}{orange}} shows LaTeX labels missed by the baseline but successfully preserved by LaTeXTrans.\n  }",
+        "trans_content": "\\caption{\n    مقارنة جودة الترجمة في حالتين تمثيليتين بين الأساس و LaTeXTrans.\n    في مصدر LaTeX، \\textbf{\\color{myblue}{الأزرق}} يميز النصوص التي يجب الحفاظ عليها. علامة استفهام حمراء (``\\textbf{\\color{red}{?}}'') تشير إلى فقدان العلامات أثناء الترجمة.\n    \\textbf{\\color{red}{الأحمر}} يبرز الترجمات غير المتسقة، \\textbf{\\color{teal}{الأخضر}} يشير إلى الترجمات المتسقة، و \\textbf{\\color{orange}{البرتقالي}} يظهر العلامات LaTeX التي فاتت من الأساس ولكن تم الحفاظ عليها بنجاح بواسطة LaTeXTrans.\n}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_6>",
+        "cap_type": "caption",
+        "content": "\\caption{\n  Performance of LaTeXTrans with different settings.\n  ``SA.'' denotes the LLM-based translation baseline, ``P.'' stands for the Parser, ``V.'' for the Validator, ``S.'' for summarizer, and ``TE.'' for the Terminology Extractor. The ``SA. + P. + V. + S. + TE.'' corresponds to our LaTeXTrans.\n  }",
+        "trans_content": "\\caption{\n  أداء LaTeXTrans مع إعدادات مختلفة.\n  ``SA.'' تشير إلى قاعدة الترجمة المعتمدة على LLM، ``P.'' تعني المحلل، ``V.'' تعني المدقق، ``S.'' تعني الملخص، و``TE.'' تعني مستخرج المصطلحات.  ``SA. + P. + V. + S. + TE.'' تتوافق مع LaTeXTrans لدينا.\n}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_7>",
+        "cap_type": "caption",
+        "content": "\\caption{Distribution of paper lengths (in word count) in our test set.}",
+        "trans_content": "\\caption{توزيع أطوال الأوراق (بعدد الكلمات) في مجموعة الاختبار لدينا.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_8>",
+        "cap_type": "caption",
+        "content": "\\caption{Word cloud visualization of topics covered in our test set.}",
+        "trans_content": "\\caption{تصوير سحابة الكلمات للمواضيع التي تم تناولها في مجموعة الاختبار الخاصة بنا.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_9>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the English PDF of case 1.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الإنجليزي للحالة 1.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_10>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the Chinese PDF of case 1.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الصيني للحالة 1.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_11>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the English PDF of case 1.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF باللغة الإنجليزية للحالة 1.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_12>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the Chinese PDF of case 1.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الصيني للحالة 1.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_13>",
+        "cap_type": "caption",
+        "content": "\\caption{Case 1 demonstrates the performance of LaTeXTrans on the En-Zh task}",
+        "trans_content": "\\caption{الحالة 1 توضح أداء LaTeXTrans في مهمة En-Zh}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_14>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the English PDF of case 2.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الإنجليزي للحالة 2.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_15>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the Chinese PDF of case 2.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الصيني للحالة 2.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_16>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the English PDF of case 2.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF باللغة الإنجليزية للحالة 2.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_17>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the Chinese PDF of case 2.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الصيني للحالة 2.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_18>",
+        "cap_type": "caption",
+        "content": "\\caption{Case 2 demonstrates the performance of LaTeXTrans on the En-Zh task}",
+        "trans_content": "\\caption{الحالة 2 توضح أداء LaTeXTrans في مهمة En-Zh}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_19>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the English PDF of case 3.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الإنجليزي للحالة 3.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_20>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the Chinese PDF of case 3.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الصيني للحالة 3.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_21>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the English PDF of case 3.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الإنجليزي للحالة 3.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_22>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the Chinese PDF of case 3.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الصيني للحالة 3.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_23>",
+        "cap_type": "caption",
+        "content": "\\caption{Case 3 demonstrates the performance of LaTeXTrans on the En-Zh task}",
+        "trans_content": "\\caption{تظهر الحالة 3 أداء LaTeXTrans في مهمة En-Zh}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_24>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the English PDF of case 4.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الإنجليزي للحالة 4.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_25>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the Japanese PDF of case 4.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الياباني للحالة 4.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_26>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the English PDF of case 4.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الإنجليزي للحالة 4.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_27>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the Japanese PDF of case 4.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الياباني للحالة 4.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_28>",
+        "cap_type": "caption",
+        "content": "\\caption{Case 4 demonstrates the performance of LaTeXTrans on the En-Ja task}",
+        "trans_content": "\\caption{الحالة 4 توضح أداء LaTeXTrans في مهمة En-Ja}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_29>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the English PDF of case 5.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الإنجليزي للحالة 5.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_30>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the Japanese PDF of case 5.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الياباني للحالة 5.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_31>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the Chinese PDF of case 5.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الصيني للحالة 5.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_32>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the Japanese PDF of case 5.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الياباني للحالة 5.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_33>",
+        "cap_type": "caption",
+        "content": "\\caption{Case 5 demonstrates the performance of LaTeXTrans on the En-Ja task}",
+        "trans_content": "\\caption{توضح الحالة 5 أداء LaTeXTrans في مهمة En-Ja}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_34>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the English PDF of case 6.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF باللغة الإنجليزية للحالة 6.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_35>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The first part of the Japanese PDF of case 6.}",
+        "trans_content": "\\subcaption{الجزء الأول من ملف PDF الياباني للحالة 6.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_36>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the Chinese PDF of case 6.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الصيني للحالة 6.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_37>",
+        "cap_type": "subcaption",
+        "content": "\\subcaption{The second part of the Japanese PDF of case 6.}",
+        "trans_content": "\\subcaption{الجزء الثاني من ملف PDF الياباني للحالة 6.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_38>",
+        "cap_type": "caption",
+        "content": "\\caption{Case 6 demonstrates the performance of LaTeXTrans on the En-Ja task}",
+        "trans_content": "\\caption{توضح الحالة 6 أداء LaTeXTrans في مهمة En-Ja}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_39>",
+        "cap_type": "caption",
+        "content": "\\caption{The LLM uses this prompt, which scores each pair's translation unit one by one.}",
+        "trans_content": "\\caption{يستخدم LLM هذا الموجه، الذي يقيم وحدة ترجمة كل زوج واحدة تلو الأخرى.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_40>",
+        "cap_type": "caption",
+        "content": "\\caption{Prompt template 1 for Translator, the Translator uses this prompt to initially translate the translation unit.}",
+        "trans_content": "\\caption{نموذج الطلب 1 للمترجم، يستخدم المترجم هذا الطلب لترجمة وحدة الترجمة في البداية.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_41>",
+        "cap_type": "caption",
+        "content": "\\caption{Prompt template 2 for Translator, the Translator uses this prompt and combines it with the error reports provided by the Validator to re-translate the translation unit.}",
+        "trans_content": "\\caption{نموذج الطلب 2 للمترجم، يستخدم المترجم هذا الطلب ويجمعه مع تقارير الأخطاء المقدمة من المدقق لإعادة ترجمة وحدة الترجمة.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_42>",
+        "cap_type": "caption",
+        "content": "\\caption{Prompt template for Filter, the Filter uses this prompt to mark whether the translation unit needs to be translated.}",
+        "trans_content": "\\caption{قالب التعليمات لفلتر، يستخدم الفلتر هذه التعليمات لتحديد ما إذا كانت وحدة الترجمة بحاجة إلى الترجمة.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_43>",
+        "cap_type": "caption",
+        "content": "\\caption{Prompt template for Terminology Extractor, Terminology Extractor uses this prompt to extract terms from each translation unit.}",
+        "trans_content": "\\caption{قالب المطالبة لمستخرج المصطلحات، يستخدم مستخرج المصطلحات هذا القالب لاستخراج المصطلحات من كل وحدة ترجمة.}"
+    },
+    {
+        "placeholder": "<PLACEHOLDER_CAP_44>",
+        "cap_type": "caption",
+        "content": "\\caption{Prompt template for Summarizer, the Summarizer uses this prompt to maintain the summary of the previous text.}",
+        "trans_content": "\\caption{نموذج الطلب لملخص، يستخدم الملخص هذا الطلب للحفاظ على ملخص النص السابق.}"
+    }
+]

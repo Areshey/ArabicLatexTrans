@@ -1,0 +1,3415 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.6)  5 JUL 2026 12:09
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/pc/Documents/ArabicLatexTrans/outputs/ar_2508.18791v2/2508.18791v2/acl_
+latex.tex
+
+(/home/pc/Documents/ArabicLatexTrans/outputs/ar_2508.18791v2/2508.18791v2/acl_l
+atex.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctex.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count193
+\l__pdf_internal_box=\box50
+))
+Package: ctex 2021/12/12 v2.5.8 Chinese adapter in LaTeX (CTEX)
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexhook.sty
+Package: ctexhook 2021/12/12 v2.5.8 Document and package hooks (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexpatch.sty
+Package: ctexpatch 2021/12/12 v2.5.8 Patching commands (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+\l__ctex_tmp_int=\count194
+\l__ctex_tmp_box=\box51
+\l__ctex_tmp_dim=\dimen139
+\g__ctex_section_depth_int=\count195
+\g__ctex_font_size_int=\count196
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
+File: ctexopts.cfg 2021/12/12 v2.5.8 Option configuration file (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/engine/ctex-engine-pdftex.def
+File: ctex-engine-pdftex.def 2021/12/12 v2.5.8 (pdf)LaTeX adapter (CTEX)
+
+(/usr/share/texmf/tex/latex/CJK/CJKutf8.sty
+Package: CJKutf8 2015/04/18 4.8.4
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+)
+(/usr/share/texmf/tex/latex/CJK/CJK.sty
+Package: CJK 2015/04/18 4.8.4
+
+(/usr/share/texmf/tex/latex/CJK/mule/MULEenc.sty
+Package: MULEenc 2015/04/18 4.8.4
+)
+(/usr/share/texmf/tex/latex/CJK/CJK.enc
+File: CJK.enc 2015/04/18 4.8.4
+Now handling font encoding C00 ...
+... no UTF-8 mapping file for font encoding C00
+Now handling font encoding C05 ...
+... no UTF-8 mapping file for font encoding C05
+Now handling font encoding C09 ...
+... no UTF-8 mapping file for font encoding C09
+Now handling font encoding C10 ...
+... no UTF-8 mapping file for font encoding C10
+Now handling font encoding C20 ...
+... no UTF-8 mapping file for font encoding C20
+Now handling font encoding C19 ...
+... no UTF-8 mapping file for font encoding C19
+Now handling font encoding C40 ...
+... no UTF-8 mapping file for font encoding C40
+Now handling font encoding C42 ...
+... no UTF-8 mapping file for font encoding C42
+Now handling font encoding C43 ...
+... no UTF-8 mapping file for font encoding C43
+Now handling font encoding C50 ...
+... no UTF-8 mapping file for font encoding C50
+Now handling font encoding C52 ...
+... no UTF-8 mapping file for font encoding C52
+Now handling font encoding C49 ...
+... no UTF-8 mapping file for font encoding C49
+Now handling font encoding C60 ...
+... no UTF-8 mapping file for font encoding C60
+Now handling font encoding C61 ...
+... no UTF-8 mapping file for font encoding C61
+Now handling font encoding C63 ...
+... no UTF-8 mapping file for font encoding C63
+Now handling font encoding C64 ...
+... no UTF-8 mapping file for font encoding C64
+Now handling font encoding C65 ...
+... no UTF-8 mapping file for font encoding C65
+Now handling font encoding C70 ...
+... no UTF-8 mapping file for font encoding C70
+Now handling font encoding C31 ...
+... no UTF-8 mapping file for font encoding C31
+Now handling font encoding C32 ...
+... no UTF-8 mapping file for font encoding C32
+Now handling font encoding C33 ...
+... no UTF-8 mapping file for font encoding C33
+Now handling font encoding C34 ...
+... no UTF-8 mapping file for font encoding C34
+Now handling font encoding C35 ...
+... no UTF-8 mapping file for font encoding C35
+Now handling font encoding C36 ...
+... no UTF-8 mapping file for font encoding C36
+Now handling font encoding C37 ...
+... no UTF-8 mapping file for font encoding C37
+Now handling font encoding C80 ...
+... no UTF-8 mapping file for font encoding C80
+Now handling font encoding C81 ...
+... no UTF-8 mapping file for font encoding C81
+Now handling font encoding C01 ...
+... no UTF-8 mapping file for font encoding C01
+Now handling font encoding C11 ...
+... no UTF-8 mapping file for font encoding C11
+Now handling font encoding C21 ...
+... no UTF-8 mapping file for font encoding C21
+Now handling font encoding C41 ...
+... no UTF-8 mapping file for font encoding C41
+Now handling font encoding C62 ...
+... no UTF-8 mapping file for font encoding C62
+)
+LaTeX Info: Redefining \selectfont on input line 755.
+\CJK@indent=\box52
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+))
+(/usr/share/texlive/texmf-dist/tex/latex/cjkpunct/CJKpunct.sty
+Package: CJKpunct 2016/05/14 4.8.4
+\CJKpunct@cnta=\count197
+\CJKpunct@cntb=\count198
+\CJKpunct@cntc=\count199
+\CJKpunct@cntd=\count266
+\CJKpunct@cnte=\count267
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2026 (decimal 8230)
+
+(/usr/share/texlive/texmf-dist/tex/latex/cjkpunct/CJKpunct.spa))
+(/usr/share/texmf/tex/latex/CJK/CJKspace.sty
+Package: CJKspace 2015/04/18 3.8.0
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexspa.def
+File: ctexspa.def 2021/12/12 v2.5.8 Space info for CJKpunct (CTEX)
+)
+\ccwd=\dimen140
+\l__ctex_ccglue_skip=\skip49
+)
+\l__ctex_ziju_dim=\dimen141
+
+(/usr/share/texlive/texmf-dist/tex/latex/zhnumber/zhnumber.sty
+Package: zhnumber 2020/05/01 v2.8 Typesetting numbers with Chinese glyphs
+\l__zhnum_scale_int=\count268
+\l__zhnum_byte_min_int=\count269
+\l__zhnum_byte_max_int=\count270
+
+(/usr/share/texlive/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
+File: zhnumber-utf8.cfg 2020/05/01 v2.8 Chinese numerals with UTF8 encoding
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese.def
+File: ctex-scheme-chinese.def 2021/12/12 v2.5.8 Chinese scheme for generic (CTE
+X)
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
+File: ctex-name-utf8.cfg 2021/12/12 v2.5.8 Caption with encoding UTF-8 (CTEX)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def
+File: ctex-fontset-fandol.def 2021/12/12 v2.5.8 Fandol fonts definition (CTEX)
+
+
+/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def:10
+3: Critical Package ctex Error: CTeX fontset `fandol' is unavailable in current
+
+(ctex)                         mode.
+
+Type <return> to continue.
+ ...                                              
+                                                  
+l.103   }
+         
+
+LaTeX does not know anything more about this error, sorry.
+
+Try typing <return> to proceed.
+If that doesn't work, type X <return> to quit.
+
+Reading the current file 'ctex-fontset-fandol' will stop.
+
+
+)) (/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctex.cfg
+File: ctex.cfg 2021/12/12 v2.5.8 Configuration file (CTEX)
+) (./acl.sty
+Conference Style for ACL
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count271
+\Gm@cntv=\count272
+\c@Gm@tempcnt=\count273
+\Gm@bindingoffset=\dimen142
+\Gm@wd@mp=\dimen143
+\Gm@odd@mp=\dimen144
+\Gm@even@mp=\dimen145
+\Gm@layoutwidth=\dimen146
+\Gm@layoutheight=\dimen147
+\Gm@layouthoffset=\dimen148
+\Gm@layoutvoffset=\dimen149
+\Gm@dimlist=\toks19
+)
+\titlebox=\skip50
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen150
+\captionmargin@=\dimen151
+\captionwidth=\dimen152
+\caption@tempdima=\dimen153
+\caption@indent=\dimen154
+\caption@parindent=\dimen155
+\caption@hangindent=\dimen156
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count274
+\c@continuedfloat=\count275
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip51
+\bibsep=\skip52
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count276
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen157
+\Hy@linkcounter=\count277
+\Hy@pagecounter=\count278
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
+nguages
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count279
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4073.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4073.
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count280
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen158
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count281
+\Field@Width=\dimen159
+\Fld@charsize=\dimen160
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count282
+\c@Item=\count283
+\c@Hfootnote=\count284
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count285
+\c@bookmark@seq@number=\count286
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip53
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 305.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 11
+2.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2021/12/10 v3.0b Micro-typographical refinements (RS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count287
+)
+\MT@toks=\toks20
+\MT@count=\count288
+\MT@tempbox=\box53
+LaTeX Info: Redefining \leftprotrusion on input line 1010.
+LaTeX Info: Redefining \rightprotrusion on input line 1018.
+LaTeX Info: Redefining \textls on input line 1173.
+\MT@outer@kern=\dimen161
+LaTeX Info: Redefining \textmicrotypecontext on input line 1759.
+\MT@listname@count=\count289
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2021/12/10 v3.0b Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 897.
+LaTeX Info: Redefining \lslig on input line 897.
+\MT@outer@space=\skip54
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2021/12/10 v3.0b microtype main configuration file (RS)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count290
+\c@subtable=\count291
+)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+Package: inconsolata 2019/05/17 v1.12
+
+`inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+)
+\XKV@depth=\count292
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\zifour@ocount=\count293
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks23
+\ex@=\dimen162
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen163
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count294
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count295
+\leftroot@=\count296
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count297
+\DOTSCASE@=\count298
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen164
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count299
+\c@MaxMatrixCols=\count300
+\dotsspace@=\muskip17
+\c@parentequation=\count301
+\dspbrk@lvl=\count302
+\tag@help=\toks24
+\row@=\count303
+\column@=\count304
+\maxfields@=\count305
+\andhelp@=\toks25
+\eqnshift@=\dimen165
+\alignsep@=\dimen166
+\tagshift@=\dimen167
+\tagwidth@=\dimen168
+\totwidth@=\dimen169
+\lineht@=\dimen170
+\@envbody=\toks26
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks27
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen173
+\lightrulewidth=\dimen174
+\cmidrulewidth=\dimen175
+\belowrulesep=\dimen176
+\belowbottomsep=\dimen177
+\aboverulesep=\dimen178
+\abovetopsep=\dimen179
+\cmidrulesep=\dimen180
+\cmidrulekern=\dimen181
+\defaultaddspace=\dimen182
+\@cmidla=\count306
+\@cmidlb=\count307
+\@aboverulesep=\dimen183
+\@belowrulesep=\dimen184
+\@thisruleclass=\count308
+\@lastruleclass=\count309
+\@thisrulewidth=\dimen185
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen186
+\ar@mcellbox=\box56
+\extrarowheight=\dimen187
+\NC@list=\toks28
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box57
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count310
+\lst@gtempboxa=\box58
+\lst@token=\toks29
+\lst@length=\count311
+\lst@currlwidth=\dimen188
+\lst@column=\count312
+\lst@pos=\count313
+\lst@lostspace=\dimen189
+\lst@width=\dimen190
+\lst@newlines=\count314
+\lst@lineno=\count315
+\lst@maxwidth=\dimen191
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count316
+\lst@skipnumbers=\count317
+\lst@framebox=\box59
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip60
+\multirow@cntb=\count318
+\multirow@dima=\skip61
+\bigstrutjot=\dimen192
+)
+(/usr/share/texlive/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2019/02/21 v1.76 
+\dashlinedash=\dimen193
+\dashlinegap=\dimen194
+\adl@box=\box60
+\adl@height=\dimen195
+\adl@heightsave=\dimen196
+\adl@depth=\dimen197
+\adl@depthsave=\dimen198
+\adl@finaldepth=\dimen199
+\adl@columns=\count319
+\adl@ncol=\count320
+\adl@currentcolumn=\count321
+\adl@currentcolumnsave=\count322
+\adl@totalheight=\count323
+\adl@totalheightsave=\count324
+\adl@dash=\count325
+\adl@gap=\count326
+\adl@cla=\count327
+\adl@clb=\count328
+\adl@everyvbox=\toks30
+\adl@LTpagetotal=\dimen256
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count329
+\float@exts=\toks31
+\float@box=\box61
+\@float@everytoks=\toks32
+\@floatcapt=\box62
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2022/01/07 version 5.0.2 text color boxes
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks33
+\pgfutil@tempdima=\dimen257
+\pgfutil@tempdimb=\dimen258
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box63
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks36
+))
+\pgf@x=\dimen259
+\pgf@y=\dimen260
+\pgf@xa=\dimen261
+\pgf@ya=\dimen262
+\pgf@xb=\dimen263
+\pgf@yb=\dimen264
+\pgf@xc=\dimen265
+\pgf@yc=\dimen266
+\pgf@xd=\dimen267
+\pgf@yd=\dimen268
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count330
+\c@pgf@countb=\count331
+\c@pgf@countc=\count332
+\c@pgf@countd=\count333
+\t@pgf@toka=\toks37
+\t@pgf@tokb=\toks38
+\t@pgf@tokc=\toks39
+\pgf@sys@id@count=\count334
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count335
+\pgfsyssoftpath@bigbuffer@items=\count336
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen269
+\pgfmath@count=\count337
+\pgfmath@box=\box64
+\pgfmath@toks=\toks40
+\pgfmath@stack@operand=\toks41
+\pgfmath@stack@operation=\toks42
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count338
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen270
+\pgf@picmaxx=\dimen271
+\pgf@picminy=\dimen272
+\pgf@picmaxy=\dimen273
+\pgf@pathminx=\dimen274
+\pgf@pathmaxx=\dimen275
+\pgf@pathminy=\dimen276
+\pgf@pathmaxy=\dimen277
+\pgf@xx=\dimen278
+\pgf@xy=\dimen279
+\pgf@yx=\dimen280
+\pgf@yy=\dimen281
+\pgf@zx=\dimen282
+\pgf@zy=\dimen283
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen284
+\pgf@path@lasty=\dimen285
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen286
+\pgf@shorten@start@additional=\dimen287
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box65
+\pgf@hbox=\box66
+\pgf@layerbox@main=\box67
+\pgf@picture@serial@count=\count339
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen288
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen289
+\pgf@pt@y=\dimen290
+\pgf@pt@temp=\dimen291
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen292
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen293
+\pgf@sys@shading@range@num=\count340
+\pgf@shadingcount=\count341
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box68
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box69
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen294
+\pgf@nodesepend=\dimen295
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks43
+\verbatim@line=\toks44
+\verbatim@in@stream=\read3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box70
+\tcb@upperbox=\box71
+\tcb@lowerbox=\box72
+\tcb@phantombox=\box73
+\c@tcbbreakpart=\count342
+\c@tcblayer=\count343
+\c@tcolorbox@number=\count344
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+\tcb@temp=\box77
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2020/03/24 1.8d listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
+(/usr/share/texmf/tex/latex/CJK/UTF8/UTF8.bdg
+File: UTF8.bdg 2015/04/18 4.8.4
+)
+(/usr/share/texmf/tex/latex/CJK/UTF8/UTF8.enc
+File: UTF8.enc 2015/04/18 4.8.4
+)
+(/usr/share/texmf/tex/latex/CJK/UTF8/UTF8.chr
+File: UTF8.chr 2015/04/18 4.8.4
+) (build_pdflatex/acl_latex.aux)
+\openout1 = `acl_latex.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count345
+\scratchdimen=\dimen296
+\scratchbox=\box78
+\nofMPsegments=\count346
+\nofMParguments=\count347
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count348
+\MPscratchDim=\dimen297
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
+\everyMPtoPDFconversion=\toks46
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: heightrounded 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=700.5215pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=17.07182pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 73.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count351
+)
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
+
+(build_pdflatex/acl_latex.out) (build_pdflatex/acl_latex.out)
+\@outlinefile=\write4
+\openout4 = `acl_latex.out'.
+
+LaTeX Info: Redefining \microtypecontext on input line 73.
+Package microtype Info: Applying patch `item' on input line 73.
+Package microtype Info: Applying patch `toc' on input line 73.
+Package microtype Info: Applying patch `eqnum' on input line 73.
+Package microtype Info: Applying patch `footnote' on input line 73.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 73.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+\c@lstlisting=\count352
+LaTeX Font Info:    Trying to load font information for C70+rm on input line 75
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/fd/c70rm.fd
+File: c70rm.fd 2021/12/12 v2.5.8 Chinese font definition (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
+5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 78
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 10.0pt on input line 78.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `zi4' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+] [2]
+
+pdfTeX warning: pdflatex (file ./main-figure.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+<main-figure.pdf, id=101, 883.04906pt x 511.15968pt>
+File: main-figure.pdf Graphic file (type pdf)
+<use main-figure.pdf>
+Package pdftex.def Info: main-figure.pdf  used on input line 96.
+(pdftex.def)             Requested size: 455.24411pt x 263.51926pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+[]\C70/rm/m/n/10.95/06 D*BJJEA9'DJ) \T1/ptm/m/n/10.95 (+20) La-TeX-
+ []
+
+
+Overfull \hbox (155.02531pt too wide) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (-20) Trans\C70/rm/m/n/10.95/06 ^^LFBHE#HD'K(%F4'!E,EH9)'.*('
+1E5/1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 ('3*./'EEDA'* \T1/ptm/m/n/1
+0.95 (+20) TeX
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\C70/rm/m/n/10.95/06 'D*J*E,E9G'EF#H1'B
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (+20) arXiv. \C70/rm/m/n/10.95/06 +EFB'1F \T1/ptm/m/n/10.95 (
++20) La-TeX-Trans
+ []
+
+
+Overfull \hbox (142.26376pt too wide) in paragraph at lines 102--103
+\C70/rm/m/n/10.95/06 E9E,EH9)EFE9'JJ1'D*1,E)'DB'&E)9DI
+ []
+
+
+Overfull \hbox (80.43611pt too wide) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (-20) MT \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (-20) LLM. 
+\C70/rm/m/n/10.95/06 *8G1'DF*'&,'D*,1J(J)#F
+ []
+
+
+Overfull \hbox (461.58522pt too wide) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (-20) La-TeX-Trans \C70/rm/m/n/10.95/06 J*AHB('3*E1'19DI,EJ9'
+DE9'JJ1AJCDEF/B)'D*1,E)H#E'F)'D*F3JB\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\C70/rm/m/n/10.95/06 HEF'D,/J1('D0C1#F \T1/ptm/m/n/10.95 (+20) La-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (+20) TeX-Trans \C70/rm/m/n/10.95/06 J-BB*-3JFK'B/1G
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (+20) 13.20 \C70/rm/m/n/10.95/06 FB7)AJ/1,)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (+20) FC\C70/rm/m/n/10.95/06 ^^LE9EC'3(C(J1)AJ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+\T1/ptm/m/n/10.95 (+20) COMETkiwi \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (+20
+) LLM-score
+ []
+
+
+Overfull \hbox (10.8638pt too wide) in paragraph at lines 106--107
+ []\C70/rm/m/n/10.95/06 *1,E)'D"D)'DE9*E/)9DI
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+\C70/rm/m/n/10.95/06 LLM.[] DB/#/*8GH1 \T1/ptm/m/n/10.95 (+20) LLMs
+ []
+
+
+Overfull \hbox (1062.0635pt too wide) in paragraph at lines 106--107
+\C70/rm/m/n/10.95/06 %DI%/.'DFEH0,,/J/D*1,E)'D"D)^^L-J+'F*BDF'EF'D*9DE'D.'69'D*
+BDJ/J9DIE,EH9'*'D(J'F'*'DE*H'2J)F-HAGE'DD:)'DE1FH9'E'D'3*./'E
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+\T1/ptm/m/n/10.95 (+20) ([][]Gain et al.[][], [][]2025[][]). \C70/rm/m/n/10.95/
+06 *8G1 \T1/ptm/m/n/10.95 (+20) LLMs
+ []
+
+
+Underfull \hbox (badness 6978) in paragraph at lines 106--107
+\C70/rm/m/n/10.95/06 E+D \T1/ptm/m/n/10.95 (+20) GPT-3  ([][]Brown et al.[][], 
+[][]2020[][]) \C70/rm/m/n/10.95/06 H
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 106--107
+\T1/ptm/m/n/10.95 (+20) PaLM  ([][]Chowd-h-ery et al.[][], [][]2022[][]) \C70/r
+m/m/n/10.95/06 H \T1/ptm/m/n/10.95 (+20) GPT-4
+ []
+
+
+Overfull \hbox (296.33022pt too wide) in paragraph at lines 106--107
+\C70/rm/m/n/10.95/06 B/1'*E*9//)'DD:'*BHJ)/HF*/1J(51J-9DIEG'E'D*1,E)\T1/ptm/m/n
+/10.95 (-20) .
+ []
+
+
+Overfull \hbox (21.8138pt too wide) in paragraph at lines 106--107
+\C70/rm/m/n/10.95/06 *3*AJ/*1,E)'DE9*E/)9DI
+ []
+
+
+Overfull \hbox (572.913pt too wide) in paragraph at lines 106--107
+\T1/ptm/m/n/10.95 (-20) LLM \C70/rm/m/n/10.95/06 EF'D*9DEAJ'D3J'B^^L-J+J*E*-AJ2
+'DFEH0,(#E+D)#H*9DJE'*D#/'!'D*1,E)(4CDAH1J\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (525.51366pt too wide) in paragraph at lines 106--107
+\C70/rm/m/n/10.95/06 HB/#8G1*G0G'D71JB)#/'!K*F'A3J'KAJ3JF'1JHG'*'D*9DE/HF9JF)HB
+DJD)'D9JF)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+\T1/ptm/m/n/10.95 (+20) ([][]Vi-lar et al.[][], [][]2023[][]; [][]Luo et al.[][
+],
+ []
+
+
+Overfull \hbox (168.06561pt too wide) in paragraph at lines 106--107
+[][]\T1/ptm/m/n/10.95 (-20) 2025[][])\C70/rm/m/n/10.95/06 ^^L.'5)KD2H,'DD:'*0'*
+'DEH'1/'D9'DJ)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (164.16376pt too wide) in paragraph at lines 106--107
+\C70/rm/m/n/10.95/06 9DI9C3'D*1,E)'D"DJ)'D95(J)'D*BDJ/J)
+ []
+
+
+Overfull \hbox (369.99324pt too wide) in paragraph at lines 106--107
+\T1/ptm/m/n/10.95 (-20) (NMT)\C70/rm/m/n/10.95/06 ^^L'D*J**7D(%9'/)*/1J(#H*9/JD
+DCDE,'D#HD:),/J/)^^LJECFD@
+ []
+
+
+Overfull \hbox (390.93794pt too wide) in paragraph at lines 106--107
+\T1/ptm/m/n/10.95 (-20) LLMs \C70/rm/m/n/10.95/06 'D*9EJE9(1'DEG'EH'DD:'*E9'D-/
+'D#/FIEF'D(J'F'*'D%6'AJ)\T1/ptm/m/n/10.95 (-20) . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+ []\C70/rm/m/n/10.95/06 #F8E)E*9//)'DHCD'!.[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+\C70/rm/m/n/10.95/06 E$.1'K^^LA*-8GH1 \T1/ptm/m/n/10.95 (+20) LLMs
+ []
+
+
+Overfull \hbox (131.31377pt too wide) in paragraph at lines 109--110
+\C70/rm/m/n/10.95/06 %EC'FJ'*,/J/)D#F8E)E*9//)'DHCD'!
+ []
+
+
+Overfull \hbox (155.16628pt too wide) in paragraph at lines 109--110
+\T1/ptm/m/n/10.95 (-20) (MAS). \C70/rm/m/n/10.95/06 AJ#F8E)E*9//)'DHCD'!'DE9*E/
+)9DI
+ []
+
+
+Overfull \hbox (99.21678pt too wide) in paragraph at lines 109--110
+\T1/ptm/m/n/10.95 (-20) LLM\C70/rm/m/n/10.95/06 ^^LJ*E*,3J/CDHCJDCCJ'FE/9HE(@
+ []
+
+
+Overfull \hbox (288.21307pt too wide) in paragraph at lines 109--110
+\T1/ptm/m/n/10.95 (-20) LLM \C70/rm/m/n/10.95/06 B'/19DI'D*ACJ1('DD:)'D7(J9J)H'
+D*.7J7H'D*9'HF\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (504.38016pt too wide) in paragraph at lines 109--110
+\C70/rm/m/n/10.95/06 JECFGEE-'C')#/H'1E*FH9)H%CE'DEG'EE9B/)EF.D'D'D*F3JB'DB'&E9
+DI'D-H'1\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (548.18015pt too wide) in paragraph at lines 109--110
+\C70/rm/m/n/10.95/06 *3*C4A9//E*2'J/)EF'D/1'3'*'3*./'E#F8E)E*9//)'DHCD'!DEG'EE*
+9DB)('D*1,E)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Underfull \hbox (badness 4872) in paragraph at lines 109--110
+\C70/rm/m/n/10.95/06 HEF'D,/J1('D0C1#F \T1/ptm/m/n/10.95 (+20) MAS
+ []
+
+
+Overfull \hbox (164.16376pt too wide) in paragraph at lines 109--110
+\C70/rm/m/n/10.95/06 B/8G1*C-DH'9/DD*1,E)9DIE3*HI'DH+'&B
+ []
+
+
+Overfull \hbox (179.11038pt too wide) in paragraph at lines 109--110
+\T1/ptm/m/n/10.95 (-20) ([][]Wang et al.[][], [][]2024[][])\C70/rm/m/n/10.95/06
+ ^^LHGJ*-/M7HJD'D#E/AJ*1,E)'D"D)\T1/ptm/m/n/10.95 (-20) . 
+ []
+
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 112.
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+ []\C70/rm/m/n/10.95/06 *1,E)'DF5H5'DEF3B).[]
+ []
+
+
+Overfull \hbox (602.16364pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 *F7HJ*1,E)'DF5H5'DEF3B)9DI*1,E)'DH+'&B'D*J*-*HJ9DI*9DJE'*G
+JCDJ)#H/D'DJ)^^LE+D
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (+20) X
+ML.
+ []
+
+
+Overfull \hbox (953.33003pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 :'D('KE'**/'.DG0G'D5J:E9'DD:)'D7(J9J)E9'D#H'E1#H'D9D'E'*#H
+'D1EH2'D*J*4A1'D*F3JB#H'D*.7J7#H'D*9DJB'*'D/D'DJ)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (295.56372pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 9DI'D1:EEF#F(96'D,GH/'D-/J+)B/(O0D*AJG0''D'*,'G
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+\T1/ptm/m/n/10.95 (+20) ([][]Klei-der-ma-cher and Zou[][], [][]2025[][]; [][]Kh
+an[][],
+ []
+
+
+Overfull \hbox (332.31557pt too wide) in paragraph at lines 112--114
+[][]\T1/ptm/m/n/10.95 (-20) 2025[][])\C70/rm/m/n/10.95/06 ^^L%D'#F*1,E)'DF5H5'D
+EF3B)D'*2'D*H',G*-/JJF1&J3JJF\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (383.93019pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 'D#HDGHFB5F8'EBHJH9'E'D:16E5EE.5J5'KD*1,E)'DE-*HI'DEF3B\T1
+/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (240.81374pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 -'DJ'K^^L*B/EAB79//BDJDEF'D#/H'*'D*,'1J)^^LE+D
+ []
+
+
+Overfull \hbox (51.66136pt too wide) in paragraph at lines 112--114
+\T1/ptm/m/n/10.95 (-20) Youdao \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (-20) B
+aidu\C70/rm/m/n/10.95/06 ^^L-DHD'KA9'D)F3(J'K\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (109.41377pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 (JFE'*DB*#/H'*'DE5/1'DEA*H-E+D
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+\T1/ptm/m/n/10.95 (+20) Math-Trans-late[][][][][] \C70/rm/m/n/10.95/06 H \T1/pt
+m/m/n/10.95 (+20) GPT-Academic[][][][][]
+ []
+
+
+Overfull \hbox (515.33015pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 *9DJB'*%J,'(J)^^L%D'#FG'D'*2'DE*.DA)9F'D#F8E)'D*,'1J)EF-J+
+'D#/'!'D9'E\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (263.48022pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 'D+'FJGHFB5*BFJ)*BJJEBHJ)D*1,E)'DF5H5'DEF3B)\T1/ptm/m/n/10
+.95 (-20) .
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 -J+#F/1,'* \T1/ptm/m/n/10.95 (+20) BLEU \C70/rm/m/n/10.95/
+06 #H \T1/ptm/m/n/10.95 (+20) COMET
+ []
+
+
+Overfull \hbox (263.48022pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 'D*BDJ/J)D'*:7J5-)'D*F3JB#H'D'-*A'8('D9D'E'*\T1/ptm/m/n/10
+.95 (-20) .
+ []
+
+
+Overfull \hbox (351.0802pt too wide) in paragraph at lines 112--114
+\C70/rm/m/n/10.95/06 D0DC^^LEF'D61H1J*7HJ1*BFJ)*BJJE,/J/)D*1,E)H'9J)('DGJCD\T1/
+ptm/m/n/10.95 (-20) . 
+ []
+
+[3]
+Underfull \hbox (badness 3884) in paragraph at lines 116--117
+[]\C70/rm/m/n/10.95/06 'D9E'1)'D#3'3J)D@ \T1/ptm/m/n/10.95 (+20) La-
+ []
+
+
+Overfull \hbox (460.10815pt too wide) in paragraph at lines 116--117
+\T1/ptm/m/n/10.95 (-20) TeX-Trans \C70/rm/m/n/10.95/06 GJ*F3JBE*9//'DHCD'!E5EED
+*1,E)'DE3*F/'*'DGJCDJ)'DEC*H()(D:)
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 116--117
+\T1/ptm/m/n/10.95 (+20) La-TeX. \C70/rm/m/n/10.95/06 J*CHFEF+D'+H-/'*\T1/ptm/m/
+n/10.95 (+20) :
+ []
+
+
+Overfull \hbox (121.13026pt too wide) in paragraph at lines 116--117
+\C70/rm/m/n/10.95/06 'DE-DD^^LH-/)'D*1,E)^^LHH-/)'D*HDJ/\T1/ptm/m/n/10.95 (-20)
+ .
+ []
+
+
+Overfull \hbox (197.78024pt too wide) in paragraph at lines 116--117
+\C70/rm/m/n/10.95/06 J*EH5A'D*5EJEHH8'&ACDECHF('D*A5JD#/F'G\T1/ptm/m/n/10.95 (-
+20) . 
+ []
+
+
+Overfull \hbox (1446.07993pt too wide) in paragraph at lines 119--121
+[]\C70/rm/m/n/10.95/06 **/'.D'DH+'&B'DE5EE)(D'*C3E9E-*HI'DD:)'D7(J9J)E9#H'E1'D*
+F3JBH9D'E'*'D/D'D)^^LEE'J$/J%DI*E+JD'*E*1'(7)(4/)DJ3*EF'3()DD*1,E)'DE('41)(H'37
+)FE'0,'DD:)'DC(J1)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (439.37474pt too wide) in paragraph at lines 119--121
+\C70/rm/m/n/10.95/06 %F*:0J)'DH+JB)('DC'ED(4CD3'0,%DIFEH0,D:)C(J1J$/J%DI9/)E4CD
+'*\T1/ptm/m/n/10.95 (-20) :
+ []
+
+
+Overfull \hbox (778.13008pt too wide) in paragraph at lines 119--121
+\C70/rm/m/n/10.95/06 E9'D,):J161H1J)DDECHF'*:J1'DB'(D)DD*1,E)^^LH2J'/)'D*CDA)'D
+-3'(J)^^LH2J'/).71%/.'D#.7'!AJ'D*1,E)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (448.86368pt too wide) in paragraph at lines 119--121
+\C70/rm/m/n/10.95/06 DE9'D,)G0G'D*-/J'*^^LFB/EH-/)'DE-DD^^L'D*J*9EDC#HDE1-D)AJ.
+7#F'(J(
+ []
+
+
+Overfull \hbox (125.14653pt too wide) in paragraph at lines 119--121
+\T1/ptm/m/n/10.95 (-20) La-TeX-Trans. \C70/rm/m/n/10.95/06 AC1*G''D#3'3J)GJ*-HJ
+DH+'&B
+ []
+
+
+Overfull \hbox (547.03354pt too wide) in paragraph at lines 119--121
+\T1/ptm/m/n/10.95 (-20) La-TeX \C70/rm/m/n/10.95/06 'DE9B/)%DIH-/'**1,E)EF8E)HF
+8JA)^^LEE'J3GD9DIFE'0,'DD:)'DC(J1)E9'D,*G'\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (1259.92995pt too wide) in paragraph at lines 119--121
+\C70/rm/m/n/10.95/06 9DIH,G'D*-/J/^^LF5EE'3*1'*J,J)'3*(/'D'D9F'51'DF'&()D'3*(/'
+D'D#H'E1H'D(J&'*'D.'5)(D'*C3E$B*K'^^LHFFA0"DJ)*5AJ)D%2'D)'DECHF'*'D*JD'**7D(*1,
+E)\T1/ptm/m/n/10.95 (-20) . 
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./placeholder.pdf): PDF inclusion: found PDF ver
+sion <1.7>, but at most version <1.5> allowed
+<placeholder.pdf, id=149, 844.42178pt x 222.86964pt>
+File: placeholder.pdf Graphic file (type pdf)
+<use placeholder.pdf>
+Package pdftex.def Info: placeholder.pdf  used on input line 124.
+(pdftex.def)             Requested size: 455.24411pt x 120.15396pt.
+
+Overfull \hbox (37.78018pt too wide) in paragraph at lines 126--126
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 2: |\C70/rm/m/n/10/06 .7'D#F'(J(D'3*
+1'*J,J)'3*(/'D'D9F'51'DF'&()D/JF'\T1/ptm/m/n/10 (-20) .
+ []
+
+
+Overfull \hbox (427.20589pt too wide) in paragraph at lines 126--126
+\C70/rm/m/n/10/06 EDA'*'D1(7GJ'D1(7(JF'D9F'51'DF'&()H'DE-*HI'DE3*(/D^^LHGJ#J6K'
+H-/'**1,E)(E3*HJ'**,2&)E.*DA)\T1/ptm/m/n/10 (-20) .| 
+ []
+
+
+Overfull \hbox (131.31377pt too wide) in paragraph at lines 131--132
+ []\C70/rm/m/n/10.95/06 '3*1'*J,J)'3*(/'D'D9F'51'DF'&().[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 ('DF3()DH+JB) \T1/ptm/m/n/10.95 (+20) La-TeX
+ []
+
+
+Overfull \hbox (383.1637pt too wide) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 'D4'&9)^^LJ*E916'3*1'*J,J*F'D'3*(/'D'D9F'51'DF'&()AJ'D4CD
+ []
+
+
+Overfull \hbox (384.2039pt too wide) in paragraph at lines 131--132
+[][]\T1/ptm/m/n/10.95 (-20) 2[][]. \C70/rm/m/n/10.95/06 F9*(1#F'D5J:'D1J'6J)'D#
+5DJ)H'DE.77'*E-AH8)#+F'!'D*1,E)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (307.28021pt too wide) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 'D.7H)'D#HDIGJ'3*(/'D'D*3EJ'*AJ'DE.77(9F'51F'&()\T1/ptm/m/
+n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (1040.93001pt too wide) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 'D.7H)'D+'FJ)GJ'3*(/'D'D(J&)(9F'51F'&()^^LH'D*J3*4ED'D:'D(
+J)'D98EIEF'D5J:'D1J'6J)^^LH'DE.77'*^^LH#,2'!#.1ID'*-*',%DI*1,E)\T1/ptm/m/n/10.9
+5 (-20) .
+ []
+
+
+Overfull \hbox (186.06375pt too wide) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 #.J1K'^^LFBHE(*B3JE'DF5'DE3*(/D%DI#B3'E
+ []
+
+
+Overfull \hbox (390.7156pt too wide) in paragraph at lines 131--132
+\T1/ptm/m/n/10.95 (-20) (\C70/rm/m/n/10.95/06 (E'AJ0DC'D#B3'E'DA19J)H'D#B3'E'DA
+19J)0'*'DE3*HJ'*'D#/FI\T1/ptm/m/n/10.95 (-20) ).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 DE41H9 \T1/ptm/m/n/10.95 (+20) La-TeX
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 J*CHFEF9/)EDA'*
+ []
+
+
+Overfull \hbox (856.779pt too wide) in paragraph at lines 131--132
+\T1/ptm/m/n/10.95 (-20) tex\C70/rm/m/n/10.95/06 ^^LFBHE#HD'K(/E,'DEDA'*'DD'2E)A
+J'DEDA'D1&J3J+E%/1','D9F'51'DF'&()AJ(/'J)HFG'J)'D/E,D'3*9'/)E3*B(DJ)\T1/ptm/m/n
+/10.95 (-20) .
+ []
+
+
+Overfull \hbox (351.0802pt too wide) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 BH'9/'3*(/'D'D9F'51'DF'&()H71B'D*B3JE*8DCE'C'F*EFB(D\T1/pt
+m/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (428.42474pt too wide) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 EF'3*1'*J,J)'3*(/'D'D9F'51'DF'&()^^LF-5D9DIH-/'**1,E)0'*/B
+*JF\T1/ptm/m/n/10.95 (-20) :
+ []
+
+
+Overfull \hbox (8.40677pt too wide) in paragraph at lines 131--132
+\C70/rm/m/n/10.95/06 'D3J'B \T1/ptm/m/n/10.95 (-20) (\C70/rm/m/n/10.95/06 #J'DB
+3EH'D(J&)\T1/ptm/m/n/10.95 (-20) )
+ []
+
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 10.95pt on input line 134.
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+ []\C70/rm/m/n/10.95/06 E14-H-/)'D*1,E).[]
+ []
+
+
+Overfull \hbox (426.96368pt too wide) in paragraph at lines 134--135
+\C70/rm/m/n/10.95/06 (JFE'J*E'3*(/'D'DECHF'*:J1'DB'(D)DD*1,E)(9F'51F'&()^^LFD'-
+8#F
+ []
+
+
+Overfull \hbox (985.03342pt too wide) in paragraph at lines 134--135
+\T1/ptm/m/n/10.95 (-20) La-TeX \C70/rm/m/n/10.95/06 J3E-DDE3*./EJF(*91JA(J&'*E.
+55)^^LEE'J,9DEF:J1'DEECF'D'9*E'/AB79DIFG,B'&E9DI'DBH'9/'D4'ED)D*-/J/,EJ9G0G'DEB
+'79\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (1259.92995pt too wide) in paragraph at lines 134--135
+\C70/rm/m/n/10.95/06 DE9'D,)G0G'DE4CD)^^LFCEDB'&E)E-//)E3(BK'EF'D(J&'*'DE-EJ)E9
+HCJD*5AJ)E/9HE(FEH0,D:)C(J1^^LH'D0JJ-///JF'EJCJK'E'%0'C'F*'D(J&)'DE97')**7D(*1,
+E)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (143.72482pt too wide) in paragraph at lines 134--135
+\C70/rm/m/n/10.95/06 J*EH699D'E)+F'&J)9DICD(J&)E3*.1,)\T1/ptm/m/n/10.95 (-20) :
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+\T1/zi4/m/n/10.95 True \C70/rm/m/n/10.95/06 #H \T1/zi4/m/n/10.95 False\T1/ptm/m
+/n/10.95 (+20) .
+ []
+
+
+Overfull \hbox (284.61372pt too wide) in paragraph at lines 134--135
+\C70/rm/m/n/10.95/06 (9/0DC^^L*9'D,H-/)'D*1,E)AB7*DC'DEB'79'DE9DQE)(@
+ []
+
+
+Overfull \hbox (99.92487pt too wide) in paragraph at lines 136--138
+[]\C70/rm/m/n/10.95/06 **CHFH-/)'D*1,E)EF#1(9)9F'51\T1/ptm/m/n/10.95 (-20) :
+ []
+
+
+Overfull \hbox (208.73024pt too wide) in paragraph at lines 136--138
+\C70/rm/m/n/10.95/06 'DE*1,E^^L'DE/BB^^L'DED.5^^LHEO3*.1,'DE57D-'*\T1/ptm/m/n/1
+0.95 (-20) .
+ []
+
+
+Overfull \hbox (1040.93001pt too wide) in paragraph at lines 136--138
+\C70/rm/m/n/10.95/06 (9/#FJOCED'DE*1,E*1,E),EJ9'DH-/'*'DE9JF)^^LJ*E*E1J1'DF'*,%
+DI'DE/BB^^L'D0JJOHD/*B1J1K'9F'D#.7'!HJO9J/GDD*9/JD%0'D2E'D#E1\T1/ptm/m/n/10.95 
+(-20) .
+ []
+
+
+Overfull \hbox (1402.2799pt too wide) in paragraph at lines 136--138
+\C70/rm/m/n/10.95/06 J3'9/'DED.5HEO3*.1,'DE57D-'*'DE*1,EEF.D'D*HAJ1ED.5DDE-*HI'
+D3'(BHB'EH3E57D-'*E*.55AJ'DE,'D^^LEE'J922EF'D*E'3C'D3J'BJHJ6EF'*3'B'DE57D-'*7H'
+D9EDJ)'D*1,E)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+[4 <./main-figure.pdf>]
+LaTeX Font Info:    Trying to load font information for C70+tt on input line 14
+0.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/fd/c70tt.fd
+File: c70tt.fd 2021/12/12 v2.5.8 Chinese font definition (CTEX)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
+ []\C70/rm/m/n/10.95/06 *C1'1'DE*1,EH'DE/BB.[]
+ []
+
+
+Overfull \hbox (547.41365pt too wide) in paragraph at lines 140--142
+\C70/rm/m/n/10.95/06 9F/'3*./'EFH'A03J'BJ)C(J1)D*1,E)'DH+'&B^^L:'D('KE'*OA6DFE'
+0,'DD:)'DC(J1)
+ []
+
+
+Overfull \hbox (528.35683pt too wide) in paragraph at lines 140--142
+\T1/ptm/m/n/10.95 (-20) (LLMs) \C70/rm/m/n/10.95/06 'D*B'7'DE9FI'D9'EDDF5^^LEE'
+JECF#FJ$/J%DI%:A'D#H3H!*1,E)'D,ED'DA1/J)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
+\T1/ptm/m/n/10.95 (+20) ([][]Wang et al.[][], [][]2024[][]).
+ []
+
+
+Overfull \hbox (207.96375pt too wide) in paragraph at lines 140--142
+\C70/rm/m/n/10.95/06 H*CHFG0G'DE4CD)H'6-)(4CD.'5AJ*1,E)H+'&B
+ []
+
+
+Overfull \hbox (390.88724pt too wide) in paragraph at lines 140--142
+\T1/ptm/m/n/10.95 (-20) La-TeX\C70/rm/m/n/10.95/06 ^^L-J+B/**,'GDFE'0,'DD:)'DC(
+J1)#H*O*1,E(4CD:J15-J-#H'E1
+ []
+
+
+Overfull \hbox (132.85056pt too wide) in paragraph at lines 140--142
+\T1/ptm/m/n/10.95 (-20) La-TeX. \C70/rm/m/n/10.95/06 9DI3(JD'DE+'D^^LB/J*E%:A'D
+'D#E1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
+\T1/ptm/m/n/10.95 (+20) ``\T1/zi4/m/n/10.95 \textbf{}\T1/ptm/m/n/10.95 (+20) ''
+\C70/rm/m/n/10.95/06 ^^L#HB/J*E*1,E)
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 140--142
+\T1/ptm/m/n/10.95 (+20) ``\T1/zi4/m/n/10.95 \left\T1/ptm/m/n/10.95 (+20) '' \C7
+0/rm/m/n/10.95/06 (4CD:J15-J-C@ \T1/ptm/m/n/10.95 (+20) ``\T1/zi4/m/n/10.95 \\C
+70/tt/m/n/10.95/5d æ\T1/ptm/m/n/10.95 (+20) ''.
+ []
+
+
+Overfull \hbox (98.46378pt too wide) in paragraph at lines 140--142
+\C70/rm/m/n/10.95/06 F81K'DD(FJ)'D-3'3)H'DEH6H9)D@
+ []
+
+
+Overfull \hbox (336.90375pt too wide) in paragraph at lines 140--142
+\T1/ptm/m/n/10.95 (-20) La-TeX\C70/rm/m/n/10.95/06 ^^LA%FE+DG0G'D#.7'!4'&9)HJEC
+F#F*$/J%DIA4DAJ'D*1,E)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (864.96356pt too wide) in paragraph at lines 140--142
+\C70/rm/m/n/10.95/06 DE9'D,)G0G'DE4CD)^^LFB/E%7'19ED*C1'1J(JF'DE*1,EH'DE/BB^^LJ
+BHE(%,1'!9/),HD'*EF'D*-BBD*-3JF'D-A'89DI#H'E1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 DCDH-/)*1,E)\T1/ptm/m/n/10.
+95 (+20) .
+ []
+
+
+Overfull \hbox (537.23015pt too wide) in paragraph at lines 140--142
+\C70/rm/m/n/10.95/06 J922G0''D*-3JF'D*C1'1J(4CDC(J1B'(DJ)'D'3*./'EHEH+HBJ)F8'E'
+D*1,E)'DCDJ\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (109.41377pt too wide) in paragraph at lines 140--142
+\C70/rm/m/n/10.95/06 9DIH,G'D*-/J/^^LCE'GHEH6-AJ'D4CD
+ []
+
+
+Overfull \hbox (968.82428pt too wide) in paragraph at lines 140--142
+[][]\T1/ptm/m/n/10.95 (-20) 1[][]\C70/rm/m/n/10.95/06 ^^L(9/#FJOCED'DE*1,E*1,E)
+,EJ9H-/'*'D*1,E)^^L3J*-BB'DE/BBEF,H/)'D*1,E)EF+D'+)#(9'/H3JF*,AJ'DFG'J)*B1J1K'9
+F'D#.7'!\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (1029.98001pt too wide) in paragraph at lines 140--142
+\C70/rm/m/n/10.95/06 9F/%,1'!'D,HD)'D*'DJ)EF'D*1,E)^^L3*4CDH-/'*'D*1,E)'D.'7&)^
+^LE9*B'1J1'D#.7'!^^L'DE-A2DDE*1,ED%14'/GEAJ*HDJ/'D*1,E)'D5-J-)\T1/ptm/m/n/10.95
+ (-20) . 
+ []
+
+
+Overfull \hbox (43.71379pt too wide) in paragraph at lines 144--145
+ []\C70/rm/m/n/10.95/06 'DED.5HEO3*.1,'DE57D-'*.[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+\C70/rm/m/n/10.95/06 E3*H-')EF9ED [][]\T1/ptm/m/n/10.95 (+20) Wang et al.[][]
+ []
+
+
+Overfull \hbox (620.22752pt too wide) in paragraph at lines 144--145
+\T1/ptm/m/n/10.95 (-20) ([][]2024[][])\C70/rm/m/n/10.95/06 ^^LFBHE(*5EJEED.5HEO
+3*.1,E57D-'*D*92J2'D*E'3C'D3J'BJH'*3'B'DE57D-'*AJ'D*1,E)\T1/ptm/m/n/10.95 (-20)
+ .
+ []
+
+
+Overfull \hbox (668.63011pt too wide) in paragraph at lines 144--145
+\C70/rm/m/n/10.95/06 9DIH,G'D*-/J/^^LJ*-ED'DED.5E3$HDJ)*HDJ/H*-/J+ED.5'DF5'D3'(
+B('3*E1'1.D'D9EDJ)'D*1,E)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (843.83006pt too wide) in paragraph at lines 144--145
+\C70/rm/m/n/10.95/06 9F/'D'F*G'!EFCDH-/)*1,E)^^L3JBHE'DED.5(/E,'DED.5'D3'(BE9'D
+F5'D#5DJDH-/)'D*1,E)'D-'DJ)D*HDJ/ED.5,/J/\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (1008.08002pt too wide) in paragraph at lines 144--145
+\C70/rm/m/n/10.95/06 J*-EDEO3*.1,'DE57D-'*E3$HDJ)'D-A'89DIB'EH3'DE57D-'*H%6'A*G
+%DI'DE-A2'D.'5('DE*1,ED*HAJ1E1,9D*1,E)'DE57D-'*DDE*1,E\T1/ptm/m/n/10.95 (-20) .
+
+ []
+
+
+Overfull \hbox (1248.97995pt too wide) in paragraph at lines 144--145
+\C70/rm/m/n/10.95/06 9F/'F*G'!'DE*1,EEF*1,E)H-/)*1,E)^^LJBHEEO3*.1,'DE57D-'*('3
+*.1',#2H','DE57D-'*EF'DF5'D#5DJH'D*1,E)HJBHE(*-/J+B'EH3'DE57D-'*AJ'DHB*'D-BJBJ\
+T1/ptm/m/n/10.95 (-20) . 
+ []
+
+
+Overfull \hbox (339.36374pt too wide) in paragraph at lines 146--147
+[]\C70/rm/m/n/10.95/06 H-/)'D*HDJ/E3$HD)9F%9'/)*,EJ9H-/'*'D*1,E)AJE3*F/'*
+ []
+
+
+Overfull \hbox (9.7172pt too wide) in paragraph at lines 146--147
+\T1/ptm/m/n/10.95 (-20) La-TeX \C70/rm/m/n/10.95/06 EF8E)H*,EJ9E3*F/'*
+ []
+
+
+Overfull \hbox (32.7638pt too wide) in paragraph at lines 146--147
+\C70/rm/m/n/10.95/06 ('3*./'E#/H'**,EJ9E-//)
+ []
+
+
+Underfull \hbox (badness 4556) in paragraph at lines 182--182
+[]\C70/rm/m/n/10/88 h \T1/ptm/m/n/10 (+20) 1: |\C70/rm/m/n/10/06 EB'1F'* \T1/pt
+m/m/n/10 (+20) COMETkiwi \C70/rm/m/n/10/06 H \T1/ptm/m/n/10 (+20) FC-score \C70
+/rm/m/n/10/06 H \T1/ptm/m/n/10 (+20) LLM-score \C70/rm/m/n/10/06 9(1#F8E)E.*DA)
+\T1/ptm/m/n/10 (+20) .
+ []
+
+
+Overfull \hbox (674.75589pt too wide) in paragraph at lines 182--182
+\C70/rm/m/n/10/06 CE'F(D:9F'D*CDA)'DE*C(/)9F/'3*./'EH',G)(1E,)'D*7(JB'*'D13EJ)D
+*1,E)CDH1B)AJ'DE*H37AJE,EH9)'D'.*('1^^LCE'GHEH6-AJ9EH/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
+ []\C70/rm/m/n/10.95/06 E,EH9)'D(J'F'*.[]
+ []
+
+
+Overfull \hbox (109.41377pt too wide) in paragraph at lines 188--190
+\C70/rm/m/n/10.95/06 F81K'D9/EH,H/E,EH9)(J'F'*H+'&B
+ []
+
+
+Overfull \hbox (568.16704pt too wide) in paragraph at lines 188--190
+\T1/ptm/m/n/10.95 (-20) La-TeX \C70/rm/m/n/10.95/06 E*'-)DD,EGH1-'DJK'^^LBEF'(%
+F4'!E,EH9)'D'.*('1'D.'5)(F'9F71JB'.*J'1E5'/1
+ []
+
+
+Overfull \hbox (231.94856pt too wide) in paragraph at lines 188--190
+\T1/ptm/m/n/10.95 (-20) TeX \C70/rm/m/n/10.95/06 D@ \T1/ptm/m/n/10.95 (-20) 50 
+\C70/rm/m/n/10.95/06 H1B)#C'/JEJ)('DD:)'D%F,DJ2J)EFE3*H/9
+ []
+
+
+Overfull \hbox (959.97057pt too wide) in paragraph at lines 188--190
+\T1/ptm/m/n/10.95 (-20) arXiv. \C70/rm/m/n/10.95/06 *4ED'D#H1'B'DE.*'1)EB'D'*7H
+JD)HB5J1)^^L'D9/J/EFG'J-*HJ9DI5J:E9B/)H#4C'D^^LEE'J6EF*FH9K'GJCDJK'H*9BJ/K'AJE-
+*HI
+ []
+
+
+Overfull \hbox (165.70055pt too wide) in paragraph at lines 188--190
+\T1/ptm/m/n/10.95 (-20) La-TeX. \C70/rm/m/n/10.95/06 *A'5JD*,1J(J)%6'AJ)EH6-)AJ
+'DED-B
+ []
+
+
+Overfull \hbox (110.87483pt too wide) in paragraph at lines 192--193
+ []\C70/rm/m/n/10.95/06 'D#33.[] *O5FNQA#33F'%DIE,EH9*JF\T1/ptm/m/n/10.95 (-20)
+ :
+ []
+
+
+Overfull \hbox (273.66373pt too wide) in paragraph at lines 192--193
+\C70/rm/m/n/10.95/06 #F8E)'D*1,E)'D*BDJ/J)H#F8E)'D*1,E)'DE3*F/)%DI
+ []
+
+
+Overfull \hbox (27.33005pt too wide) in paragraph at lines 192--193
+\T1/ptm/m/n/10.95 (-20) LLM. \C70/rm/m/n/10.95/06 ('DF3()DD#HDI^^L'.*1F'
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+\T1/ptm/m/n/10.95 (+20) Ni-u-Trans \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (+2
+0) Google Trans-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+\T1/ptm/m/n/10.95 (+20) late \C70/rm/m/n/10.95/06 CF8E*E+JDJ)\T1/ptm/m/n/10.95 
+(+20) .
+ []
+
+
+Overfull \hbox (153.21376pt too wide) in paragraph at lines 192--193
+\C70/rm/m/n/10.95/06 ('DF3()DD#.J1)^^LBEF'(*BJJE.E3)FE'0,
+ []
+
+
+Overfull \hbox (354.60762pt too wide) in paragraph at lines 192--193
+\T1/ptm/m/n/10.95 (-20) LLM \C70/rm/m/n/10.95/06 BHJ)^^L*4EDCDK'EF'DFE'0,EA*H-)
+'DE5/1H'DFE'0,'D*,'1J)\T1/ptm/m/n/10.95 (-20) :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+\T1/ptm/m/n/10.95 (+20) LLaMA-3.1-8B ([][]Grattafiori et al.[][], [][]2024[][])
+\C70/rm/m/n/10.95/06 ^^L
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+\T1/ptm/m/n/10.95 (+20) Qwen-3-8B ([][]Yang et al.[][], [][]2025[][])\C70/rm/m/
+n/10.95/06 ^^L \T1/ptm/m/n/10.95 (+20) Qwen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+\T1/ptm/m/n/10.95 (+20) 3-14B\C70/rm/m/n/10.95/06 ^^L \T1/ptm/m/n/10.95 (+20) D
+eepSeek-V3 ([][]Liu et al.[][],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+[][]\T1/ptm/m/n/10.95 (+20) 2024[][])\C70/rm/m/n/10.95/06 ^^LH \T1/ptm/m/n/10.9
+5 (+20) GPT-4o ([][]Hurst et al.[][], [][]2024[][]).
+ []
+
+
+Overfull \hbox (54.66379pt too wide) in paragraph at lines 192--193
+\C70/rm/m/n/10.95/06 EF(JFG0G'DFE'0,^^L*E'3*./'E
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+\T1/ptm/m/n/10.95 (+20) Qwen-3-14B \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (+2
+0) DeepSeek-V3 \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (+20) GPT-4o
+ []
+
+
+Overfull \hbox (10.8638pt too wide) in paragraph at lines 192--193
+\C70/rm/m/n/10.95/06 CFE'0,#3'3J)DDHCD'!AJ
+ []
+
+
+Overfull \hbox (154.67485pt too wide) in paragraph at lines 194--195
+[]\C70/rm/m/n/10.95/06 BEF'(%,1'!*BJJE4'EDDF8'EF'EF(9/JF\T1/ptm/m/n/10.95 (-20)
+ :
+ []
+
+
+Overfull \hbox (132.08026pt too wide) in paragraph at lines 194--195
+\C70/rm/m/n/10.95/06 ,H/)'D*1,E)HB/1)'D'-*A'8('D*F3JB\T1/ptm/m/n/10.95 (-20) . 
+
+ []
+
+[5 <./placeholder.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+ []\C70/rm/m/n/10.95/06 ,H/)'D*1,E).[]
+ []
+
+
+Overfull \hbox (229.86374pt too wide) in paragraph at lines 196--197
+\C70/rm/m/n/10.95/06 F81K'D#F'D*1,E'*'DE1,9J)9'DJ)'D,H/)DH+'&B
+ []
+
+
+Overfull \hbox (228.71713pt too wide) in paragraph at lines 196--197
+\T1/ptm/m/n/10.95 (-20) La-TeX \C70/rm/m/n/10.95/06 **7D(*9DJE'K9DIE3*HI'D.(1'!
+^^L'9*E/F'9DI
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+\T1/ptm/m/n/10.95 (+20) wmt22-cometkiwi-da ([][]Rei et al.[][],
+ []
+
+
+Overfull \hbox (46.84915pt too wide) in paragraph at lines 196--197
+[][]\T1/ptm/m/n/10.95 (-20) 2022[][])\C70/rm/m/n/10.95/06 ^^LHGHEBJ'3*BJJE(/HFE
+1,9
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+\T1/ptm/m/n/10.95 (+20) (\C70/rm/m/n/10.95/06 J4'1%DJG(@
+ []
+
+
+Overfull \hbox (62.13582pt too wide) in paragraph at lines 196--197
+\T1/ptm/m/n/10.95 (-20) Cometkiwi)\C70/rm/m/n/10.95/06 ^^LD*BJJE,H/)*1,E)H+'&B
+ []
+
+
+Overfull \hbox (34.30058pt too wide) in paragraph at lines 196--197
+\T1/ptm/m/n/10.95 (-20) La-TeX. \C70/rm/m/n/10.95/06 9D'H)9DI0DC^^L'3*./EF'
+ []
+
+
+Overfull \hbox (638.5784pt too wide) in paragraph at lines 196--197
+\T1/ptm/m/n/10.95 (-20) GPT-4o \C70/rm/m/n/10.95/06 CEBJQE*DB'&JD*BJJE,H/)'D*1,
+E)9(1#(9'/E*9//)^^LE3*14/JF(E7'D('*F8'EE5EE)(9F'J)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (1.37486pt too wide) in paragraph at lines 196--197
+\C70/rm/m/n/10.95/06 4ED'D*BJJE#1(9),H'F(\T1/ptm/m/n/10.95 (-20) :
+ []
+
+
+Overfull \hbox (525.51366pt too wide) in paragraph at lines 196--197
+\C70/rm/m/n/10.95/06 'D#E'F)^^LH'D7D'B)^^LH*F'3B'DE57D-'*^^LH'D*E'3C^^L-J+*E*BJ
+JECDEFG'9DIEBJ'3EF
+ []
+
+
+Overfull \hbox (91.72884pt too wide) in paragraph at lines 196--197
+\T1/ptm/m/n/10.95 (-20) 0 \C70/rm/m/n/10.95/06 %DI \T1/ptm/m/n/10.95 (-20) 10. 
+\C70/rm/m/n/10.95/06 +E*E*,EJ9/1,)9'E)(H'37)
+ []
+
+
+Overfull \hbox (199.81203pt too wide) in paragraph at lines 196--197
+\T1/ptm/m/n/10.95 (-20) GPT-4o \C70/rm/m/n/10.95/06 (F'!K9DI'D/1,'*'DA1/J)9(1G0
+G'D#(9'/
+ []
+
+
+Overfull \hbox (10.8638pt too wide) in paragraph at lines 198--199
+ []\C70/rm/m/n/10.95/06 B/1)'D'-*A'8('D*F3JB.[]
+ []
+
+
+Overfull \hbox (504.38016pt too wide) in paragraph at lines 198--199
+\C70/rm/m/n/10.95/06 E'%0'C'F*'D*3EJ'*E-*A8(G'('DC'EDGH*,3J/EGEDB/1)F8'E*1,E)'D
+F5'DEF3B\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (810.98007pt too wide) in paragraph at lines 198--199
+\C70/rm/m/n/10.95/06 HE90DC^^LAJ'DHB*'D-'DJ^^LD'JH,/E$419'DEJD*BJJEB/1)'D'-*A'8
+('D*F3JBDDFE'0,#H'D#F8E).D'D9EDJ)'D*1,E)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+\C70/rm/m/n/10.95/06 D0DC^^LDH+'&B \T1/ptm/m/n/10.95 (+20) La-
+ []
+
+
+Overfull \hbox (28.82677pt too wide) in paragraph at lines 198--199
+\T1/ptm/m/n/10.95 (-20) TeX\C70/rm/m/n/10.95/06 ^^L5EEF'EBJ'3*BJJE,/J/^^L
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+[]$\C70/rm/m/n/10.95/06 B/1) $[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+\T1/ptm/m/n/10.95 (+20) (\C70/rm/m/n/10.95/06 J4'1%DJG(@ \T1/ptm/m/n/10.95 (+20
+) FC-
+ []
+
+
+Overfull \hbox (190.37924pt too wide) in paragraph at lines 198--199
+\T1/ptm/m/n/10.95 (-20) score)\C70/rm/m/n/10.95/06 ^^LD*BJJEB/1)F8'EF'9DI'D'-*A
+'8(*3EJ'*
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 .D'D9EDJ)'D*1,E)\T1/ptm/m/n
+/10.95 (+20) .
+ []
+
+
+Overfull \hbox (223.5893pt too wide) in paragraph at lines 201--203
+\C70/rm/m/n/10.95/06 -J+ $\OML/cmm/m/it/10.95 S[]$ \C70/rm/m/n/10.95/06 GH'D/1,
+)'D#HDJ)B(D'DEC'A"*H'D9BH('*^^L
+ []
+
+
+Overfull \hbox (19.98956pt too wide) in paragraph at lines 201--203
+\OML/cmm/m/it/10.95 $ \C70/rm/m/n/10.95/06 GHE9'ED'D9BH()DCD.7#^^L
+ []
+
+
+Overfull \hbox (41.61581pt too wide) in paragraph at lines 201--203
+\OML/cmm/m/it/10.95 ^^L$ \C70/rm/m/n/10.95/06 GHE9'ED'D9BH()DCD*-0J1^^L
+ []
+
+
+Overfull \hbox (41.88826pt too wide) in paragraph at lines 201--203
+\OML/cmm/m/it/10.95 ^^M$ \C70/rm/m/n/10.95/06 GH'DEC'A#)DD*,EJ9'DF',-\T1/ptm/m/
+n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (89.7587pt too wide) in paragraph at lines 201--203
+\OML/cmm/m/it/10.95 N[]$ \C70/rm/m/n/10.95/06 H $\OML/cmm/m/it/10.95 N[]$ \C70/
+rm/m/n/10.95/06 GE'9//'D#.7'!H'D*-0J1'*^^L
+ []
+
+
+Overfull \hbox (61.70361pt too wide) in paragraph at lines 201--203
+\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/
+10.95 ; \OT1/cmr/m/n/10.95 1\OMS/cmsy/m/n/10.95 g$ \C70/rm/m/n/10.95/06 J4J1%DI
+E'%0'C'F*H+JB)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 B/*E*,EJ9G'(F,'-\T1/ptm/m/n
+/10.95 (+20) .
+ []
+
+
+Overfull \hbox (109.41377pt too wide) in paragraph at lines 201--203
+\C70/rm/m/n/10.95/06 +EFBHE(B5'D/1,)%DI'DF7'B'D5'D-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
+\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 S[]; S[]\OT1/cmr/m/n/10.95 ]$\C70/rm/m/
+n/10.95/06 ^^L-J+ $\OML/cmm/m/it/10.95 S[]$ \C70/rm/m/n/10.95/06 H $\OML/cmm/m/
+it/10.95 S[]$
+ []
+
+
+Overfull \hbox (109.41377pt too wide) in paragraph at lines 201--203
+\C70/rm/m/n/10.95/06 GE''D-/'D#9DIH'D-/'D#/FIDD/1,)
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./case-study-main.pdf): PDF inclusion: found PDF
+ version <1.7>, but at most version <1.5> allowed
+<case-study-main.pdf, id=328, 760.08669pt x 439.6425pt>
+File: case-study-main.pdf Graphic file (type pdf)
+<use case-study-main.pdf>
+Package pdftex.def Info: case-study-main.pdf  used on input line 205.
+(pdftex.def)             Requested size: 455.24411pt x 263.32465pt.
+
+Overfull \hbox (7.08018pt too wide) in paragraph at lines 211--211
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 3: |\C70/rm/m/n/10/06 EB'1F),H/)'D*1
+,E)AJ-'D*JF*E+JDJ*JF(JF'D#3'3H
+ []
+
+
+Overfull \hbox (42.57669pt too wide) in paragraph at lines 211--211
+\T1/ptm/m/n/10 (-20) La-TeX-Trans. \C70/rm/m/n/10/06 AJE5/1 \T1/ptm/m/n/10 (-20
+) La-TeX\C70/rm/m/n/10/06 ^^L []'D#21B[] JEJ2'DF5H5'D*JJ,('D-A'89DJG'\T1/ptm/m/
+n/10 (-20) .
+ []
+
+
+Overfull \hbox (60.83598pt too wide) in paragraph at lines 211--211
+\C70/rm/m/n/10/06 9D'E)'3*AG'E-E1'! \T1/ptm/m/n/10 (-20) (``[]?[]'') \C70/rm/m/
+n/10/06 *4J1%DIAB/'F'D9D'E'*#+F'!'D*1,E)\T1/ptm/m/n/10 (-20) .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
+[]\C70/rm/m/n/10/06 'D#-E1[] J(12'D*1,E'*:J1'DE*3B)^^L []'D#.61[]
+ []
+
+
+Overfull \hbox (13.7088pt too wide) in paragraph at lines 211--211
+\T1/ptm/m/n/10 (-20) La-TeX \C70/rm/m/n/10/06 'D*JA'**EF'D#3'3HDCF*E'D-A'89DJG'
+(F,'-(H'37)
+ []
+
+Package CJKpunct Info: punctuation spaces for family 'rm' do not exist. Use fam
+ily 'def' instead. on input line 216.
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+[]\C70/rm/m/n/10.95/06 FBHE(*BJJEF8'E \T1/ptm/m/n/10.95 (+20) La-TeX-
+ []
+
+
+Overfull \hbox (38.11691pt too wide) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (-20) Trans \C70/rm/m/n/10.95/06 D/JF'9DIEGE*JFDD*1,E)\T1/ptm
+/m/n/10.95 (-20) :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\C70/rm/m/n/10.95/06 'D%F,DJ2J)%DI'D5JFJ)
+ []
+
+
+Overfull \hbox (69.04733pt too wide) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (-20) (En-Zh) \C70/rm/m/n/10.95/06 H'D%F,DJ2J)%DI'DJ'('FJ)
+ []
+
+
+Overfull \hbox (113.64165pt too wide) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (-20) (En-Ja). \C70/rm/m/n/10.95/06 *8G1'DF*'&,^^L'DEH6-)AJ'D
+,/HD
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+[][]\T1/ptm/m/n/10.95 (+20) 1[][]\C70/rm/m/n/10.95/06 ^^L#F \T1/ptm/m/n/10.95 (
++20) La-TeX-Trans
+ []
+
+
+Overfull \hbox (65.61378pt too wide) in paragraph at lines 216--217
+\C70/rm/m/n/10.95/06 J*AHB('3*E1'19DICDEFE9'JJ1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (+20) NMT \C70/rm/m/n/10.95/06 H\T1/ptm/m/n/10.95 (+20) Singl
+e-Agent
+ []
+
+
+Overfull \hbox (98.46378pt too wide) in paragraph at lines 216--217
+\C70/rm/m/n/10.95/06 9(1,EJ9EB'JJ3'D*BJJE^^L(E'AJ0DC
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (+20) COMETkiwi \C70/rm/m/n/10.95/06 H\T1/ptm/m/n/10.95 (+20)
+ FC-score.
+ []
+
+
+Overfull \hbox (10.8638pt too wide) in paragraph at lines 216--217
+\C70/rm/m/n/10.95/06 EF-J+,H/)'D*1,E)^^LJ8G1
+ []
+
+
+Underfull \hbox (badness 8189) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (+20) La-TeX-Trans \C70/rm/m/n/10.95/06 *-3JF'*C(J1)AJ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (+20) FC-score (71.52 \C70/rm/m/n/10.95/06 EB'(D
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (+20) 58.32 \C70/rm/m/n/10.95/06 DEGE) \T1/ptm/m/n/10.95 (+20
+) En-Zh \C70/rm/m/n/10.95/06 H\T1/ptm/m/n/10.95 (+20) 70.52
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\C70/rm/m/n/10.95/06 EB'(D \T1/ptm/m/n/10.95 (+20) 63.68 \C70/rm/m/n/10.95/06 D
+EGE) \T1/ptm/m/n/10.95 (+20) En-
+ []
+
+
+Overfull \hbox (154.56783pt too wide) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (-20) Ja)\C70/rm/m/n/10.95/06 ^^LEE'J4J1%DI'D-A'8(4CD#A6D9DI*
+F3JB
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 #+F'!'D*1,E)\T1/ptm/m/n/10.
+95 (+20) .
+ []
+
+
+Overfull \hbox (109.41377pt too wide) in paragraph at lines 216--217
+\C70/rm/m/n/10.95/06 9D'H)9DI0DC^^L9F/E'J*E/9EG(H'37)
+ []
+
+
+Underfull \hbox (badness 5288) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (+20) GPT-4o \C70/rm/m/n/10.95/06 CFEH0,#3'3J^^LJ-BB
+ []
+
+
+Overfull \hbox (252.76878pt too wide) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (-20) La-TeX-Trans \C70/rm/m/n/10.95/06 #9DI'D/1,'*9(1,EJ9EB'
+JJ3'D*BJJE'D+D'+)
+ []
+
+
+Underfull \hbox (badness 5316) in paragraph at lines 216--217
+|\C70/rm/m/n/10.95/20 ^^T| \T1/ptm/m/n/10.95 (+20) COMETkiwi \C70/rm/m/n/10.95/
+06 H\T1/ptm/m/n/10.95 (+20) LLM-score \C70/rm/m/n/10.95/06 H\T1/ptm/m/n/10.95 (
++20) FC-score |\C70/rm/m/n/10.95/20 ^^T|
+ []
+
+
+Overfull \hbox (361.2637pt too wide) in paragraph at lines 216--217
+\C70/rm/m/n/10.95/06 E$C/'K#/'&G'DBHJ'D9'EAJ'D*1,E)9DI'DH+'&B'DEF8E)(*F3JB
+ []
+
+
+Overfull \hbox (56.20058pt too wide) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (-20) La-TeX. \C70/rm/m/n/10.95/06 EF-J+*CDA)'D*1,E)^^LJB/E
+ []
+
+
+Overfull \hbox (745.51865pt too wide) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (-20) La-TeX-Trans \C70/rm/m/n/10.95/06 #/'!KE*AHB'K/HF*C(/2J
+'/)C(J1)AJ'DFAB'*'D-'3H(J)EB'1F)(#F8E)'D*1,E)'D#.1I'DE9*E/)9DI
+ []
+
+
+Overfull \hbox (362.7832pt too wide) in paragraph at lines 216--217
+\T1/ptm/m/n/10.95 (-20) LLM\C70/rm/m/n/10.95/06 ^^LEE'J,9DGEF'3(K'DDF419DIF7'BH
+'39AJ'D*7(JB'*'DH'B9J)\T1/ptm/m/n/10.95 (-20) . 
+ []
+
+[6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 6775) has occurred while \output is active []
+
+ [7 <./case-study-main.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
+[]\C70/rm/m/n/10/88 h \T1/ptm/m/n/10 (+20) 2: |\C70/rm/m/n/10/06 #/'! \T1/ptm/m
+/n/10 (+20) La-TeX-Trans
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
+\C70/rm/m/n/10/06 E9%9/'/'*E.*DA)\T1/ptm/m/n/10 (+20) . ``SA.''
+ []
+
+
+Overfull \hbox (80.91386pt too wide) in paragraph at lines 242--242
+\C70/rm/m/n/10/06 *4J1%DIB'9/)'D*1,E)'DE9*E/)9DI
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
+\T1/ptm/m/n/10 (+20) LLM\C70/rm/m/n/10/06 ^^L \T1/ptm/m/n/10 (+20) ``P.'' \C70/
+rm/m/n/10/06 *9FJ'DE-DD^^L
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
+\T1/ptm/m/n/10 (+20) ``V.'' \C70/rm/m/n/10/06 *9FJ'DE/BB^^L \T1/ptm/m/n/10 (+20
+) ``S.''
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
+\C70/rm/m/n/10/06 *9FJ'DED.5^^LH\T1/ptm/m/n/10 (+20) ``TE.''
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
+\C70/rm/m/n/10/06 *9FJE3*.1,'DE57D-'*\T1/ptm/m/n/10 (+20) .
+ []
+
+
+Underfull \hbox (badness 1325) in paragraph at lines 242--242
+\T1/ptm/m/n/10 (+20) ``SA. + P. + V. + S. + TE.'' \C70/rm/m/n/10/06 **H'ABE9
+ []
+
+
+Overfull \hbox (12.6195pt too wide) in paragraph at lines 248--249
+[]\C70/rm/m/n/10.95/06 FB/E/1'3)-'D)DEGE)%F\T1/ptm/m/n/10.95 (-20) -
+ []
+
+
+Overfull \hbox (744.5136pt too wide) in paragraph at lines 248--249
+\C70/rm/m/n/10.95/06 5EFE,EH9)'D'.*('1D/JF'D%8G'1#FF8'EF'J$/J('DA9D(4CD#A6DEF-J
++'*3'B'D*1,E)^^LCE'GHEH6-AJ'D4CD
+ []
+
+
+Overfull \hbox (142.53748pt too wide) in paragraph at lines 248--249
+[][]\T1/ptm/m/n/10.95 (-20) 3[][]. \C70/rm/m/n/10.95/06 AJG0G'D-'D)^^L*(BI*1,E)
+'DE57D-'*EF
+ []
+
+
+Overfull \hbox (78.33533pt too wide) in paragraph at lines 248--249
+\T1/ptm/m/n/10.95 (-20) La-TeX-Trans \C70/rm/m/n/10.95/06 E*3B)9(1'D#B3'E'D+D'+
+)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (405.83018pt too wide) in paragraph at lines 248--249
+\C70/rm/m/n/10.95/06 AJ'DEB'(D^^L*,/'D71JB)'D#3'3J)59H()AJ'D-A'89DIE+DG0''D'*3'
+B\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (504.38016pt too wide) in paragraph at lines 248--249
+\C70/rm/m/n/10.95/06 HG0'J4J1%DI#FF8'EF'JECFG'D-A'89DI'*3'BEE*'27H'D9EDJ)'D*1,E
+)(#CEDG'\T1/ptm/m/n/10.95 (-20) . 
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 252--253
+[]\C70/rm/m/n/10.95/06 AJG0G'DH1B)^^LFB*1- \T1/ptm/m/n/10.95 (+20) La-
+ []
+
+
+Overfull \hbox (293.7777pt too wide) in paragraph at lines 252--253
+\T1/ptm/m/n/10.95 (-20) TeX-Trans\C70/rm/m/n/10.95/06 ^^LF8'EE*9//'DHCD'!D*1,E)
+'DH+'&B'DEF8E)(*F3JB
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+\T1/ptm/m/n/10.95 (+20) La-TeX. \C70/rm/m/n/10.95/06 J*CHF \T1/ptm/m/n/10.95 (+
+20) La-TeX-Trans
+ []
+
+
+Overfull \hbox (405.83018pt too wide) in paragraph at lines 252--253
+\C70/rm/m/n/10.95/06 EF+D'+)H-/'**9'HFJ)^^LCDEFG'E3$HD9FE1-D)E9JF)EF9EDJ)'D*1,E
+)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (21.8138pt too wide) in paragraph at lines 252--253
+\C70/rm/m/n/10.95/06 *8G1'DF*'&,'D*,1J(J)#F
+ []
+
+
+Overfull \hbox (449.86873pt too wide) in paragraph at lines 252--253
+\T1/ptm/m/n/10.95 (-20) La-TeX-Trans \C70/rm/m/n/10.95/06 JECF#FJ*AHB9DI'D#F8E)
+'D#3'3J)HJB/E-D'KEH+HBK'D*1,E)H+'&B
+ []
+
+
+Overfull \hbox (186.06378pt too wide) in paragraph at lines 254--255
+[]\C70/rm/m/n/10.95/06 JECF/E,#JFEH0,D:)J*(9'D*9DJE'*AJF8'E
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+\T1/ptm/m/n/10.95 (+20) La-TeX-Trans \C70/rm/m/n/10.95/06 'D.'5(F'\T1/ptm/m/n/1
+0.95 (+20) .
+ []
+
+
+Overfull \hbox (570.08014pt too wide) in paragraph at lines 254--255
+\C70/rm/m/n/10.95/06 HE90DC^^LF81K'D9//'DFE'0,'DE*'-)'DC(J1^^LA%FGEF:J1'D9EDJ*B
+JJECDFEH0,(4CDA1/J\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (109.41377pt too wide) in paragraph at lines 254--255
+\C70/rm/m/n/10.95/06 D0DC^^LF.*'1E,EH9)*E+JDJ)EFFE'0,
+ []
+
+
+Overfull \hbox (69.21313pt too wide) in paragraph at lines 254--255
+\T1/ptm/m/n/10.95 (-20) LLM \C70/rm/m/n/10.95/06 'D4'&9)'D'3*./'ED*,'1(F'\T1/pt
+m/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (361.2637pt too wide) in paragraph at lines 254--255
+\C70/rm/m/n/10.95/06 F-FF9*B/#FG0''D'.*J'1JH6-(4CDC'AMB'(DJ)'D*7(JBHA'9DJ)
+ []
+
+
+Underfull \hbox (badness 8189) in paragraph at lines 254--255
+\T1/ptm/m/n/10.95 (+20) La-TeX-Trans \C70/rm/m/n/10.95/06 AJ*1,E)E3*F/'*
+ []
+
+
+Overfull \hbox (308.0505pt too wide) in paragraph at lines 254--255
+\T1/ptm/m/n/10.95 (-20) La-TeX. \C70/rm/m/n/10.95/06 ('D%6'A)%DI0DC^^L9DI'D1:EE
+F#F'D#F8E)'D*,'1J)E+D
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+\T1/ptm/m/n/10.95 (+20) Baidu \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (+20) Yo
+udao
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+\C70/rm/m/n/10.95/06 *B/E./E'**1,E) \T1/ptm/m/n/10.95 (+20) La-
+ []
+
+
+Overfull \hbox (62.44325pt too wide) in paragraph at lines 254--255
+\T1/ptm/m/n/10.95 (-20) TeX\C70/rm/m/n/10.95/06 ^^L%D'#FG'DJ3*EA*H-)'DE5/1\T1/p
+tm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (120.36377pt too wide) in paragraph at lines 254--255
+\C70/rm/m/n/10.95/06 F*J,)D0DC^^LD'JECFF'-3'(EB'JJ3E+D
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+\T1/ptm/m/n/10.95 (+20) COMETkiwi \C70/rm/m/n/10.95/06 H \T1/ptm/m/n/10.95 (+20
+) FC-score
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+\C70/rm/m/n/10.95/06 DG0G'D#F8E)\T1/ptm/m/n/10.95 (+20) .
+ []
+
+
+Overfull \hbox (318.23021pt too wide) in paragraph at lines 254--255
+\C70/rm/m/n/10.95/06 D0DC^^LD'FBHE(*6EJFEB'1F)4'ED)E9G'AJ*,'1(F''D1&J3J)\T1/ptm
+/m/n/10.95 (-20) . 
+ []
+
+(./acl_latex.bbl
+Underfull \hbox (badness 2486) in paragraph at lines 5--8
+\T1/ptm/m/n/10 (+20) Askell, Sand-hini Agar-wal, Ariel Herbert-Voss,
+ []
+
+[8]
+Underfull \hbox (badness 3138) in paragraph at lines 71--74
+\T1/ptm/m/n/10 (+20) Binyuan Hui, Bo Zheng, Bowen Yu, Chang
+ []
+
+) [9
+
+]
+Overfull \hbox (197.57782pt too wide) in paragraph at lines 260--260
+[]\C70/rm/m/n/12/06 'D%9/'/'*'D*A5JDJ)'D%6'AJ)DD*,1()  
+ []
+
+
+Overfull \hbox (328.41371pt too wide) in paragraph at lines 264--265
+ []\C70/rm/m/n/10.95/06 'D#33.[] F81K'D#FE,EH9)'D(J'F'***CHF('DC'EDEFE3*F/'*
+ []
+
+
+Overfull \hbox (634.63351pt too wide) in paragraph at lines 264--265
+\T1/ptm/m/n/10.95 (-20) La-TeX \C70/rm/m/n/10.95/06 GJCDJ)*AHBB/1'*'D#F8E)0'*'D
+FEH0,'DH'-/^^L'9*E/F'.7H)E9'D,)E3(B)AJ'DFG,'D#3'3J\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (87.51378pt too wide) in paragraph at lines 264--265
+\C70/rm/m/n/10.95/06 9DIH,G'D*-/J/^^L*E*B3JEE3*F/'*
+ []
+
+
+Overfull \hbox (481.33356pt too wide) in paragraph at lines 264--265
+\T1/ptm/m/n/10.95 (-20) La-TeX \C70/rm/m/n/10.95/06 'DGJCDJ)%DIH-/'**1,E)9DIE3*
+HI'D#B3'ED,9DG'B'(D)DD%/'1)DD*1,E)\T1/ptm/m/n/10.95 (-20) . 
+ []
+
+
+Overfull \hbox (32.7638pt too wide) in paragraph at lines 267--268
+ []\C70/rm/m/n/10.95/06 %9/'/'*'DE9DE'*'DA'&B).[]
+ []
+
+
+Overfull \hbox (559.13014pt too wide) in paragraph at lines 267--268
+\C70/rm/m/n/10.95/06 AJ'D*,'1(^^LBEF'(*BJJECDEF'DFE'0,EA*H-)'DE5/1H'DFE'0,E:DB)
+'DE5/1(4CDEFA5D\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (537.23015pt too wide) in paragraph at lines 267--268
+\C70/rm/m/n/10.95/06 ('DF3()DDFE'0,E:DB)'DE5/1^^LBEF'('DH5HD%DJG'9(1H',G)(1E,)*
+7(JB'*71A+'D+\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (383.1637pt too wide) in paragraph at lines 267--268
+\C70/rm/m/n/10.95/06 AJ'DFG,'D#3'3J^^LBEF'(*9JJF'D-/'D#B5ID9//'D1EH2'D,/J/)%DI
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\T1/ptm/m/n/10.95 (+20) 16,384 \C70/rm/m/n/10.95/06 H/1,)'D-1'1)%DI
+ []
+
+
+Overfull \hbox (397.34392pt too wide) in paragraph at lines 267--268
+\T1/ptm/m/n/10.95 (-20) 0.7\C70/rm/m/n/10.95/06 ^^LE9'D'-*A'8(,EJ9'DE9DE'*'DA'&
+B)'D#.1I9F/BJEG''D'A*1'6J)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (262.71373pt too wide) in paragraph at lines 267--268
+\C70/rm/m/n/10.95/06 ('DF3()DF8'EF'^^L*E*9JJF/1,)'D-1'1)AJ'DAD*1%DI
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+\T1/ptm/m/n/10.95 (+20) 0 \C70/rm/m/n/10.95/06 E9-/#B5IJ(D: \T1/ptm/m/n/10.95 (
++20) 50
+ []
+
+
+Overfull \hbox (361.2637pt too wide) in paragraph at lines 267--268
+\C70/rm/m/n/10.95/06 1E2K',/J/K'^^LAJ-JF*E*CHJF,EJ9'DHCD'!'D".1JF(-/#B5IJ(D:
+ []
+
+
+Overfull \hbox (519.65538pt too wide) in paragraph at lines 267--268
+\T1/ptm/m/n/10.95 (-20) 8,192 \C70/rm/m/n/10.95/06 1E2K',/J/K'^^[H*E'D'-*A'8('D
+E9DE'*'DA'&B)'DE*(BJ)9F/BJEG''D'A*1'6J)\T1/ptm/m/n/10.95 (-20) . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+ []\C70/rm/m/n/10.95/06 'D*BJJE.[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\C70/rm/m/n/10.95/06 9F/-3'(/1,'* \T1/ptm/m/n/10.95 (+20) COMETkiwi
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\C70/rm/m/n/10.95/06 H\T1/ptm/m/n/10.95 (+20) LLM\C70/rm/m/n/10.95/06 ^^L'3*./E
+F' \T1/zi4/m/n/10.95 pylatexenc[][][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\C70/rm/m/n/10.95/06 D*-HJDCDH-/)*1,E)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 %DIF59'/J\T1/ptm/m/n/10.95 
+(+20) .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\C70/rm/m/n/10.95/06 9DI'D1:EEF#F \T1/ptm/m/n/10.95 (+20) La-TeX-Trans
+ []
+
+
+Overfull \hbox (1029.21352pt too wide) in paragraph at lines 270--271
+\C70/rm/m/n/10.95/06 'DGJCDJ)%DIH-/'**1,E)/BJB)^^L%D'#FF''*(9F'(1H*HCHD'D*BJJE'
+D.'5('D#3'3('3*./'EH-/'**1,E)9DIE3*HI'D#B3'ED-3'(CDEF/1,'*
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\T1/ptm/m/n/10.95 (+20) COMETkiwi \C70/rm/m/n/10.95/06 H\T1/ptm/m/n/10.95 (+20)
+ LLM.
+ []
+
+
+Overfull \hbox (207.96375pt too wide) in paragraph at lines 270--271
+\C70/rm/m/n/10.95/06 9D'H)9DI0DC^^LD*BJJE'D'*3'B'D3J'BJAJ*BJJE
+ []
+
+
+Overfull \hbox (570.06665pt too wide) in paragraph at lines 270--271
+\T1/ptm/m/n/10.95 (-20) LLM\C70/rm/m/n/10.95/06 ^^LBEF'(/E,H-/'*'D*1,E)9DIE3*HI
+'D#B3'EAJAB1'*2H,J)+EBEF'(*BJJEG'('3*./'E
+ []
+
+
+Overfull \hbox (247.38972pt too wide) in paragraph at lines 270--271
+\T1/ptm/m/n/10.95 (-20) GPT-4o. \C70/rm/m/n/10.95/06 J*E*H6J-B'D('D7D('DE3*./ED
+D*BJJEAJ'D4CD
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+[][]\T1/ptm/m/n/10.95 (+20) 12[][]. \C70/rm/m/n/10.95/06 9F/-3'(/1,)
+ []
+
+
+Overfull \hbox (56.83763pt too wide) in paragraph at lines 270--271
+\T1/ptm/m/n/10.95 (-20) FC\C70/rm/m/n/10.95/06 ^^LBEF'(*9JJF'D/1,)'D#HDJ)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+\OML/cmm/m/it/10.95 S[]$ \C70/rm/m/n/10.95/06 %DI \T1/ptm/m/n/10.95 (+20) 100.
+ []
+
+
+Overfull \hbox (273.66373pt too wide) in paragraph at lines 270--271
+\C70/rm/m/n/10.95/06 F81K'D#F'D#.7'!DG'*#+J1#C(19DI*#+J1,/HD)*F3JB
+ []
+
+
+Overfull \hbox (372.074pt too wide) in paragraph at lines 270--271
+\T1/ptm/m/n/10.95 (-20) PDF \C70/rm/m/n/10.95/06 'DFG'&JEB'1F)('D*-0J1'*^^LAJ'D
+*,1()^^LBEF'(*9JJF'DBJE)D@
+ []
+
+
+Overfull \hbox (555.23927pt too wide) in paragraph at lines 270--271
+\T1/ptm/m/n/10.95 (-20) (2). \C70/rm/m/n/10.95/06 AJ'DFG'J)^^LE'%0'C'F*9EDJ)'D*
+,EJ9F',-)GH'D9'ED'D#C+1H6H-K'D*BJJE'D*,EJ9\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (54.66379pt too wide) in paragraph at lines 270--271
+\C70/rm/m/n/10.95/06 D0DC^^LAJ'D*,1()^^LBEF'(*9JJF
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+ []\C70/rm/m/n/10.95/06 E,EH9'*'D(J'F'*[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+\C70/rm/m/n/10.95/06 '.*1F'EDA'*'DE5/1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 D@ \T1/ptm/m/n/10.95 (+20) 
+50
+ []
+
+
+Overfull \hbox (142.26376pt too wide) in paragraph at lines 273--274
+\C70/rm/m/n/10.95/06 H1B)#C'/JEJ)AJE,'D9DHE'DCE(JH*1EF
+ []
+
+
+Overfull \hbox (5.02127pt too wide) in paragraph at lines 273--274
+\T1/ptm/m/n/10.95 (-20) arXiv \C70/rm/m/n/10.95/06 CE,EH9)'.*('1D/JF'\T1/ptm/m/
+n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (109.41377pt too wide) in paragraph at lines 273--274
+\C70/rm/m/n/10.95/06 J*E916*H2J9#7H'D'D#H1'BAJ'D4CD
+ []
+
+
+Overfull \hbox (492.55412pt too wide) in paragraph at lines 273--274
+[][]\T1/ptm/m/n/10.95 (-20) 4[][]. \C70/rm/m/n/10.95/06 ('D%6'A)%DI0DC^^LBEF'(*
+-DJDEH'6J9'D#H1'BH*5HJ1G'C3-'()CDE'*AJ'D4CD
+ []
+
+
+Overfull \hbox (1271.15366pt too wide) in paragraph at lines 273--274
+[][]\T1/ptm/m/n/10.95 (-20) 5[][]. \C70/rm/m/n/10.95/06 *8G1G0G'DF*J,)#FE,EH9)'
+D'.*('1*916E,EH9)E*FH9)EF#7H'D'D#H1'B^^L*:7JCDEF'DH+'&B'DB5J1)H'D7HJD)^^LEE'J3'
+9/9DI6E'F'DBH)9(1#-,'E'DH+'&B'DE.*DA)\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (1194.22997pt too wide) in paragraph at lines 273--274
+\C70/rm/m/n/10.95/06 9D'H)9DI0DC^^L*C4A3-'()'DCDE'*9FE,EH9)H'39)EFEH'6J9'D(-+6E
+FE,'D9DHE'DCE(JH*1^^LEE'J$C/*FH9'DEH6H9'*AJE,EH9)'D'.*('1HJ9229EHEJ)*BJJEF'\T1/
+ptm/m/n/10.95 (-20) . 
+ []
+
+<my_distribution_plot_k_labels.pdf, id=420, 569.62408pt x 278.54062pt>
+File: my_distribution_plot_k_labels.pdf Graphic file (type pdf)
+<use my_distribution_plot_k_labels.pdf>
+Package pdftex.def Info: my_distribution_plot_k_labels.pdf  used on input line 
+278.
+(pdftex.def)             Requested size: 455.24411pt x 222.62029pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (+20) 4: |\C70/rm/m/n/10/06 *H2J9#7H'D'D#H
+1'B
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
+\T1/ptm/m/n/10 (+20) (\C70/rm/m/n/10/06 (9//'DCDE'*\T1/ptm/m/n/10 (+20) )
+ []
+
+<word_cloud.pdf, id=421, 633.23373pt x 510.40688pt>
+File: word_cloud.pdf Graphic file (type pdf)
+<use word_cloud.pdf>
+Package pdftex.def Info: word_cloud.pdf  used on input line 286.
+(pdftex.def)             Requested size: 455.24411pt x 366.9475pt.
+
+Overfull \hbox (435.68816pt too wide) in paragraph at lines 287--287
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 5: |\C70/rm/m/n/10/06 *5HJ13-'()'DCD
+E'*DDEH'6J9'D*J*E*F'HDG'AJE,EH9)'D'.*('1'D.'5)(F'\T1/ptm/m/n/10 (-20) .| 
+ []
+
+
+Overfull \hbox (1215.3635pt too wide) in paragraph at lines 291--292
+[]\C70/rm/m/n/10.95/06 F.*'13*-'D'*D916'D#/'!'D*1,EIDF8'EF'(51JK'^^LE9'D*1CJ29D
+IEG'E'D*1,E)EF'D%F,DJ2J)%DI'D5JFJ)HEF'D%F,DJ2J)%DI'DJ'('FJ)^^LCE'GHEH6-AJ'D4CD
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+[][]\T1/ptm/m/n/10.95 (+20) 6[][] \C70/rm/m/n/10.95/06 %DI'D4CD [][]\T1/ptm/m/n
+/10.95 (+20) 11[][].
+ []
+
+
+Overfull \hbox (197.01375pt too wide) in paragraph at lines 291--292
+\C70/rm/m/n/10.95/06 ,EJ9'D-'D'*'D3*GJ-'D'**1,E)D4A1)'DE5/1
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 291--292
+\T1/ptm/m/n/10.95 (+20) La-TeX \C70/rm/m/n/10.95/06 DEB'D'*(H'37) \T1/ptm/m/n/1
+0.95 (+20) La-TeX-
+ []
+
+
+Overfull \hbox (238.3pt too wide) in paragraph at lines 291--292
+\T1/ptm/m/n/10.95 (-20) Trans. \C70/rm/m/n/10.95/06 AJCD-'D)^^L'.*1F',2&JFE9B/J
+FF3(JK'D916GE'\T1/ptm/m/n/10.95 (-20) .
+ []
+
+
+Overfull \hbox (931.43004pt too wide) in paragraph at lines 291--292
+\C70/rm/m/n/10.95/06 EF(JF'D-'D'*'D3*^^LGF'C+D'+EG'E*1,E)EF'D%F,DJ2J)%DI'D5JFJ)
+H+D'+EG'E*1,E)EF'D%F,DJ2J)%DI'DJ'('FJ)^^L9DI'D*H'DJ\T1/ptm/m/n/10.95 (-20) . 
+ []
+
+
+Overfull \hbox (124.91777pt too wide) in paragraph at lines 292--292
+[]\C70/rm/m/n/12/06 BH'D('D7D('*DECHF'*B'&E)9DI 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+[]\C70/rm/m/n/10.95/06 *8G1'D#4C'D [][]\T1/ptm/m/n/10.95 (+20) 13[][] \C70/rm/m
+/n/10.95/06 %DI [][]\T1/ptm/m/n/10.95 (+20) 17[][]
+ []
+
+
+Overfull \hbox (229.86374pt too wide) in paragraph at lines 294--295
+\C70/rm/m/n/10.95/06 BH'D('D7D('*'DE3*./E)EFB(D'DHCD'!/'.DF8'E
+ []
+
+
+Underfull \vbox (badness 1596) has occurred while \output is active []
+
+ [10
+
+ <./my_distribution_plot_k_labels.pdf> <./word_cloud.pdf>] [11
+
+]
+<appendix_cases/case2/case2a.pdf, id=484, 614.295pt x 794.97pt>
+File: appendix_cases/case2/case2a.pdf Graphic file (type pdf)
+<use appendix_cases/case2/case2a.pdf>
+Package pdftex.def Info: appendix_cases/case2/case2a.pdf  used on input line 30
+2.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--303
+[]\T1/ptm/m/n/9 (+20) (a) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case2/case2b.pdf, id=485, 614.295pt x 794.97pt>
+File: appendix_cases/case2/case2b.pdf Graphic file (type pdf)
+<use appendix_cases/case2/case2b.pdf>
+Package pdftex.def Info: appendix_cases/case2/case2b.pdf  used on input line 30
+9.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
+[]\T1/ptm/m/n/9 (+20) (b) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case2/case2c.pdf, id=486, 614.295pt x 794.97pt>
+File: appendix_cases/case2/case2c.pdf Graphic file (type pdf)
+<use appendix_cases/case2/case2c.pdf>
+Package pdftex.def Info: appendix_cases/case2/case2c.pdf  used on input line 31
+6.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--317
+[]\T1/ptm/m/n/9 (+20) (c) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--317
+\C70/rm/m/n/9/06 ('DD:)'D%F,DJ2J)DD-'D)
+ []
+
+<appendix_cases/case2/case2d.pdf, id=487, 614.295pt x 794.97pt>
+File: appendix_cases/case2/case2d.pdf Graphic file (type pdf)
+<use appendix_cases/case2/case2d.pdf>
+Package pdftex.def Info: appendix_cases/case2/case2d.pdf  used on input line 32
+2.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
+[]\T1/ptm/m/n/9 (+20) (d) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+<appendix_cases/case1/case1a.pdf, id=488, 597.50829pt x 845.0471pt>
+File: appendix_cases/case1/case1a.pdf Graphic file (type pdf)
+<use appendix_cases/case1/case1a.pdf>
+Package pdftex.def Info: appendix_cases/case1/case1a.pdf  used on input line 33
+4.
+(pdftex.def)             Requested size: 218.51521pt x 309.03922pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--335
+[]\T1/ptm/m/n/9 (+20) (a) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case1/case1b.pdf, id=489, 597.51233pt x 845.0471pt>
+File: appendix_cases/case1/case1b.pdf Graphic file (type pdf)
+<use appendix_cases/case1/case1b.pdf>
+Package pdftex.def Info: appendix_cases/case1/case1b.pdf  used on input line 34
+1.
+(pdftex.def)             Requested size: 218.51521pt x 309.03922pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
+[]\T1/ptm/m/n/9 (+20) (b) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case1/case1c.pdf, id=490, 597.50829pt x 845.0471pt>
+File: appendix_cases/case1/case1c.pdf Graphic file (type pdf)
+<use appendix_cases/case1/case1c.pdf>
+Package pdftex.def Info: appendix_cases/case1/case1c.pdf  used on input line 34
+8.
+(pdftex.def)             Requested size: 218.51521pt x 309.03922pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--349
+[]\T1/ptm/m/n/9 (+20) (c) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--349
+\C70/rm/m/n/9/06 ('DD:)'D%F,DJ2J)DD-'D)
+ []
+
+<appendix_cases/case1/case1d.pdf, id=491, 597.51233pt x 845.0471pt>
+File: appendix_cases/case1/case1d.pdf Graphic file (type pdf)
+<use appendix_cases/case1/case1d.pdf>
+Package pdftex.def Info: appendix_cases/case1/case1d.pdf  used on input line 35
+4.
+(pdftex.def)             Requested size: 218.51521pt x 309.03922pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--355
+[]\T1/ptm/m/n/9 (+20) (d) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+
+LaTeX Warning: Float too large for page by 21.15707pt on input line 360.
+
+<appendix_cases/case3/case3a.pdf, id=492, 614.295pt x 794.97pt>
+File: appendix_cases/case3/case3a.pdf Graphic file (type pdf)
+<use appendix_cases/case3/case3a.pdf>
+Package pdftex.def Info: appendix_cases/case3/case3a.pdf  used on input line 36
+6.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--367
+[]\T1/ptm/m/n/9 (+20) (a) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case3/case3b.pdf, id=493, 614.295pt x 794.97pt>
+File: appendix_cases/case3/case3b.pdf Graphic file (type pdf)
+<use appendix_cases/case3/case3b.pdf>
+Package pdftex.def Info: appendix_cases/case3/case3b.pdf  used on input line 37
+3.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--374
+[]\T1/ptm/m/n/9 (+20) (b) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case3/case3c.pdf, id=494, 614.295pt x 794.97pt>
+File: appendix_cases/case3/case3c.pdf Graphic file (type pdf)
+<use appendix_cases/case3/case3c.pdf>
+Package pdftex.def Info: appendix_cases/case3/case3c.pdf  used on input line 38
+0.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+[]\T1/ptm/m/n/9 (+20) (c) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+<appendix_cases/case3/case3d.pdf, id=495, 614.295pt x 794.97pt>
+File: appendix_cases/case3/case3d.pdf Graphic file (type pdf)
+<use appendix_cases/case3/case3d.pdf>
+Package pdftex.def Info: appendix_cases/case3/case3d.pdf  used on input line 38
+6.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--387
+[]\T1/ptm/m/n/9 (+20) (d) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+<appendix_cases/case4/case4a.pdf, id=496, 614.295pt x 794.97pt>
+File: appendix_cases/case4/case4a.pdf Graphic file (type pdf)
+<use appendix_cases/case4/case4a.pdf>
+Package pdftex.def Info: appendix_cases/case4/case4a.pdf  used on input line 39
+9.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+[]\T1/ptm/m/n/9 (+20) (a) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./appendix_cases/case4/case4b.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix_cases/case4/case4b.pdf, id=497, 614.295pt x 794.97pt>
+File: appendix_cases/case4/case4b.pdf Graphic file (type pdf)
+<use appendix_cases/case4/case4b.pdf>
+Package pdftex.def Info: appendix_cases/case4/case4b.pdf  used on input line 40
+5.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--406
+[]\T1/ptm/m/n/9 (+20) (b) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case4/case4c.pdf, id=498, 614.295pt x 794.97pt>
+File: appendix_cases/case4/case4c.pdf Graphic file (type pdf)
+<use appendix_cases/case4/case4c.pdf>
+Package pdftex.def Info: appendix_cases/case4/case4c.pdf  used on input line 41
+1.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--412
+[]\T1/ptm/m/n/9 (+20) (c) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./appendix_cases/case4/case4d.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix_cases/case4/case4d.pdf, id=499, 614.295pt x 794.97pt>
+File: appendix_cases/case4/case4d.pdf Graphic file (type pdf)
+<use appendix_cases/case4/case4d.pdf>
+Package pdftex.def Info: appendix_cases/case4/case4d.pdf  used on input line 41
+7.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--418
+[]\T1/ptm/m/n/9 (+20) (d) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+<appendix_cases/case5/case5a.pdf, id=500, 614.295pt x 794.97pt>
+File: appendix_cases/case5/case5a.pdf Graphic file (type pdf)
+<use appendix_cases/case5/case5a.pdf>
+Package pdftex.def Info: appendix_cases/case5/case5a.pdf  used on input line 42
+9.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--430
+[]\T1/ptm/m/n/9 (+20) (a) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./appendix_cases/case5/case5b.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix_cases/case5/case5b.pdf, id=501, 614.295pt x 794.97pt>
+File: appendix_cases/case5/case5b.pdf Graphic file (type pdf)
+<use appendix_cases/case5/case5b.pdf>
+Package pdftex.def Info: appendix_cases/case5/case5b.pdf  used on input line 43
+5.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
+[]\T1/ptm/m/n/9 (+20) (b) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case5/case5c.pdf, id=502, 614.295pt x 794.97pt>
+File: appendix_cases/case5/case5c.pdf Graphic file (type pdf)
+<use appendix_cases/case5/case5c.pdf>
+Package pdftex.def Info: appendix_cases/case5/case5c.pdf  used on input line 44
+1.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--442
+[]\T1/ptm/m/n/9 (+20) (c) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./appendix_cases/case5/case5d.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix_cases/case5/case5d.pdf, id=503, 614.295pt x 794.97pt>
+File: appendix_cases/case5/case5d.pdf Graphic file (type pdf)
+<use appendix_cases/case5/case5d.pdf>
+Package pdftex.def Info: appendix_cases/case5/case5d.pdf  used on input line 44
+7.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--448
+[]\T1/ptm/m/n/9 (+20) (d) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+<appendix_cases/case6/case6a.pdf, id=504, 614.295pt x 794.97pt>
+File: appendix_cases/case6/case6a.pdf Graphic file (type pdf)
+<use appendix_cases/case6/case6a.pdf>
+Package pdftex.def Info: appendix_cases/case6/case6a.pdf  used on input line 46
+0.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+[]\T1/ptm/m/n/9 (+20) (a) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+\C70/rm/m/n/9/06 ('DD:)'D%F,DJ2J)DD-'D)
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./appendix_cases/case6/case6b.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix_cases/case6/case6b.pdf, id=505, 614.295pt x 794.97pt>
+File: appendix_cases/case6/case6b.pdf Graphic file (type pdf)
+<use appendix_cases/case6/case6b.pdf>
+Package pdftex.def Info: appendix_cases/case6/case6b.pdf  used on input line 46
+6.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]\T1/ptm/m/n/9 (+20) (b) |\C70/rm/m/n/9/06 'D,2!'D#HDEFEDA \T1/ptm/m/n/9 (+20)
+ PDF
+ []
+
+<appendix_cases/case6/case6c.pdf, id=506, 614.295pt x 794.97pt>
+File: appendix_cases/case6/case6c.pdf Graphic file (type pdf)
+<use appendix_cases/case6/case6c.pdf>
+Package pdftex.def Info: appendix_cases/case6/case6c.pdf  used on input line 47
+2.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--473
+[]\T1/ptm/m/n/9 (+20) (c) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./appendix_cases/case6/case6d.pdf): PDF inclusio
+n: found PDF version <1.7>, but at most version <1.5> allowed
+<appendix_cases/case6/case6d.pdf, id=507, 614.295pt x 794.97pt>
+File: appendix_cases/case6/case6d.pdf Graphic file (type pdf)
+<use appendix_cases/case6/case6d.pdf>
+Package pdftex.def Info: appendix_cases/case6/case6d.pdf  used on input line 47
+8.
+(pdftex.def)             Requested size: 218.51521pt x 282.78038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--479
+[]\T1/ptm/m/n/9 (+20) (d) |\C70/rm/m/n/9/06 'D,2!'D+'FJEFEDA \T1/ptm/m/n/9 (+20
+) PDF
+ []
+
+Package CJKpunct Info: punctuation spaces for family 'tt' do not exist. Use fam
+ily 'def' instead. on input line 498.
+
+Overfull \hbox (118.91672pt too wide) in paragraph at lines 508--508
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 12: |\C70/rm/m/n/10/06 J3*./E \T1/pt
+m/m/n/10 (-20) LLM \C70/rm/m/n/10/06 G0''DEH,G^^L'D0JJBJEH-/)*1,E)CD2H,H'-/)*DH
+'D#.1I\T1/ptm/m/n/10 (-20) .| 
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 531--532
+[]\T1/zi4/m/n/9 - Strictly follow the term dictionary. If an English term in th
+e source appears in the 
+ []
+
+Package textcomp Info: Symbol \textrightarrow not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 544.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 2134) in paragraph at lines 540--545
+\T1/zi4/m/n/9 \cite{}, \ref{}, \textbf{}, \emph{}, etc. Mathematical environmen
+ts: $...$, [...], 
+ []
+
+
+Underfull \hbox (badness 5533) in paragraph at lines 554--555
+[]\T1/zi4/m/n/9 8. <PLACEHOLDER_CAP_...>, <PLACEHOLDER_ENV_...>, <PLACEHOLDER_.
+.._begin> and 
+ []
+
+
+Overfull \hbox (233.13022pt too wide) in paragraph at lines 559--559
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 13: |\C70/rm/m/n/10/06 FEH0,'D7D( \T
+1/ptm/m/n/10 (-20) 1 \C70/rm/m/n/10/06 DDE*1,E^^LJ3*./E'DE*1,EG0''D7D(D*1,E)H-/
+)'D*1,E)AJ'D(/'J)\T1/ptm/m/n/10 (-20) .| 
+ []
+
+Package textcomp Info: Symbol \textrightarrow not provided by
+(textcomp)             font family zi4 in TS1 encoding.
+(textcomp)             Default family used instead on input line 580.
+
+Underfull \hbox (badness 2134) in paragraph at lines 576--581
+\T1/zi4/m/n/9 \cite{}, \ref{}, \textbf{}, \emph{}, etc. Mathematical environmen
+ts: $...$, [...], 
+ []
+
+
+Underfull \hbox (badness 5533) in paragraph at lines 590--591
+[]\T1/zi4/m/n/9 8. <PLACEHOLDER_CAP_...>, <PLACEHOLDER_ENV_...>, <PLACEHOLDER_.
+.._begin> and 
+ []
+
+
+Overfull \hbox (553.13022pt too wide) in paragraph at lines 596--596
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 14: |\C70/rm/m/n/10/06 FEH0,'D7D( \T
+1/ptm/m/n/10 (-20) 2 \C70/rm/m/n/10/06 DDE*1,E^^LJ3*./E'DE*1,EG0''D7D(HJ,E9GE9*
+B'1J1'D#.7'!'DEB/E)EF'DE/BBD%9'/)*1,E)H-/)'D*1,E)\T1/ptm/m/n/10 (-20) .| 
+ []
+
+
+Overfull \hbox (414.43018pt too wide) in paragraph at lines 631--631
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 15: |\C70/rm/m/n/10/06 B'D('D*9DJE'*
+DAD*1^^LJ3*./E'DAD*1G0G'D*9DJE'*D*-/J/E'%0'C'F*H-/)'D*1,E)(-',)%DI'D*1,E)\T1/pt
+m/m/n/10 (-20) .| 
+ []
+
+
+Overfull \hbox (464.43018pt too wide) in paragraph at lines 664--664
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 16: |\C70/rm/m/n/10/06 B'D('DE7'D()D
+E3*.1,'DE57D-'*^^LJ3*./EE3*.1,'DE57D-'*G0''DB'D(D'3*.1','DE57D-'*EFCDH-/)*1,E)\
+T1/ptm/m/n/10 (-20) .| 
+ []
+
+
+Overfull \hbox (164.43018pt too wide) in paragraph at lines 697--697
+[]\C70/rm/m/n/10/56 þ \T1/ptm/m/n/10 (-20) 17: |\C70/rm/m/n/10/06 FEH0,'D7D(DED
+.5^^LJ3*./E'DED.5G0''D7D(DD-A'89DIED.5'DF5'D3'(B\T1/ptm/m/n/10 (-20) .| 
+ []
+
+[12 <./appendix_cases/case2/case2a.pdf> <./appendix_cases/case2/case2b.pdf> <./
+appendix_cases/case2/case2c.pdf> <./appendix_cases/case2/case2d.pdf>] [13 <./ap
+pendix_cases/case1/case1a.pdf> <./appendix_cases/case1/case1b.pdf> <./appendix_
+cases/case1/case1c.pdf> <./appendix_cases/case1/case1d.pdf>] [14 <./appendix_ca
+ses/case3/case3a.pdf> <./appendix_cases/case3/case3b.pdf> <./appendix_cases/cas
+e3/case3c.pdf> <./appendix_cases/case3/case3d.pdf>] [15 <./appendix_cases/case4
+/case4a.pdf> <./appendix_cases/case4/case4b.pdf> <./appendix_cases/case4/case4c
+.pdf
+
+pdfTeX warning: pdflatex (file ./appendix_cases/case4/case4c.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+> <./appendix_cases/case4/case4d.pdf>] [16 <./appendix_cases/case5/case5a.pdf> 
+<./appendix_cases/case5/case5b.pdf> <./appendix_cases/case5/case5c.pdf> <./appe
+ndix_cases/case5/case5d.pdf>] [17 <./appendix_cases/case6/case6a.pdf> <./append
+ix_cases/case6/case6b.pdf> <./appendix_cases/case6/case6c.pdf
+
+pdfTeX warning: pdflatex (file ./appendix_cases/case6/case6c.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+> <./appendix_cases/case6/case6d.pdf>] [18] [19] [20] [21] [22]
+(build_pdflatex/acl_latex.aux)
+Package rerunfilecheck Info: File `acl_latex.out' has not changed.
+(rerunfilecheck)             Checksum: DBC58A3C9408269A159CD4B2C221E0EE;2677.
+ ) 
+Here is how much of TeX's memory you used:
+ 29635 strings out of 478287
+ 554021 string characters out of 5849290
+ 1054252 words of memory out of 5000000
+ 46932 multiletter control sequences out of 15000+600000
+ 508318 words of font info for 184 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 83i,16n,122p,2108b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
+!pdfTeX error: pdflatex (file unifs20): Font unifs20 at 540 not found
+ ==> Fatal error occurred, no output PDF file produced!

@@ -1,0 +1,7 @@
+[
+    {
+        "part": "env",
+        "num_or_ph": "<PLACEHOLDER_ENV_1>",
+        "bracket_error": "Brackets error:\nExtra closing bracket ')' at position 551, context: متخصصين: 1) \\textit{\nExtra closing bracket ')' at position 664, context:  البنية؛ 2) \\textit{\nExtra closing bracket ')' at position 843, context: مصطلحات؛ 3) \\textit{"
+    }
+]
