@@ -141,6 +141,12 @@ def _inject_style() -> None:
 
 def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
     llm_defaults = defaults.get("llm_config", {})
+    # UI language selector (Step 1: dropdown only, labels not yet translated)
+    ui_language = streamlit_backend.sidebar.selectbox(
+        "Language / اللغة",
+        options=["English", "Arabic"],
+        index=0,
+    )
     streamlit_backend.sidebar.header("Run Configuration")
     config_path = streamlit_backend.sidebar.text_input("Config Path", "config/default.toml")
     source_language = streamlit_backend.sidebar.text_input("Source Language", defaults.get("source_language", "en"))
