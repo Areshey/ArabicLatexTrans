@@ -141,28 +141,74 @@ def _inject_style() -> None:
 
 def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
     llm_defaults = defaults.get("llm_config", {})
-    streamlit_backend.sidebar.header("Run Configuration")
-    config_path = streamlit_backend.sidebar.text_input("Config Path", "config/default.toml")
-    source_language = streamlit_backend.sidebar.text_input("Source Language", defaults.get("source_language", "en"))
-    #target_language = streamlit_backend.sidebar.text_input("Target Language", defaults.get("target_language", "ch")) Set default target language to Arabic ("ar")  (updated by Ali)
-    target_language = streamlit_backend.sidebar.text_input("Target Language", defaults.get("target_language", "ar"))
-    model = streamlit_backend.sidebar.text_input("Model", llm_defaults.get("model", ""))
-    base_url = streamlit_backend.sidebar.text_input("Base URL", llm_defaults.get("base_url", ""))
-    api_key = streamlit_backend.sidebar.text_input("API Key", llm_defaults.get("api_key", ""), type="password")
-    tex_source_dir = streamlit_backend.sidebar.text_input("TeX Source Dir", defaults.get("tex_sources_dir", "tex source"))
-    output_dir = streamlit_backend.sidebar.text_input("Output Dir", defaults.get("output_dir", "outputs"))
-    mode_options = {"0 - Normal": 0, "1 - Retry Errors": 1, "2 - Alt": 2}
-    selected_mode = streamlit_backend.sidebar.selectbox("Mode", list(mode_options.keys()), index=0)
+    # UI language selector
+    ui_language = streamlit_backend.sidebar.selectbox(
+        "Language / اللغة",
+        options=["Arabic", "English"],
+        index=0  # Arabic is default since the main panel is Arabic
+    )
+    # === Sidebar Translation Mapping ===
+    labels = {
+        "English": {
+            "header": "Run Configuration",
+            "config_path": "Config Path",
+            "source_lang": "Source Language",
+            "target_lang": "Target Language",
+            "model": "Model",
+            "base_url": "Base URL",
+            "api_key": "API Key",
+            "tex_dir": "TeX Source Dir",
+            "output_dir": "Output Dir",
+            "mode": "Mode",
+            "update_terms": "Update Terms",
+            "all_existing": "Process All Existing Projects",
+            "user_terms": "User Terms",
+            "help_text": "Optional terminology guidance passed through the existing config field.",
+        },
+    "Arabic": {
+        "header": "إعدادات التشغيل",
+        "config_path": "مسار ملف الإعدادات",
+        "source_lang": "لغة المصدر",
+        "target_lang": "اللغة المستهدفة",
+        "model": "النموذج",
+        "base_url": "رابط واجهة البرمجة (API)",
+        "api_key": "مفتاح واجهة البرمجة (API Key)",
+        "tex_dir": "مجلد ملفات LaTeX",
+        "output_dir": "مجلد المخرجات",
+        "mode": "وضع التشغيل",
+        "update_terms": "تحديث المصطلحات",
+        "all_existing": "معالجة جميع المشاريع الموجودة",
+        "user_terms": "المصطلحات الخاصة بالمستخدم",
+        "help_text": "إرشادات اختيارية للمصطلحات يتم تمريرها عبر حقل الإعدادات الحالي."
+       }
+    }
+    lang_labels = labels[ui_language]
+    #Dynamic Sidebar Fields
+    streamlit_backend.sidebar.header(lang_labels["header"])
+    config_path = streamlit_backend.sidebar.text_input(lang_labels["config_path"], "config/default.toml")
+    source_language = streamlit_backend.sidebar.text_input(lang_labels["source_lang"], defaults.get("source_language", "en"))
+    target_language = streamlit_backend.sidebar.text_input(lang_labels["target_lang"], defaults.get("target_language", "ar"))
+    model = streamlit_backend.sidebar.text_input(lang_labels["model"], llm_defaults.get("model", ""))
+    base_url = streamlit_backend.sidebar.text_input(lang_labels["base_url"], llm_defaults.get("base_url", ""))
+    api_key = streamlit_backend.sidebar.text_input(lang_labels["api_key"], llm_defaults.get("api_key", ""), type="password")
+    tex_source_dir = streamlit_backend.sidebar.text_input(lang_labels["tex_dir"], defaults.get("tex_sources_dir", "tex source"))
+    output_dir = streamlit_backend.sidebar.text_input(lang_labels["output_dir"], defaults.get("output_dir", "outputs"))
+    
+    if ui_language == "Arabic":
+        mode_options = {"0 - عادي": 0, "1 - إعادة محاولة الأخطاء": 1, "2 - بديل": 2}
+    else:
+        mode_options = {"0 - Normal": 0, "1 - Retry Errors": 1, "2 - Alt": 2}
+    selected_mode = streamlit_backend.sidebar.selectbox(lang_labels["mode"], list(mode_options.keys()), index=0)
     update_term = streamlit_backend.sidebar.checkbox(
-        "Update Terms",
+        lang_labels["update_terms"],
         value=str(defaults.get("update_term", "False")) == "True",
     )
-    all_existing = streamlit_backend.sidebar.checkbox("Process All Existing Projects", value=False)
+    all_existing = streamlit_backend.sidebar.checkbox(lang_labels["all_existing"], value=False)
     user_term = streamlit_backend.sidebar.text_area(
-        "User Terms",
+        lang_labels["user_terms"],
         defaults.get("user_term", ""),
         height=120,
-        help="Optional terminology guidance passed through the existing config field.",
+        help=lang_labels["help_text"],
     )
 
     return {
