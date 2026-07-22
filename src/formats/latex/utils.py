@@ -570,6 +570,31 @@ def add_ja_package(latex_code):
             latex_code = latex_code[:position] + "\n" + ctex_package + "\n" + latex_code[position:]
     return latex_code
 
+def add_arabic_package(latex_code):
+    if "\\usepackage{polyglossia}" not in latex_code and "\\usepackage{babel}" not in latex_code:
+        arabic_packages = (
+            "\\usepackage{fontspec}\n"
+            "\\usepackage{polyglossia}\n"
+            "\\setmainlanguage[numerals=maghrib]{arabic}\n"
+            "\\setotherlanguage{english}\n"
+            "\\setmainfont{Arial}\n"
+            "\\newfontfamily\\arabicfont[Script=Arabic]{Arial}\n"
+            "\\newfontfamily\\arabicfontsf[Script=Arabic]{Arial}\n"
+            "\\newfontfamily\\arabicfonttt[Script=Arabic]{Arial}\n"
+            "\\let\\UseMathForPositioningText\\relax\n"
+        )
+        documentclass_pattern = get_command_pattern("documentclass")
+        match = documentclass_pattern.search(latex_code)
+        if match:
+            position = match.end()
+            latex_code = (
+                latex_code[:position]
+                + "\n"
+                + arabic_packages
+                + latex_code[position:]
+            )
+    return latex_code
+
 def find_main_tex_file(dir): 
     """
     Find the main LaTeX file in the given directory.

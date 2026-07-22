@@ -95,7 +95,8 @@ class GeneratorAgent(BaseToolAgent):
         sys.stderr = sys.__stderr__
 
         latex_compiler = LaTexCompiler(output_latex_dir=transed_latex_dir)
-        pdf_file = latex_compiler.compile()
+        #pdf_file = latex_compiler.compile()
+        pdf_file = latex_compiler.compile_ar() # Arabic compile
 
         sys.stderr = open(os.devnull, 'w')
         self.progress_bar.progress(90)
