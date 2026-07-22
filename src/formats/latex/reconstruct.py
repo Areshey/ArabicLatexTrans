@@ -130,9 +130,10 @@ class LatexConstructor:
             print(f"⚠️ Warning: Residual placeholders found and removed: {residual_matches}")
             tex = re.sub(r"<PLACEHOLDER_[^>]*>", "", tex)
 
-        tex = add_ctex_package(tex) # zh
+        # tex = add_ctex_package(tex) # zh
         # tex = add_ja_package(tex)  # ja
-
+        tex = add_arabic_package(tex)  # ar
+        
         main_file_path = find_main_tex_file(self.output_latex_dir)
         if os.path.exists(main_file_path):
             with open(main_file_path, "w", encoding="utf-8") as f:
