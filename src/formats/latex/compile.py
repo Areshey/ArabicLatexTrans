@@ -65,6 +65,67 @@ class LaTexCompiler:
             if log_files_lualatex:
                 print(f"📄 Log files for pdflatex: {log_files_lualatex}")
             return None
+        
+    def compile_ar(self):
+        """
+        Compile Arabic LaTeX documents using XeLaTeX,
+        with LuaLaTeX as a fallback.
+        """
+
+        tex_file_to_compile = find_main_tex_file(self.output_latex_dir)
+        if not tex_file_to_compile:
+            print("⚠️ Warning: There is no main tex file to compile.")
+            return None
+
+        print("Start compiling with xelatex...⏳")
+
+        compile_out_dir_xelatex = os.path.join(
+            self.output_latex_dir,
+            "build_xelatex"
+        )
+
+        self._compile_with_xelatex(
+            tex_file_to_compile,
+            compile_out_dir_xelatex,
+            engine="xelatex"
+        )
+
+        pdf_files = [
+            os.path.join(compile_out_dir_xelatex, f)
+            for f in os.listdir(compile_out_dir_xelatex)
+            if f.lower().endswith(".pdf")
+        ]
+
+        if pdf_files:
+            print("✅ Successfully generated PDF file!")
+            return pdf_files[0]
+
+        print("⚠️ XeLaTeX failed. Retrying with LuaLaTeX...⏳")
+
+        compile_out_dir_lualatex = os.path.join(
+            self.output_latex_dir,
+            "build_lualatex"
+        )
+
+        self._compile_with_lualatex(
+            tex_file_to_compile,
+            compile_out_dir_lualatex,
+            engine="lualatex"
+        )
+
+        pdf_files = [
+            os.path.join(compile_out_dir_lualatex, f)
+            for f in os.listdir(compile_out_dir_lualatex)
+            if f.lower().endswith(".pdf")
+        ]
+
+        if pdf_files:
+            print("✅ Successfully generated PDF file!")
+            return pdf_files[0]
+
+        print("⚠️ Failed to generate PDF for Arabic document.")
+
+        return None
 
     def compile_source(self, pdf_dir):
         if pdf_dir is None:
@@ -158,21 +219,23 @@ class LaTexCompiler:
         os.makedirs(out_dir, exist_ok=True)
         
         cmd = [
-            "latexmk",
-            f"-{engine}",                
-            "-interaction=nonstopmode",   # no stop on errors
-            f"-outdir={out_dir}",  
-            f"-file-line-error",       
-            f"-synctex=1",
-            f"-f",                        # force mode
+            "xelatex",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-synctex=1",
+            f"-output-directory={out_dir}",
             tex_file
         ]
         cwd = os.path.dirname(tex_file)
         try:
             subprocess.run(cmd, check=True, capture_output=True, cwd=cwd)
-            print("✅  Compilation successful!") #compile success!
+            print("✅ Compilation successful with xelatex!")
         except subprocess.CalledProcessError as e:
-            print("⚠️  Somthing went wrong during compiling with xelatex.")
+            print("⚠️ Something went wrong during compiling with xelatex.")
+            print("=" * 80)
+            print(e.stdout.decode(errors="ignore"))
+            print("=" * 80)
+            print(e.stderr.decode(errors="ignore"))
 
 
     def _compile_with_lualatex(self,
@@ -183,23 +246,25 @@ class LaTexCompiler:
         os.makedirs(out_dir, exist_ok=True)
         
         cmd = [
-            "latexmk",
-            f"-{engine}",                
-            "-interaction=nonstopmode",   # no stop on errors
-            f"-outdir={out_dir}",  
-            f"-file-line-error",       
-            f"-synctex=1",
-            f"-f",                        # force mode
+            "lualatex",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-synctex=1",
+            f"-output-directory={out_dir}",
             tex_file
         ]
         cwd = os.path.dirname(tex_file)
         try:
             subprocess.run(cmd, check=True, capture_output=True, cwd=cwd)
-            print("✅  Compilation successful!") #compile success!
+            print("✅ Compilation successful with lualatex!")
 
             output_path = os.path.join(self.output_latex_dir, "success.txt")
             with open(output_path, "w", encoding="utf-8") as f:
                 f.write("Compilation successful\n")
                 
         except subprocess.CalledProcessError as e:
-            print(f"⚠️  Somthing went wrong during compiling with lualatex. \n {e}")
+            print(f"⚠️ Something went wrong during compiling with lualatex. \n {e}")
+            print("=" * 80)
+            print(e.stdout.decode(errors="ignore"))
+            print("=" * 80)
+            print(e.stderr.decode(errors="ignore"))
