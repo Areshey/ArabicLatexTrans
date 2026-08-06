@@ -9,13 +9,129 @@ import streamlit as streamlit_backend
 import toml
 
 from src.runtime import run_translation, split_multivalue_text
-from src.utils.progress import get_progress_backend, set_progress_backend
+from src.utils.progress import get_progress_backend, set_progress_backend, set_status_language
+
+
+# =====================================================================
+# Central bilingual label store. Every user-facing string in this file
+# (outside of _sidebar_form(), which already has its own working
+# English/Arabic dict) is looked up through _t(key) below, which reads
+# the current UI language from session_state. This lets every function
+# in the file react to the "Language / اللغة" dropdown without needing
+# ui_language threaded through every function signature.
+# =====================================================================
+LABELS = {
+    "English": {
+        "page_title": "Latex Translation Platform",
+        "hero_title": "Latex Translation Platform",
+        "hero_subtitle": "Run LaTeX file translation jobs from arXiv or local projects, with live workflow progress, logs, and run configuration.",
+        "session_caption": "Enter arXiv IDs or local projects. Results, failed jobs, and recent runs stay visible throughout this session.",
+        "start_button": "Start Translation",
+        "no_input_error": "No input provided. Add arXiv IDs or local projects, or enable the process-all-existing-projects option.",
+        "config_not_found_error": "Config file not found: {path}",
+        "current_run_title": "Current Run",
+
+        "arxiv_ids_label": "arXiv IDs",
+        "arxiv_ids_help": "Use commas or new lines. Versioned IDs are supported.",
+        "local_projects_label": "Local Projects or Archives",
+        "local_projects_help": "Supports extracted folders and .zip/.tar/.tar.gz/.tgz archives.",
+
+        "results_subheader": "Results",
+        "metric_completed": "Completed",
+        "metric_failed": "Failed",
+        "metric_pdf_files": "PDF Files",
+        "output_dir_caption": "Output directory. Use it directly in File Explorer or your terminal.",
+        "generated_pdfs_expander": "Generated PDF Files",
+        "download_button": "Download {name}",
+        "read_error_warning": "Could not read {path}",
+        "no_pdfs_info": "No PDF files were found under the output directory yet.",
+        "retry_failed_title": "Retry {count} failed project(s)",
+        "retry_failed_button": "Retry Failed Projects",
+
+        "history_subheader": "Task History",
+        "history_empty_caption": "No jobs recorded in this session yet.",
+        "history_entry_label": "{timestamp} | {completed} ok / {failed} failed | {output_dir}",
+        "history_inputs_label": "Inputs",
+        "history_output_dir_label": "Output Directory",
+        "history_pdf_files_label": "PDF Files",
+        "history_failed_projects_label": "Failed Projects",
+        "history_retry_button": "Retry Failed Projects from This Run",
+        "history_retry_title": "Retry failed projects from {timestamp}",
+        "history_recent_logs_label": "Recent Logs",
+
+        "project_progress_label": "Project",
+        "stage_progress_label": "Stage",
+        "stats_projects_label": "Projects",
+        "stage_error_label": "Error in `{name}`: {error}",
+        "run_failed_stage": "Failed: {error}",
+        "run_failed_notice": "Run failed: {error}",
+        "stage_finished": "Finished",
+        "run_summary": "Completed {completed} project(s), failed {failed}.",
+    },
+    "Arabic": {
+        "page_title": "\u0645\u0646\u0635\u0629 \u062a\u0631\u062c\u0645\u0629 Latex",
+        "hero_title": "\u0645\u0646\u0635\u0629 \u062a\u0631\u062c\u0645\u0629 Latex",
+        "hero_subtitle": "\u062a\u0634\u063a\u064a\u0644 \u0645\u0647\u0627\u0645 \u062a\u0631\u062c\u0645\u0629 \u0645\u0644\u0641\u0627\u062a LaTeX \u0645\u0646 arXiv \u0623\u0648 \u0645\u0646 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0645\u062d\u0644\u064a\u0629\u060c \u0645\u0639 \u0639\u0631\u0636 \u0645\u0628\u0627\u0634\u0631 \u0644\u062a\u0642\u062f\u0645 \u0627\u0644\u0639\u0645\u0644 \u0648\u0627\u0644\u0633\u062c\u0644\u0627\u062a \u0648\u0625\u0639\u062f\u0627\u062f\u0627\u062a \u0627\u0644\u062a\u0634\u063a\u064a\u0644 \u0648\u0633\u062c\u0644 \u0627\u0644\u0645\u0647\u0627\u0645.",
+        "session_caption": "\u0623\u062f\u062e\u0644 \u0645\u0639\u0631\u0641\u0627\u062a arXiv \u0623\u0648 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0645\u062d\u0644\u064a\u0629. \u0633\u062a\u0638\u0644 \u0627\u0644\u0646\u062a\u0627\u0626\u062c\u060c \u0648\u0627\u0644\u0645\u0647\u0627\u0645 \u0627\u0644\u062a\u064a \u062a\u0639\u0630\u0631 \u062a\u0646\u0641\u064a\u0630\u0647\u0627\u060c \u0648\u0639\u0645\u0644\u064a\u0627\u062a \u0627\u0644\u062a\u0634\u063a\u064a\u0644 \u0627\u0644\u0623\u062e\u064a\u0631\u0629 \u0645\u062a\u0627\u062d\u0629 \u0637\u0648\u0627\u0644 \u0647\u0630\u0647 \u0627\u0644\u062c\u0644\u0633\u0629",
+        "start_button": "\u0628\u062f\u0621 \u0627\u0644\u062a\u0631\u062c\u0645\u0629",
+        "no_input_error": "\u0644\u0645 \u064a\u062a\u0645 \u062a\u0648\u0641\u064a\u0631 \u0623\u064a \u0645\u062f\u062e\u0644\u0627\u062a. \u0623\u0636\u0641 \u0645\u0639\u0631\u0641\u0627\u062a arXiv \u0623\u0648 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0645\u062d\u0644\u064a\u0629\u060c \u0623\u0648 \u0641\u0639\u0644 \u062e\u064a\u0627\u0631 \u0645\u0639\u0627\u0644\u062c\u0629 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629",
+        "config_not_found_error": "\u0644\u0645 \u064a\u062a\u0645 \u0627\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0645\u0644\u0641 \u0627\u0644\u0625\u0639\u062f\u0627\u062f\u0627\u062a: {path}",
+        "current_run_title": "\u0627\u0644\u062a\u0634\u063a\u064a\u0644 \u0627\u0644\u062d\u0627\u0644\u064a",
+
+        "arxiv_ids_label": "\u0645\u0639\u0631\u0641\u0627\u062a arXiv",
+        "arxiv_ids_help": "\u064a\u0645\u0643\u0646 \u0625\u062f\u062e\u0627\u0644 \u0627\u0644\u0645\u0639\u0631\u0641\u0627\u062a \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0641\u0648\u0627\u0635\u0644 \u0623\u0648 \u0643\u0644 \u0645\u0639\u0631\u0641 \u0641\u064a \u0633\u0637\u0631 \u0645\u0646\u0641\u0635\u0644",
+        "local_projects_label": "\u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0645\u062d\u0644\u064a\u0629 \u0623\u0648 \u0627\u0644\u0645\u0644\u0641\u0627\u062a \u0627\u0644\u0645\u0636\u063a\u0648\u0637\u0629",
+        "local_projects_help": "\u064a\u0645\u0643\u0646 \u0625\u062f\u062e\u0627\u0644 \u0645\u0633\u0627\u0631\u0627\u062a \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0645\u062d\u0644\u064a\u0629 \u0623\u0648 \u0627\u0644\u0645\u0644\u0641\u0627\u062a \u0627\u0644\u0645\u0636\u063a\u0648\u0637\u0629 \u0647\u0646\u0627.",
+
+        "results_subheader": "\u0627\u0644\u0646\u062a\u0627\u0626\u062c",
+        "metric_completed": "\u0627\u0644\u0645\u0643\u062a\u0645\u0644\u0629",
+        "metric_failed": "\u0627\u0644\u0641\u0627\u0634\u0644\u0629",
+        "metric_pdf_files": "\u0645\u0644\u0641\u0627\u062a PDF",
+        "output_dir_caption": "\u0645\u062c\u0644\u062f \u0627\u0644\u0645\u062e\u0631\u062c\u0627\u062a. \u064a\u0645\u0643\u0646\u0643 \u0641\u062a\u062d\u0647 \u0645\u0628\u0627\u0634\u0631\u0629 \u0628\u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0645\u0633\u062a\u0643\u0634\u0641 \u0627\u0644\u0645\u0644\u0641\u0627\u062a \u0623\u0648 \u0645\u0646 \u062e\u0644\u0627\u0644 \u0633\u0637\u0631 \u0627\u0644\u0623\u0648\u0627\u0645\u0631",
+        "generated_pdfs_expander": "\u0645\u0644\u0641\u0627\u062a PDF \u0627\u0644\u0646\u0627\u062a\u062c\u0629",
+        "download_button": "\u062a\u0646\u0632\u064a\u0644 {name}",
+        "read_error_warning": "\u062a\u0639\u0630\u0631 \u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0645\u0644\u0641: {path}",
+        "no_pdfs_info": "\u0644\u0645 \u064a\u062a\u0645 \u0627\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0623\u064a \u0645\u0644\u0641\u0627\u062a PDF \u0641\u064a \u0645\u062c\u0644\u062f \u0627\u0644\u0645\u062e\u0631\u062c\u0627\u062a \u062d\u062a\u0649 \u0627\u0644\u0622\u0646",
+        "retry_failed_title": "\u0625\u0639\u0627\u062f\u0629 \u0645\u062d\u0627\u0648\u0644\u0629 {count} \u0645\u0634\u0631\u0648\u0639 \u0641\u0627\u0634\u0644",
+        "retry_failed_button": "\u0625\u0639\u0627\u062f\u0629 \u0645\u062d\u0627\u0648\u0644\u0629 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0641\u0627\u0634\u0644\u0629",
+
+        "history_subheader": "\u0633\u062c\u0644 \u0627\u0644\u0645\u0647\u0627\u0645",
+        "history_empty_caption": "\u0644\u0627 \u062a\u0648\u062c\u062f \u0645\u0647\u0627\u0645 \u0645\u0633\u062c\u0644\u0629 \u0641\u064a \u0647\u0630\u0647 \u0627\u0644\u062c\u0644\u0633\u0629 \u062d\u062a\u0649 \u0627\u0644\u0622\u0646",
+        "history_entry_label": "{timestamp} | {completed} \u0645\u0643\u062a\u0645\u0644\u0629 / {failed} \u0641\u0627\u0634\u0644\u0629 | {output_dir}",
+        "history_inputs_label": "\u0627\u0644\u0645\u062f\u062e\u0644\u0627\u062a",
+        "history_output_dir_label": "\u0645\u062c\u0644\u062f \u0627\u0644\u0645\u062e\u0631\u062c\u0627\u062a",
+        "history_pdf_files_label": "\u0645\u0644\u0641\u0627\u062a pdf",
+        "history_failed_projects_label": "\u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0641\u0627\u0634\u0644\u0629",
+        "history_retry_button": "\u0625\u0639\u0627\u062f\u0629 \u0645\u062d\u0627\u0648\u0644\u0629 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0641\u0627\u0634\u0644\u0629 \u0645\u0646 \u0647\u0630\u0627 \u0627\u0644\u062a\u0634\u063a\u064a\u0644",
+        "history_retry_title": "\u0625\u0639\u0627\u062f\u0629 \u0645\u062d\u0627\u0648\u0644\u0629 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0641\u0627\u0634\u0644\u0629 \u0645\u0646 \u062a\u0634\u063a\u064a\u0644 {timestamp}",
+        "history_recent_logs_label": "\u0623\u062d\u062f\u062b \u0627\u0644\u0633\u062c\u0644\u0627\u062a",
+
+        "project_progress_label": "\u0627\u0644\u0645\u0634\u0631\u0648\u0639",
+        "stage_progress_label": "\u0627\u0644\u0645\u0631\u062d\u0644\u0629",
+        "stats_projects_label": "\u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639",
+        "stage_error_label": "\u062d\u062f\u062b \u062e\u0637\u0623 \u0641\u064a `{name}`: {error}",
+        "run_failed_stage": "\u0641\u0634\u0644 \u0627\u0644\u062a\u0634\u063a\u064a\u0644: {error}",
+        "run_failed_notice": "\u0641\u0634\u0644 \u0627\u0644\u062a\u0634\u063a\u064a\u0644: {error}",
+        "stage_finished": "\u0627\u0643\u062a\u0645\u0644 \u0627\u0644\u062a\u0634\u063a\u064a\u0644",
+        "run_summary": "\u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0645\u0643\u062a\u0645\u0644\u0629: {completed} | \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0641\u0627\u0634\u0644\u0629: {failed}",
+    },
+}
+
+
+def _current_ui_language() -> str:
+    """Current UI language, defaulting to Arabic (matches the sidebar's own default)."""
+    return streamlit_backend.session_state.get("ui_language", "Arabic")
+
+
+def _t(key: str, **kwargs) -> str:
+    """Look up a label in the current UI language, with optional .format() kwargs."""
+    text = LABELS[_current_ui_language()][key]
+    return text.format(**kwargs) if kwargs else text
 
 
 def _collect_result_pdfs(result: Dict[str, Any]) -> List[str]:
     output_dir = Path(result["output_dir"])
-    #target_language = result["config"].get("target_language", "ch") #Set default target language to Arabic ("ar") instead of Chinese ("ch") (updated by Ali)
-    target_language = result["config"].get("target_language", "ar") 
+    target_language = result["config"].get("target_language", "ar")
     selected: List[str] = []
 
     for project_dir in result["projects"]:
@@ -65,10 +181,7 @@ class StreamlitLogWriter(io.TextIOBase):
             current = int(project_match.group(1))
             total = int(project_match.group(2))
             name = project_match.group(3).strip()
-            #self.state["project_text"].markdown(f"**Project** `{current}/{total}`  `{name}`")
-            # Localized the project status message to Arabic(Updated by Imaan Alkhanen)
-            self.state["project_text"].markdown(f"**المشروع** `{current}/{total}`  `{name}`"
-)
+            self.state["project_text"].markdown(f"**{_t('project_progress_label')}** `{current}/{total}`  `{name}`")
             if total > 0:
                 self.state["overall_bar"].progress((current - 1) / total)
             return
@@ -77,15 +190,11 @@ class StreamlitLogWriter(io.TextIOBase):
         if progress_match:
             percent = min(100.0, max(0.0, float(progress_match.group(1))))
             self.state["stage_bar"].progress(percent / 100.0)
-            #self.state["stage_text"].markdown(f"**Stage** {line}")
-            # Localized the stage status message to Arabic(Updated by Imaan Alkhanen)
-            self.state["stage_text"].markdown(f"**المرحلة** {line}")
+            self.state["stage_text"].markdown(f"**{_t('stage_progress_label')}** {line}")
             return
 
         if line.startswith("[") or "Error processing project" in line or "Successfully" in line:
-            #self.state["stage_text"].markdown(f"**Stage** {line}")
-            # Localized the stage status message to Arabic(Updated by Imaan Alkhanen)
-            self.state["stage_text"].markdown(f"**المرحلة** {line}")
+            self.state["stage_text"].markdown(f"**{_t('stage_progress_label')}** {line}")
 
 
 def _load_defaults(config_path: str) -> Dict[str, Any]:
@@ -99,70 +208,75 @@ def _ensure_session_state() -> None:
     streamlit_backend.session_state.setdefault("job_history", [])
     streamlit_backend.session_state.setdefault("retry_failed_only", False)
     streamlit_backend.session_state.setdefault("retry_payload", None)
+    streamlit_backend.session_state.setdefault("ui_language", "Arabic")
 
 
-def _inject_style() -> None:
+def _set_page_config() -> None:
+    # Must run once, before any other Streamlit command. Page title uses
+    # whatever UI language was set on the PREVIOUS run (default Arabic on
+    # first load) -- a one-run lag on the browser tab title only, since
+    # set_page_config cannot be deferred until after the sidebar renders.
     streamlit_backend.set_page_config(
-        #page_title="LaTeXTrans Studio",
-        # Set the page title to Arabic (Updated by Imaan Alkhanen)
-        page_title="منصة ترجمة Latex",
+        page_title=_t("page_title"),
         page_icon="L",
         layout="wide",
     )
-    streamlit_backend.markdown(
-        # Applied Arabic RTL layout and right-aligned text styling for the user interface(Updated by Imaan Alkhanen)
-        """
-        <style>
-        /* RTL */
+
+
+def _inject_css(ui_language: str) -> None:
+    rtl_block = """
         html, body, .stApp {
             direction: rtl;
         }
-
         h1, h2, h3, h4, h5, h6,
         p, label, span, div {
             text-align: right !important;
         }
-
         textarea {
             direction: rtl;
             text-align: right;
         }
-
         .hero-title,
         .hero-subtitle {
             text-align: right !important;
         }
+    """ if ui_language == "Arabic" else ""
 
-        .stApp {
+    streamlit_backend.markdown(
+        f"""
+        <style>
+        /* Direction rules only applied for Arabic */
+        {rtl_block}
+        .stApp {{
             background:
                 radial-gradient(circle at top left, rgba(245, 173, 92, 0.18), transparent 28%),
                 radial-gradient(circle at top right, rgba(26, 96, 107, 0.18), transparent 24%),
                 linear-gradient(180deg, #f7f2ea 0%, #f1ede4 100%);
-        }
-        .block-container {
+        }}
+        .block-container {{
             padding-top: 2rem;
             padding-bottom: 2rem;
-        }
-        .app-shell {
+        }}
+        .app-shell {{
             padding: 1.25rem 1.5rem;
             border-radius: 24px;
             background: rgba(255, 252, 247, 0.84);
             border: 1px solid rgba(46, 56, 64, 0.08);
             box-shadow: 0 18px 60px rgba(67, 51, 32, 0.10);
             backdrop-filter: blur(12px);
-        }
-        .hero-title {
+        }}
+        .hero-title {{
             font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.05;
             color: #17323b;
             margin-bottom: 0.35rem;
-        }
-        .hero-subtitle {
+        }}
+        .hero-subtitle {{
             color: #5f5c53;
             font-size: 1rem;
             margin-bottom: 0;
-        }
+        }}
         </style>
         """,
         unsafe_allow_html=True,
@@ -173,10 +287,12 @@ def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
     llm_defaults = defaults.get("llm_config", {})
     # UI language selector
     ui_language = streamlit_backend.sidebar.selectbox(
-        "Language / اللغة",
+        "Language / \u0627\u0644\u0644\u063a\u0629",
         options=["Arabic", "English"],
-        index=0  # Arabic is default since the main panel is Arabic
+        index=0 if _current_ui_language() == "Arabic" else 1,
     )
+    streamlit_backend.session_state["ui_language"] = ui_language
+
     # === Sidebar Translation Mapping ===
     labels = {
         "English": {
@@ -195,25 +311,25 @@ def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
             "user_terms": "User Terms",
             "help_text": "Optional terminology guidance passed through the existing config field.",
         },
-    "Arabic": {
-        "header": "إعدادات التشغيل",
-        "config_path": "مسار ملف الإعدادات",
-        "source_lang": "لغة المصدر",
-        "target_lang": "اللغة المستهدفة",
-        "model": "النموذج",
-        "base_url": "رابط واجهة البرمجة (API)",
-        "api_key": "مفتاح واجهة البرمجة (API Key)",
-        "tex_dir": "مجلد ملفات LaTeX",
-        "output_dir": "مجلد المخرجات",
-        "mode": "وضع التشغيل",
-        "update_terms": "تحديث المصطلحات",
-        "all_existing": "معالجة جميع المشاريع الموجودة",
-        "user_terms": "المصطلحات الخاصة بالمستخدم",
-        "help_text": "إرشادات اختيارية للمصطلحات يتم تمريرها عبر حقل الإعدادات الحالي."
-       }
+        "Arabic": {
+            "header": "\u0625\u0639\u062f\u0627\u062f\u0627\u062a \u0627\u0644\u062a\u0634\u063a\u064a\u0644",
+            "config_path": "\u0645\u0633\u0627\u0631 \u0645\u0644\u0641 \u0627\u0644\u0625\u0639\u062f\u0627\u062f\u0627\u062a",
+            "source_lang": "\u0644\u063a\u0629 \u0627\u0644\u0645\u0635\u062f\u0631",
+            "target_lang": "\u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0645\u0633\u062a\u0647\u062f\u0641\u0629",
+            "model": "\u0627\u0644\u0646\u0645\u0648\u0630\u062c",
+            "base_url": "\u0631\u0627\u0628\u0637 \u0648\u0627\u062c\u0647\u0629 \u0627\u0644\u0628\u0631\u0645\u062c\u0629 (API)",
+            "api_key": "\u0645\u0641\u062a\u0627\u062d \u0648\u0627\u062c\u0647\u0629 \u0627\u0644\u0628\u0631\u0645\u062c\u0629 (API Key)",
+            "tex_dir": "\u0645\u062c\u0644\u062f \u0645\u0644\u0641\u0627\u062a LaTeX",
+            "output_dir": "\u0645\u062c\u0644\u062f \u0627\u0644\u0645\u062e\u0631\u062c\u0627\u062a",
+            "mode": "\u0648\u0636\u0639 \u0627\u0644\u062a\u0634\u063a\u064a\u0644",
+            "update_terms": "\u062a\u062d\u062f\u064a\u062b \u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a",
+            "all_existing": "\u0645\u0639\u0627\u0644\u062c\u0629 \u062c\u0645\u064a\u0639 \u0627\u0644\u0645\u0634\u0627\u0631\u064a\u0639 \u0627\u0644\u0645\u0648\u062c\u0648\u062f\u0629",
+            "user_terms": "\u0627\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a \u0627\u0644\u062e\u0627\u0635\u0629 \u0628\u0627\u0644\u0645\u0633\u062a\u062e\u062f\u0645",
+            "help_text": "\u0625\u0631\u0634\u0627\u062f\u0627\u062a \u0627\u062e\u062a\u064a\u0627\u0631\u064a\u0629 \u0644\u0644\u0645\u0635\u0637\u0644\u062d\u0627\u062a \u064a\u062a\u0645 \u062a\u0645\u0631\u064a\u0631\u0647\u0627 \u0639\u0628\u0631 \u062d\u0642\u0644 \u0627\u0644\u0625\u0639\u062f\u0627\u062f\u0627\u062a \u0627\u0644\u062d\u0627\u0644\u064a.",
+        },
     }
     lang_labels = labels[ui_language]
-    #Dynamic Sidebar Fields
+    # Dynamic Sidebar Fields
     streamlit_backend.sidebar.header(lang_labels["header"])
     config_path = streamlit_backend.sidebar.text_input(lang_labels["config_path"], "config/default.toml")
     source_language = streamlit_backend.sidebar.text_input(lang_labels["source_lang"], defaults.get("source_language", "en"))
@@ -223,9 +339,9 @@ def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
     api_key = streamlit_backend.sidebar.text_input(lang_labels["api_key"], llm_defaults.get("api_key", ""), type="password")
     tex_source_dir = streamlit_backend.sidebar.text_input(lang_labels["tex_dir"], defaults.get("tex_sources_dir", "tex source"))
     output_dir = streamlit_backend.sidebar.text_input(lang_labels["output_dir"], defaults.get("output_dir", "outputs"))
-    
+
     if ui_language == "Arabic":
-        mode_options = {"0 - عادي": 0, "1 - إعادة محاولة الأخطاء": 1, "2 - بديل": 2}
+        mode_options = {"0 - \u0639\u0627\u062f\u064a": 0, "1 - \u0625\u0639\u0627\u062f\u0629 \u0645\u062d\u0627\u0648\u0644\u0629 \u0627\u0644\u0623\u062e\u0637\u0627\u0621": 1, "2 - \u0628\u062f\u064a\u0644": 2}
     else:
         mode_options = {"0 - Normal": 0, "1 - Retry Errors": 1, "2 - Alt": 2}
     selected_mode = streamlit_backend.sidebar.selectbox(lang_labels["mode"], list(mode_options.keys()), index=0)
@@ -244,7 +360,6 @@ def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "config_path": config_path,
         "source_language": source_language.strip() or "en",
-        #"target_language": target_language.strip() or "ch", Set default target language to Arabic ("ar")  (updated by Ali)
         "target_language": target_language.strip() or "ar",
         "model": model.strip(),
         "url": base_url.strip(),
@@ -257,44 +372,24 @@ def _sidebar_form(defaults: Dict[str, Any]) -> Dict[str, Any]:
         "user_term": user_term.strip(),
     }
 
-## Updated UI labels, placeholders, and help text to Arabic (Updated by Imaan Alkhanen)
+
 def _collect_inputs() -> Dict[str, List[str]]:
     left, right = streamlit_backend.columns([1.15, 0.85], gap="large")
     with left:
-        #arxiv_text = streamlit_backend.text_area(
-         #   "arXiv IDs",
-        #    value="",
-         #   height=120,
-         #   placeholder="2508.18791v2, 2407.01648",
-         #   help="Use commas or new lines. Versioned IDs are supported.",
-        #)
-        # Localized the arXiv ID input label and help text to Arabic(Updated by Imaan Alkhanen)
         arxiv_text = streamlit_backend.text_area(
-            "معرفات arXiv",
+            _t("arxiv_ids_label"),
             value="",
             height=120,
             placeholder="2508.18791v2, 2407.01648",
-            #help="Use commas or new lines. Versioned IDs are supported.",
-            help="يمكن إدخال المعرفات باستخدام الفواصل أو كل معرف في سطر منفصل ",
+            help=_t("arxiv_ids_help"),
         )
     with right:
-        
-        #project_text = streamlit_backend.text_area(
-        #    "Local Projects or Archives",
-        #    value="",
-        #    height=120,
-        #    placeholder=r"D:\path\paper.tar.gz",
-        #    help="Supports extracted folders and .zip/.tar/.tar.gz/.tgz archives.",
-        #)
-        
-        # Localized the local project input label and help text to Arabic(Updated by Imaan Alkhanen)
         project_text = streamlit_backend.text_area(
-            "المشاريع المحلية أو الملفات المضغوطة",
+            _t("local_projects_label"),
             value="",
             height=120,
             placeholder=r"D:\path\paper.tar.gz",
-            #help="Supports extracted folders and .zip/.tar/.tar.gz/.tgz archives.",
-            help="يمكن إدخال مسارات المشاريع المحلية أو الملفات المضغوطة هنا.",
+            help=_t("local_projects_help"),
         )
 
     return {
@@ -329,50 +424,34 @@ def _render_result_files(result: Dict[str, Any], params: Dict[str, Any], inputs:
     completed = result["completed_projects"]
     failed = result["failed_projects"]
     pdfs = [Path(path) for path in _collect_result_pdfs(result)]
-    #streamlit_backend.subheader("Results")
-    # Localized the results section title  to Arabic(Updated by Imaan Alkhanen)
-    streamlit_backend.subheader("النتائج")
+
+    streamlit_backend.subheader(_t("results_subheader"))
     stat_a, stat_b, stat_c = streamlit_backend.columns(3)
-    
-    #stat_a.metric("Completed", str(len(completed)))
-    #stat_b.metric("Failed", str(len(failed)))
-    #stat_c.metric("PDF Files", str(len(pdfs)))
-    # Localized the results metrics to Arabic(Updated by Imaan Alkhanen)
-    stat_a.metric("المكتملة", str(len(completed)))
-    stat_b.metric("الفاشلة", str(len(failed)))
-    stat_c.metric("ملفات PDF", str(len(pdfs)))
+    stat_a.metric(_t("metric_completed"), str(len(completed)))
+    stat_b.metric(_t("metric_failed"), str(len(failed)))
+    stat_c.metric(_t("metric_pdf_files"), str(len(pdfs)))
 
     streamlit_backend.code(str(output_dir), language="text")
-    #streamlit_backend.caption("Output directory. Use it directly in File Explorer or your terminal.")
-    # Localized the output directory description to Arabic(Updated by Imaan Alkhanen)
-    streamlit_backend.caption("مجلد المخرجات. يمكنك فتحه مباشرة باستخدام مستكشف الملفات أو من خلال سطر الأوامر")
+    streamlit_backend.caption(_t("output_dir_caption"))
 
     if pdfs:
-        #with streamlit_backend.expander("Generated PDF Files", expanded=True):
-        # Localized the generated PDF files section heading to Arabic(Updated by Imaan Alkhanen)
-        with streamlit_backend.expander("ملفات PDF الناتجة", expanded=True):
+        with streamlit_backend.expander(_t("generated_pdfs_expander"), expanded=True):
             for idx, pdf_path in enumerate(pdfs, start=1):
                 streamlit_backend.write(f"{idx}. `{pdf_path.name}`")
                 streamlit_backend.code(str(pdf_path), language="text")
                 try:
                     with open(pdf_path, "rb") as f:
                         streamlit_backend.download_button(
-                            #label=f"Download {pdf_path.name}",
-                            # Localized the PDF download button label to Arabic(Updated by Imaan Alkhanen)
-                            label=f"تنزيل {pdf_path.name}",
+                            label=_t("download_button", name=pdf_path.name),
                             data=f.read(),
                             file_name=pdf_path.name,
                             mime="application/pdf",
                             key=f"download_pdf_{idx}_{pdf_path.name}",
                         )
                 except OSError:
-                    #streamlit_backend.warning(f"Could not read {pdf_path}")
-                    # Localized the file read warning message to Arabic(Updated by Imaan Alkhanen)
-                    streamlit_backend.warning(f"تعذر قراءة الملف: {pdf_path}")
+                    streamlit_backend.warning(_t("read_error_warning", path=pdf_path))
     else:
-        #streamlit_backend.info("No PDF files were found under the output directory yet.")
-        # Localized the no-PDF status message to Arabic(Updated by Imaan Alkhanen)
-        streamlit_backend.info("لم يتم العثور على أي ملفات PDF في مجلد المخرجات حتى الآن")
+        streamlit_backend.info(_t("no_pdfs_info"))
 
     if failed:
         failed_paths = [item["project_dir"] for item in failed]
@@ -383,74 +462,51 @@ def _render_result_files(result: Dict[str, Any], params: Dict[str, Any], inputs:
                 "project_items": failed_paths,
             },
             "all_existing": False,
-            #"title": f"Retry {len(failed_paths)} failed project(s)",
-            # Localized the retry job title to Arabic(Updated by Imaan Alkhanen)
-            "title": f"إعادة محاولة {len(failed_paths)} مشروع فاشل",
-
-
+            "title": _t("retry_failed_title", count=len(failed_paths)),
         }
-        #if streamlit_backend.button("Retry Failed Projects", use_container_width=True):
-        # Localized the retry button label to Arabic(Updated by Imaan Alkhanen)
-        if streamlit_backend.button("إعادة محاولة المشاريع الفاشلة", use_container_width=True):
+        if streamlit_backend.button(_t("retry_failed_button"), use_container_width=True):
             streamlit_backend.session_state.retry_payload = retry_payload
             streamlit_backend.rerun()
 
     _append_history(result=result, params=params, inputs=inputs, logs=streamlit_backend.session_state.current_run_logs)
 
-## Localized the job history section title and empty-state message to Arabic(Updated by Imaan Alkhanen)
+
 def _render_history() -> None:
     history = streamlit_backend.session_state.job_history
-    #streamlit_backend.subheader("Task History")
-    streamlit_backend.subheader("سجل المهام")
+    streamlit_backend.subheader(_t("history_subheader"))
     if not history:
-        streamlit_backend.caption("لا توجد مهام مسجلة في هذه الجلسة حتى الآن")
+        streamlit_backend.caption(_t("history_empty_caption"))
         return
 
     for index, item in enumerate(history):
-       # label = (
-       #     f"{item['timestamp']} | "
-       #     f"{len(item['completed_projects'])} ok / {len(item['failed_projects'])} failed | "
-       #     f"{Path(item['output_dir']).name}"
-       # )
-       #Localized the job history entry label to Arabic(Updated by Imaan Alkhanen)
-        label = (
-                f"{item['timestamp']} | "
-                f"{len(item['completed_projects'])} مكتملة / "
-                f"{len(item['failed_projects'])} فاشلة | "
-                f"{Path(item['output_dir']).name}"
-            )
-       
+        label = _t(
+            "history_entry_label",
+            timestamp=item["timestamp"],
+            completed=len(item["completed_projects"]),
+            failed=len(item["failed_projects"]),
+            output_dir=Path(item["output_dir"]).name,
+        )
         with streamlit_backend.expander(label, expanded=index == 0):
-            #streamlit_backend.write("Inputs")
-            # Localized the section heading to Arabic(Updated by Imaan Alkhanen)
-            streamlit_backend.write("المدخلات")
+            streamlit_backend.write(_t("history_inputs_label"))
             if item["inputs"]["paper_list"]:
                 streamlit_backend.code("\n".join(item["inputs"]["paper_list"]), language="text")
             if item["inputs"]["project_items"]:
                 streamlit_backend.code("\n".join(item["inputs"]["project_items"]), language="text")
 
-            #streamlit_backend.write("Output Directory")
-            # Localized the output directory heading to Arabic(Updated by Imaan Alkhanen)
-            streamlit_backend.write("مجلد المخرجات")
+            streamlit_backend.write(_t("history_output_dir_label"))
             streamlit_backend.code(item["output_dir"], language="text")
 
             if item["pdfs"]:
-                #streamlit_backend.write("PDF Files")
-                # Localized the PDF files heading to Arabic(Updated by Imaan Alkhanen)
-                streamlit_backend.write("ملفات pdf")
+                streamlit_backend.write(_t("history_pdf_files_label"))
                 for pdf in item["pdfs"]:
                     streamlit_backend.code(pdf, language="text")
 
             if item["failed_projects"]:
                 failed_dirs = [entry["project_dir"] for entry in item["failed_projects"]]
-                #streamlit_backend.write("Failed Projects")
-                # Localized the failed projects heading to Arabic(Updated by Imaan Alkhanen)
-                streamlit_backend.write("المشاريع الفاشلة")
+                streamlit_backend.write(_t("history_failed_projects_label"))
                 streamlit_backend.code("\n".join(failed_dirs), language="text")
                 if streamlit_backend.button(
-                    #f"Retry Failed Projects from This Run",
-                    # Localized the retry failed projects button label to Arabic(Updated by Imaan Alkhanen)
-                    f"إعادة محاولة المشاريع الفاشلة من هذا التشغيل",
+                    _t("history_retry_button"),
                     key=f"retry_history_{index}",
                     use_container_width=True,
                 ):
@@ -461,15 +517,11 @@ def _render_history() -> None:
                             "project_items": failed_dirs,
                         },
                         "all_existing": False,
-                        #"title": f"Retry failed projects from {item['timestamp']}",
-                        # Localized the retry job title for failed projects to Arabic(Updated by Imaan Alkhanen)
-                        "title": f"إعادة محاولة المشاريع الفاشلة من تشغيل {item['timestamp']}",
+                        "title": _t("history_retry_title", timestamp=item["timestamp"]),
                     }
                     streamlit_backend.rerun()
 
-            #streamlit_backend.write("Recent Logs")
-            # Localized the recent logs heading to Arabic(Updated by Imaan Alkhanen)
-            streamlit_backend.write("أحدث السجلات")
+            streamlit_backend.write(_t("history_recent_logs_label"))
             streamlit_backend.code("\n".join(item["logs"]), language="text")
 
 
@@ -498,36 +550,22 @@ def _run_streamlit_job(params: Dict[str, Any], inputs: Dict[str, List[str]], tit
         "total_projects": 0,
     }
     streamlit_backend.session_state.current_run_logs = state["logs"]
-    
-    #def on_event(event: Dict[str, Any]) -> None:
-      #  if event["type"] == "project_start":
-       ##    stats_placeholder.metric("Projects", f"{event['index']}/{event['total']}")
-         #   project_text.markdown(f"**Project** `{event['index']}/{event['total']}`  `{event['project_name']}`")
-          #  if event["total"] > 0:
-           #     overall_bar.progress((event["index"] - 1) / event["total"])
-        ###  stats_placeholder.metric("Projects", f"{event['index']}/{event['total']}")
-           # if event["total"] > 0:
-            #    overall_bar.progress(event["index"] / event["total"])
-        #elif event["type"] == "project_error":
-         #   stats_placeholder.metric("Projects", f"{event['index']}/{event['total']}")
-          #  stage_text.markdown(f"**Stage** Error in `{event['project_name']}`: {event['error']}")
 
-    #Localized progress labels and status messages to Arabic(Updated by Imaan Alkhanen)
     def on_event(event: Dict[str, Any]) -> None:
         if event["type"] == "project_start":
             state["total_projects"] = event["total"]
-            stats_placeholder.metric("المشاريع", f"{event['index']}/{event['total']}")
-            project_text.markdown(f"**المشروع** `{event['index']}/{event['total']}`  `{event['project_name']}`")
+            stats_placeholder.metric(_t("stats_projects_label"), f"{event['index']}/{event['total']}")
+            project_text.markdown(f"**{_t('project_progress_label')}** `{event['index']}/{event['total']}`  `{event['project_name']}`")
             if event["total"] > 0:
                 overall_bar.progress((event["index"] - 1) / event["total"])
         elif event["type"] == "project_complete":
             state["completed_projects"] = event["index"]
-            stats_placeholder.metric("المشاريع", f"{event['index']}/{event['total']}")
+            stats_placeholder.metric(_t("stats_projects_label"), f"{event['index']}/{event['total']}")
             if event["total"] > 0:
                 overall_bar.progress(event["index"] / event["total"])
         elif event["type"] == "project_error":
-            stats_placeholder.metric("المشاريع", f"{event['index']}/{event['total']}")
-            stage_text.markdown(f"**المرحلة** حدث خطأ في `{event['project_name']}`: {event['error']}")
+            stats_placeholder.metric(_t("stats_projects_label"), f"{event['index']}/{event['total']}")
+            stage_text.markdown(f"**{_t('stage_progress_label')}** {_t('stage_error_label', name=event['project_name'], error=event['error'])}")
 
     overrides = {
         "paper_list": inputs["paper_list"],
@@ -546,6 +584,7 @@ def _run_streamlit_job(params: Dict[str, Any], inputs: Dict[str, List[str]], tit
     writer = StreamlitLogWriter(log_placeholder, state)
     previous_backend = get_progress_backend()
     set_progress_backend(streamlit_backend)
+    set_status_language("ar" if _current_ui_language() == "Arabic" else "en")  # backend status messages now follow the UI language dropdown, not the paper's target_language
 
     try:
         with redirect_stdout(writer), redirect_stderr(writer):
@@ -557,71 +596,47 @@ def _run_streamlit_job(params: Dict[str, Any], inputs: Dict[str, List[str]], tit
                 event_callback=on_event,
             )
     except Exception as exc:
-        
-        #stage_text.markdown(f"**Stage** Failed: {exc}")
-       # results_placeholder.error(f"Run failed: {exc}")
-        # Localized the runtime error status and notification messages to Arabic(Updated by Imaan Alkhanen)
-        stage_text.markdown(f"**المرحلة** فشل التشغيل: {exc}")
-        results_placeholder.error(f"فشل التشغيل: {exc}")
+        stage_text.markdown(f"**{_t('stage_progress_label')}** {_t('run_failed_stage', error=exc)}")
+        results_placeholder.error(_t("run_failed_notice", error=exc))
         return
     finally:
         writer.flush()
         set_progress_backend(previous_backend)
 
     stage_bar.progress(1.0)
-    #stage_text.markdown("**Stage** Finished")
-    # Localized the completion status message to Arabic(Updated by Imaan Alkhanen)
-    stage_text.markdown("**المرحلة** اكتمل التشغيل")
-    
-    #results_placeholder.success(
-     #   f"Completed {len(result['completed_projects'])} project(s), failed {len(result['failed_projects'])}."
-    #)
-    
-    # Localized the translation summary message to Arabic(Updated by Imaan Alkhanen)
+    stage_text.markdown(f"**{_t('stage_progress_label')}** {_t('stage_finished')}")
+
     results_placeholder.success(
-    f"المشاريع المكتملة: {len(result['completed_projects'])} | المشاريع الفاشلة: {len(result['failed_projects'])}"
+        _t("run_summary", completed=len(result["completed_projects"]), failed=len(result["failed_projects"]))
     )
     _render_result_files(result=result, params=params, inputs=inputs)
 
 
 def main() -> None:
     _ensure_session_state()
-    _inject_style()
-    # Display the hero section with Arabic title and Arabic subtitle (Updated by Imaan Alkhanen)
-    streamlit_backend.markdown(
-        # """
-       # <div class="app-shell">
-        #    <div class="hero-title">LaTeXTrans Studio</div>
-         #   <p class="hero-subtitle">
-          #      Run arXiv or local LaTeX translation jobs with live workflow progress, logs, configurable runtime parameters, and session-level job history.
-           # </p>
-        #</div>
-        #""",
+    _set_page_config()
 
-        """
+    default_config_path = "config/default.toml"
+    defaults = _load_defaults(default_config_path)
+    params = _sidebar_form(defaults)
+    ui_language = _current_ui_language()
+
+    _inject_css(ui_language)
+
+    streamlit_backend.markdown(
+        f"""
         <div class="app-shell">
-            <div class="hero-title">منصة ترجمة Latex</div> 
-            <p class="hero-subtitle">
-            تشغيل مهام ترجمة ملفات LaTeX من arXiv أو من المشاريع المحلية،
-            مع عرض مباشر لتقدم العمل والسجلات وإعدادات التشغيل وسجل المهام.
+        <div class="hero-title">{_t("hero_title")}</div>
+        <p class="hero-subtitle">
+        {_t("hero_subtitle")}
             </p>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
-    default_config_path = "config/default.toml"
-    defaults = _load_defaults(default_config_path)
-    params = _sidebar_form(defaults)
     inputs = _collect_inputs()
-    #streamlit_backend.caption(
-     #   "Provide arXiv IDs, local projects, or enable all-existing mode. Results, failed jobs, and recent runs stay visible in this session."
-   # )
-    
-    ## Localized the session description to Arabic (Updated by Imaan Alkhanen)
-    streamlit_backend.caption(
-        "أدخل معرفات arXiv أو المشاريع المحلية. ستظل النتائج، والمهام التي تعذر تنفيذها، وعمليات التشغيل الأخيرة متاحة طوال هذه الجلسة"
-    )
+    streamlit_backend.caption(_t("session_caption"))
 
     retry_payload = streamlit_backend.session_state.pop("retry_payload", None)
     if retry_payload:
@@ -632,26 +647,17 @@ def main() -> None:
         )
         _render_history()
         return
-    #run_clicked = streamlit_backend.button("Start Translation", type="primary", use_container_width=True)
-    #Main action button (label localized to Arabic) (Updated by Imaan Alkhanen)
-    run_clicked = streamlit_backend.button("بدء الترجمة", type="primary", use_container_width=True)
+
+    run_clicked = streamlit_backend.button(_t("start_button"), type="primary", use_container_width=True)
     if run_clicked:
         if not (inputs["paper_list"] or inputs["project_items"] or params["all_existing"]):
-            #streamlit_backend.error("No input provided. Add arXiv IDs, local projects, or enable all-existing mode.")
-            #Localized the missing input error message to Arabic(Updated by Imaan Alkhanen)
-            streamlit_backend.error(
-        "لم يتم توفير أي مدخلات. أضف معرفات arXiv أو المشاريع المحلية، أو فعل خيار معالجة جميع المشاريع الموجودة")
+            streamlit_backend.error(_t("no_input_error"))
         else:
             config_candidate = Path(params["config_path"])
             if not config_candidate.exists():
-                #treamlit_backend.error(f"Config file not found: {params['config_path']}")
-                #Localized the missing configuration file error message to Arabic(Updated by Imaan Alkhanen)
-                streamlit_backend.error(f"لم يتم العثور على ملف الإعدادات: {params['config_path']}")
-
+                streamlit_backend.error(_t("config_not_found_error", path=params["config_path"]))
             else:
-                #_run_streamlit_job(params=params, inputs=inputs, title="Current Run")
-                #Localized the current run title to Arabic(Updated by Imaan Alkhanen)
-                _run_streamlit_job(params=params, inputs=inputs, title="التشغيل الحالي")
+                _run_streamlit_job(params=params, inputs=inputs, title=_t("current_run_title"))
 
     _render_history()
 
