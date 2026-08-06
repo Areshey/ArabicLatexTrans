@@ -1,6 +1,22 @@
 import sys
 
 
+_current_lang = {"target_language": "ar"}
+
+
+def set_status_language(target_language):
+    """Call once, early in a run (wherever target_language becomes known),
+    e.g. set_status_language(config.get("target_language", "ar")). Defaults
+    to "ar" since this project's target_language is always Arabic."""
+    _current_lang["target_language"] = (target_language or "ar").strip().lower()
+
+
+def status(en_text, ar_text):
+    """Return ar_text if the current run's target language is Arabic,
+    otherwise en_text. Use to wrap any user-facing status/log string."""
+    return ar_text if _current_lang["target_language"] in ("ar", "arabic") else en_text
+
+
 class _LinePrinter:
     _last_len = 0
     _active = False
