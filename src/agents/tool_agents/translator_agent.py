@@ -1,3 +1,5 @@
+# Import socket to configure the connection to use IPv4  (Updated by Imaan Alkhanen)
+import socket
 from typing import Dict, Any, List, Optional
 from src.agents.tool_agents.base_tool_agent import BaseToolAgent
 #from TransLatex.src.formats.latex.prompts import *
@@ -80,8 +82,27 @@ class TranslatorAgent(BaseToolAgent):
             status_text.text(f"🤖💬 Starting translating for project...⏳: {os.path.basename(self.project_dir)}.")
             process_bar.progress(5)
             sys.stderr = sys.__stderr__
+            # Default session (replaced with custom network configuration) (Updated by Imaan Alkhanen)
+            # async with aiohttp.ClientSession() as session:
+            # Configure timeouts for long-running translation requests (Updated by Imaan Alkhanen)
+            timeout = aiohttp.ClientTimeout(
+                total=600,        # Maximum total request time: 10 minutes
+                connect=60,       # Maximum time to obtain or establish a connection
+                sock_connect=60,  # Maximum time to establish the socket connection
+                sock_read=600     # Maximum time to wait for data while reading the response
+            )
+           # Configure the TCP connection (Updated by Imaan Alkhanen)
+            connector = aiohttp.TCPConnector(
+                limit=1,                 # Allow one concurrent connection
+                family=socket.AF_INET    # Force IPv4 to avoid potential IPv6 connectivity issues
+            )
+            # Create the network session using custom timeout, connection, and proxy settings (Updated by Imaan Alkhanen)
+            async with aiohttp.ClientSession(
+                timeout=timeout,
+                connector=connector,
+                trust_env=True           # Use proxy settings defined in environment variables
+            ) as session:
 
-            async with aiohttp.ClientSession() as session:
                 sem = asyncio.Semaphore(5) #10 # Considering the api response speed, processing one section approximately takes about 10 seconds, and initiating a call every half second, 
                                              # around 10 should not waste api tokens
 
@@ -138,7 +159,27 @@ class TranslatorAgent(BaseToolAgent):
             sys.stderr = open(os.devnull, "w")
             status_text = st.empty()
             sys.stderr = sys.__stderr__
-            async with aiohttp.ClientSession() as session:
+            # Default session (replaced with custom network configuration) (Updated by Imaan Alkhanen)
+            # async with aiohttp.ClientSession() as session:
+            # Configure timeouts for long-running translation requests (Updated by Imaan Alkhanen)
+            timeout = aiohttp.ClientTimeout(
+                total=600,        # Maximum total request time: 10 minutes
+                connect=60,       # Maximum time to obtain or establish a connection
+                sock_connect=60,  # Maximum time to establish the socket connection
+                sock_read=600     # Maximum time to wait for data while reading the response
+            )
+            # Configure the TCP connection (Updated by Imaan Alkhanen)
+            connector = aiohttp.TCPConnector(
+                limit=1,                 # Allow one concurrent connection
+                family=socket.AF_INET    # Force IPv4 to avoid potential IPv6 connectivity issues
+            )
+            # Create the network session using custom timeout, connection, and proxy settings (Updated by Imaan Alkhanen)
+            async with aiohttp.ClientSession(
+                timeout=timeout,
+                connector=connector,
+                trust_env=True           # Use proxy settings defined in environment variables
+            ) as session:
+
                 error_parts = [error_part["num_or_ph"] for error_part in self.errors_report]
                 self.log(
                     f"🤖💬 Starting retranslating for error parts:{error_parts}, the {error_retry_count + 1} chance for {Maxtry} total.")
@@ -288,7 +329,27 @@ class TranslatorAgent(BaseToolAgent):
 
     async def _retranslate_error_parts(self, secs, caps, envs, session) -> Any:
 
-        async with aiohttp.ClientSession() as session:
+        # Default session (replaced with custom network configuration) (Updated by Imaan Alkhanen)
+        # async with aiohttp.ClientSession() as session:
+        # Configure timeouts for long-running translation requests (Updated by Imaan Alkhanen)
+        timeout = aiohttp.ClientTimeout(
+            total=600,        # Maximum total request time: 10 minutes
+            connect=60,       # Maximum time to obtain or establish a connection
+            sock_connect=60,  # Maximum time to establish the socket connection
+            sock_read=600     # Maximum time to wait for data while reading the response
+        )
+        # Configure the TCP connection (Updated by Imaan Alkhanen)
+        connector = aiohttp.TCPConnector(
+            limit=1,                 # Allow one concurrent connection
+            family=socket.AF_INET    # Force IPv4 to avoid potential IPv6 connectivity issues
+        )
+        # Create the network session using custom timeout, connection, and proxy settings (Updated by Imaan Alkhanen)
+        async with aiohttp.ClientSession(
+            timeout=timeout,
+            connector=connector,
+            trust_env=True           # Use proxy settings defined in environment variables
+        ) as session:
+
             #sem = asyncio.Semaphore(20)  
             sem = asyncio.Semaphore(5)
 
