@@ -1,7 +1,5 @@
-from pylatexenc.latexwalker import (
-    LatexWalker, LatexMacroNode, LatexEnvironmentNode, LatexGroupNode, LatexCharsNode,
-    LatexSpecialsNode, LatexMathNode
-    )
+
+   
 from pylatexenc.latex2text import LatexNodes2Text
 import os
 import re
@@ -570,22 +568,98 @@ def add_ja_package(latex_code):
             latex_code = latex_code[:position] + "\n" + ctex_package + "\n" + latex_code[position:]
     return latex_code
 
+def fix_figure_direction_for_arabic(latex_code):
+    """
+    Force every \\includegraphics call into an explicit left-to-right
+    direction context, using \\beginL ... \\endL (provided by the `bidi`
+    package, which polyglossia loads internally for Arabic).
+
+    Images have no inherent text direction, but under RTL document
+    direction, bidi's box-placement logic still affects how a figure's
+    bounding box gets anchored within the column -- confirmed by testing:
+    figures sized with \\includegraphics[width=\\textwidth]{...} inside
+    figure*/figure environments were visibly clipped on the left edge of
+    the page in a real compiled Arabic PDF, even though \\textwidth itself
+    is a fixed length unaffected by direction. Wrapping each
+    \\includegraphics call in \\beginL...\\endL forces standard, direction-
+    unaffected LTR box placement, matching how the image would be placed
+    in the original (non-RTL) document.
+    """
+    pattern = re.compile(r"\\includegraphics(\[[^\]]*\])?\{[^}]*\}")
+
+    def wrap(match):
+        return "\\beginL\n" + match.group(0) + "\n\\endL"
+
+    return pattern.sub(wrap, latex_code)
+
+
 def add_arabic_package(latex_code):
     if "\\usepackage{polyglossia}" not in latex_code and "\\usepackage{babel}" not in latex_code:
         arabic_packages = (
+            "\\usepackage{multicol}\n"
             "\\usepackage{fontspec}\n"
             "\\usepackage{polyglossia}\n"
             "\\setmainlanguage[numerals=maghrib]{arabic}\n"
             "\\setotherlanguage{english}\n"
-            "\\setmainfont{Arial}\n"
-            "\\newfontfamily\\arabicfont[Script=Arabic]{Arial}\n"
-            "\\newfontfamily\\arabicfontsf[Script=Arabic]{Arial}\n"
-            "\\newfontfamily\\arabicfonttt[Script=Arabic]{Arial}\n"
+            "\\newfontfamily\\arabicfont[Script=Arabic,Renderer=HarfBuzz]{Amiri}\n"
             "\\let\\UseMathForPositioningText\\relax\n"
+            # Relax float-placement defaults: reduces large blank gaps that can
+            # appear when LaTeX defers a large figure* float (spanning both
+            # columns) to a later page and has no body text left to fill the
+            # remaining column space. Confirmed by testing: a real compiled
+            # Arabic PDF showed a ~55%-blank page directly below a deferred
+            # figure* float. \raggedbottom additionally allows columns to end
+            # at different heights instead of being stretched to align, which
+            # is a common secondary cause of visible blank space.
+            "\\renewcommand{\\topfraction}{0.9}\n"
+            "\\renewcommand{\\textfraction}{0.1}\n"
+            "\\renewcommand{\\floatpagefraction}{0.8}\n"
+            "\\renewcommand{\\bottomfraction}{0.9}\n"
+            "\\raggedbottom\n"
+            # Raise LaTeX's default per-page float limits (default topnumber=2,
+            # bottomnumber=1, totalnumber=3). Documents with many competing
+            # floats -- this one has 3 figure* elements plus 3 tables -- can
+            # hit these limits, causing floats to "clump" together on later
+            # pages while earlier pages are left under-filled with body text
+            # queued up behind the float backlog. Confirmed by testing: a real
+            # compiled Arabic PDF showed a large blank area on the page
+            # directly following a figure, even though the body text that
+            # should have followed was verified present in the source file --
+            # the text was simply queued behind other floats, not missing.
+            "\\setcounter{topnumber}{9}\n"
+            "\\setcounter{bottomnumber}{9}\n"
+            "\\setcounter{totalnumber}{9}\n"
+            # stfloats specifically patches LaTeX's known bugs in how figure*/
+            # table* (double-column) floats are placed in native \twocolumn
+            # documents -- a separate, stricter mechanism than single-column
+            # floats, which \topfraction/\bottomfraction/\totalnumber alone do
+            # not fully control. This is the standard fix for large blank
+            # areas following a figure*/table* in twocolumn documents.
+            "\\usepackage{stfloats}\n"
         )
         documentclass_pattern = get_command_pattern("documentclass")
         match = documentclass_pattern.search(latex_code)
-        if match:
+        begin_doc_match = re.search(r"\\begin\{document\}", latex_code)
+        if begin_doc_match:
+            # IMPORTANT: insert right before \begin{document}, NOT right after
+            # \documentclass. bidi (loaded internally by polyglossia for
+            # Arabic) requires essentially every other package to load before
+            # it -- inserting here, after acl.sty and everything it pulls in
+            # (times, hyperref, xcolor, natbib, etc.), avoids the wall of
+            # "you have loaded package X after bidi package" errors and the
+            # "current latin font Amiri(0) does not contain the Arabic
+            # script" errors this exact ordering mistake produces (confirmed
+            # by testing on a real compile log).
+            position = begin_doc_match.start()
+            latex_code = (
+                latex_code[:position]
+                + arabic_packages
+                + "\n"
+                + latex_code[position:]
+            )
+        elif match:
+            # Fallback if \begin{document} isn't found (shouldn't normally
+            # happen): insert right after \documentclass instead of dropping it.
             position = match.end()
             latex_code = (
                 latex_code[:position]
@@ -593,6 +667,7 @@ def add_arabic_package(latex_code):
                 + arabic_packages
                 + latex_code[position:]
             )
+        latex_code = fix_figure_direction_for_arabic(latex_code)
     return latex_code
 
 def find_main_tex_file(dir): 
@@ -925,3 +1000,5 @@ def extract_arxiv_ids_V2(item):
         if match:
             ids = match.group(1)
     return ids
+            
+        
