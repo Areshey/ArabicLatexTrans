@@ -219,11 +219,13 @@ class LaTexCompiler:
         os.makedirs(out_dir, exist_ok=True)
         
         cmd = [
-            "xelatex",
-            "-interaction=nonstopmode",
-            "-file-line-error",
-            "-synctex=1",
-            f"-output-directory={out_dir}",
+            "latexmk",
+            f"-{engine}",                
+            "-interaction=nonstopmode",   # no stop on errors
+            f"-outdir={out_dir}",  
+            f"-file-line-error",       
+            f"-synctex=1",
+            f"-f",                        # force mode
             tex_file
         ]
         cwd = os.path.dirname(tex_file)
@@ -246,11 +248,13 @@ class LaTexCompiler:
         os.makedirs(out_dir, exist_ok=True)
         
         cmd = [
-            "lualatex",
-            "-interaction=nonstopmode",
-            "-file-line-error",
-            "-synctex=1",
-            f"-output-directory={out_dir}",
+            "latexmk",
+            f"-{engine}",                
+            "-interaction=nonstopmode",   # no stop on errors
+            f"-outdir={out_dir}",  
+            f"-file-line-error",       
+            f"-synctex=1",
+            f"-f",                        # force mode
             tex_file
         ]
         cwd = os.path.dirname(tex_file)
