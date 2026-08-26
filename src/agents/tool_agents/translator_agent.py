@@ -41,7 +41,8 @@ class TranslatorAgent(BaseToolAgent):
         self.base_url = config["llm_config"].get("base_url", None)
         self.API_KEY = config["llm_config"].get("api_key", None)
         self.user_term = config.get("user_term", None)
-        self.target_language = config.get("target_language", "ch")
+       #self.target_language = config.get("target_language", "ch") Here change the target langauge to Arabic
+        self.target_language = config.get("target_language", "ar")
         self.category = config.get("category", None)
         self.project_dir = project_dir  # Project path for parsing
         self.output_dir = output_dir  # Output directory for parsed files
@@ -923,8 +924,10 @@ class TranslatorAgent(BaseToolAgent):
             match = re.match(r'^"(.+?)"\s*-\s*"(.+?)"$', line)
             if match:
                 english = match.group(1)
-                chinese = match.group(2)
-                new_term_dict[english] = chinese
+                #chinese = match.group(2)
+                arabic = match.group(2) # change to Arabic
+                #new_term_dict[english] = chinese
+                new_term_dict[english] = arabic   # change to Arabic
 
         for en, zh in new_term_dict.items():
             if en not in self.term_dict:
@@ -999,8 +1002,10 @@ class TranslatorAgent(BaseToolAgent):
 
     def build_term_dict(self):
         if self.user_term:
-            df = pd.read_csv(self.user_term, header=None, names=['English Term', 'Chinese Translation'])
-            self.term_dict.update(zip(df['English Term'], df['Chinese Translation']))
+            #df = pd.read_csv(self.user_term, header=None, names=['English Term', 'Chinese Translation'])
+            df = pd.read_csv(self.user_term, header=None, names=['English Term', 'arabic Translation']) # change to Arabic
+            #self.term_dict.update(zip(df['English Term'], df['Chinese Translation']))
+            self.term_dict.update(zip(df['English Term'], df['arabic Translation'])) # change to Arabic
         else:
             arxiv_id = os.path.basename(self.project_dir)
             if self.category.get(arxiv_id):
@@ -1008,8 +1013,10 @@ class TranslatorAgent(BaseToolAgent):
                 for category in self.category[arxiv_id]:
                     file_path = os.path.join('terms', f'{category}.csv')
                     try:
-                        df = pd.read_csv(file_path, header=None, names=['English Term', 'Chinese Translation'])
-                        self.term_dict.update(zip(df['English Term'], df['Chinese Translation']))
+                        #df = pd.read_csv(file_path, header=None, names=['English Term', 'Chinese Translation'])
+                        df = pd.read_csv(file_path, header=None, names=['English Term', 'arabic Translation']) # change to Arabic
+                        #self.term_dict.update(zip(df['English Term'], df['Chinese Translation']))
+                        self.term_dict.update(zip(df['English Term'], df['arabic Translation'])) # change to Arabic
                         term_dict_loaded = True
 
                     except FileNotFoundError:
@@ -1018,15 +1025,19 @@ class TranslatorAgent(BaseToolAgent):
                 if not term_dict_loaded:
                     try:
                         df = pd.read_csv('terms/default.csv', header=None,
-                                         names=['English Term', 'Chinese Translation'])
-                        self.term_dict.update(zip(df['English Term'], df['Chinese Translation']))
+                                         #names=['English Term', 'Chinese Translation'])
+                                         names=['English Term', 'arabic Translation']) # change to Arabic
+                        #self.term_dict.update(zip(df['English Term'], df['Chinese Translation']))
+                        self.term_dict.update(zip(df['English Term'], df['arabic Translation'])) # change to Arabic
                     except FileNotFoundError as e:
                         print(f"Error: Default terminology file not found: {e}")
             else:
                 try:
                     df = pd.read_csv('terms/default.csv', header=None,
-                                     names=['English Term', 'Chinese Translation'])
-                    self.term_dict.update(zip(df['English Term'], df['Chinese Translation']))
+                                     #names=['English Term', 'Chinese Translation']) 
+                                     names=['English Term', 'arabic Translation']) # change to Arabic
+                    #self.term_dict.update(zip(df['English Term'], df['Chinese Translation']))
+                    self.term_dict.update(zip(df['English Term'], df['arabic Translation'])) # change to Arabic
                 except FileNotFoundError as e:
                     print(f"Error: Default terminology file not found: {e}")
 
