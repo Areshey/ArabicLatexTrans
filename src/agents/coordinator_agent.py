@@ -33,7 +33,8 @@ class CoordinatorAgent:
         """
         self.config = config
         self.name = config.get("sys_name", "LaTeXTrans")
-        self.target_language = config.get("target_language", "ch")
+        #self.target_language = config.get("target_language", "ch")
+        self.target_language = config.get("target_language", "ar") # change to Arabic
         self.source_language = config.get("source_language", "en")
         self.project_dir = project_dir  # Project path for parsing
         self.output_dir = output_dir  # Output directory for parsed files
