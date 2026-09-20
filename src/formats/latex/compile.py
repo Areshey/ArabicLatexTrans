@@ -72,7 +72,17 @@ class LaTexCompiler:
         Compile Arabic LaTeX documents using XeLaTeX,
         with LuaLaTeX as a fallback.
         """
+        # Preserve LTR direction for citations in all Arabic .tex files (Updated by Imaan Alkhanen)
+        for tex_file in find_tex_files(self.output_latex_dir):
+            with open(tex_file, "r", encoding="utf-8") as f:
+                latex_code = f.read()
 
+            fixed_code = fix_citation_direction_for_arabic(latex_code)
+
+            if fixed_code != latex_code:
+                with open(tex_file, "w", encoding="utf-8") as f:
+                    f.write(fixed_code)
+                    
         tex_file_to_compile = find_main_tex_file(self.output_latex_dir)
         if not tex_file_to_compile:
             print("⚠️ Warning: There is no main tex file to compile.")
