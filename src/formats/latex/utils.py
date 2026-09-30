@@ -1042,6 +1042,26 @@ def apply_arabic_content_direction_fixes(latex_code):
     latex_code = fix_author_direction_for_arabic(latex_code)
     return latex_code
 
+def fix_citation_direction_for_arabic(latex_code):
+   
+    # Preserve LTR direction for citation output inside Arabic text (Updated by Imaan Alkhanen)
+    
+    import re
+
+    citation_pattern = re.compile(
+        r'(?<!\\textenglish\{)'
+        r'\\(?:cite|citep|citet|citealp|citealt|'
+        r'parencite|textcite|autocite)'
+        r'\*?'
+        r'(?:\s*\[[^\]]*\]){0,2}'
+        r'\s*\{[^{}]+\}'
+    )
+
+    def wrap_citation(match):
+        citation = match.group(0)
+        return r'\textenglish{' + citation + '}'
+
+    return citation_pattern.sub(wrap_citation, latex_code)
 
 def add_arabic_package(latex_code):
     if "\\usepackage{polyglossia}" not in latex_code and "\\usepackage{babel}" not in latex_code:
@@ -1064,6 +1084,7 @@ def add_arabic_package(latex_code):
         latex_code = fix_table_direction_for_arabic(latex_code)
         latex_code = fix_number_direction_for_arabic(latex_code)
         latex_code = fix_author_direction_for_arabic(latex_code)
+        latex_code = fix_citation_direction_for_arabic(latex_code)
 
         has_authblk = bool(
             re.search(
