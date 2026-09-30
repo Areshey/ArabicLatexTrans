@@ -1083,6 +1083,8 @@ def add_arabic_package(latex_code):
              "\\titleformat{\\subsubsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsubsection}{1em}{}\n"
 
             "\\let\\ArabicLatexTransOriginalAuthor\\author\n"
+            # Preserve the document's original footnote separator before RTL packages load.
+            "\\let\\ArabicLatexTransOriginalFootnoteRule\\footnoterule\n"
 
             "\\usepackage{polyglossia}\n"
             "\\setmainlanguage[numerals=maghrib]{arabic}\n"
@@ -1091,6 +1093,19 @@ def add_arabic_package(latex_code):
             "\\newfontfamily\\arabicfonttt[Script=Arabic]{Amiri}\n"
 
             "\\let\\author\\ArabicLatexTransOriginalAuthor\n"
+            # Restore the original separator after RTL package initialization.
+            # And right-align it when possible; otherwise, retain its original behavior.
+            "\\newbox\\ArabicLatexTransRuleBox\n"
+            "\\AtBeginDocument{%\n"
+            "  \\def\\footnoterule{%\n"
+            "    \\setbox\\ArabicLatexTransRuleBox\\vbox{\\ArabicLatexTransOriginalFootnoteRule}%\n"
+            "    \\ifdim\\wd\\ArabicLatexTransRuleBox>0pt\n"
+            "      \\nointerlineskip\n"
+            "      \\hbox to\\hsize{\\hfill\\box\\ArabicLatexTransRuleBox}%\n"
+            "      \\nointerlineskip\n"
+            "    \\else\n"
+            "      \\ArabicLatexTransOriginalFootnoteRule\n"
+            "    \\fi}}\n"
             
             "\\let\\UseMathForPositioningText\\relax\n"
             # Relax float-placement defaults: reduces large blank gaps that can
