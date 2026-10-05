@@ -1112,7 +1112,10 @@ def add_arabic_package(latex_code):
             "\\setotherlanguage{english}\n"
             "\\newfontfamily\\arabicfont[Script=Arabic,Renderer=HarfBuzz]{Amiri}\n"
             "\\newfontfamily\\arabicfonttt[Script=Arabic]{Amiri}\n"
-
+            "\\newcommand\\ArabicLatexTransBibLTR{\\selectlanguage{english}\\ifdefined\\setLR\\setLR\\fi}\n"
+            "\\AtBeginDocument{%\n"
+            "  \\ifdefined\\thebibliography\\apptocmd{\\thebibliography}{\\ArabicLatexTransBibLTR}{}{}\\fi\n"
+            "  \\ifdefined\\AtBeginBibliography\\AtBeginBibliography{\\ArabicLatexTransBibLTR}\\fi}\n"
             "\\let\\author\\ArabicLatexTransOriginalAuthor\n"
             # Restore the original separator after RTL package initialization.
             # And right-align it when possible; otherwise, retain its original behavior.
