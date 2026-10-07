@@ -57,18 +57,44 @@ class LatexConstructor:
              
     def _revert_captions(self, tex: str) -> str:
         """
-        Revert all the captions to tex
-        """
-        for caption in self.captions:
-            placeholder = caption["placeholder"]
-            #tex = tex.replace(placeholder, caption["trans_content"])
-            trans = caption["trans_content"]
-            # Preserve the original author note if translation removes the \thanks command.
-            if caption.get("cap_type") == "thanks" and "\\" + caption["cap_type"] not in trans:
-                trans = caption["content"]
-            tex = tex.replace(placeholder, trans)
+        Revert all the captions to tex.
 
-        return tex                              
+        The \author{...} placeholder (cap_type "author") can contain a
+        nested \thanks{...} placeholder inside it (see parser.py's
+        _extract_author_notes: thanks notes are placeholder-ized first,
+        then the whole author block -- thanks placeholder included -- is
+        itself placeholder-ized). A single top-to-bottom pass over
+        self.captions can substitute the author placeholder back into
+        tex AFTER it has already passed the point where the nested
+        thanks placeholder was looked for, leaving the literal
+        "<PLACEHOLDER_CAP_N>" text stranded in the output. Looping until
+        no caption placeholder remains (bounded by the number of
+        captions) resolves any such nesting regardless of order.
+        """
+        for _ in range(len(self.captions) + 1):
+            replaced_any = False
+            for caption in self.captions:
+                placeholder = caption["placeholder"]
+                if placeholder not in tex:
+                    continue
+                #tex = tex.replace(placeholder, caption["trans_content"])
+                trans = caption["trans_content"]
+                cap_type = caption.get("cap_type")
+                # Preserve the original author note if translation removes the \thanks command.
+                if cap_type == "thanks" and "\\" + cap_type not in trans:
+                    trans = caption["content"]
+                # Author blocks (names, affiliations, emails) must never be
+                # translated: always restore the original, untranslated
+                # text, regardless of what trans_content holds. This is
+                # what keeps author order and affiliation wording intact.
+                if cap_type == "author":
+                    trans = caption["content"]
+                tex = tex.replace(placeholder, trans)
+                replaced_any = True
+            if not replaced_any:
+                break
+
+        return tex
     
     def _revert_newcommands(self, tex: str) -> str:
         """
