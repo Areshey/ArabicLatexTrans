@@ -195,11 +195,34 @@ class LatexParser:
 
     def _extract_author_notes(self, tex: str) -> str:
         """
-        Extract \thanks commands from author blocks for translation
-        while preserving the remaining author information.
+        Protect \author{...} blocks (names, affiliations, emails) from
+        translation.
+
+        \thanks{...} notes inside the author block are pulled out first
+        so they can still be translated on their own -- they are prose
+        (e.g. funding acknowledgements), unlike the rest of the block.
+
+        The REST of the \author{...} content is then replaced, as a
+        whole, by a single placeholder that is never sent to the
+        translator. Previously only \thanks was protected, so names,
+        affiliations and emails were translated as ordinary text --
+        which let the translator reorder them (e.g. Arabic word order
+        for "Department of Computer Science and Engineering, UC San
+        Diego" producing "Diego San UC Engineering, and Science
+        Computer of Department") and occasionally reorder authors
+        themselves. See reconstruct.py's _revert_captions, which always
+        restores this placeholder's ORIGINAL content, ignoring whatever
+        translation may have produced for it.
         """
         full_tex = remove_comments(tex)
-        author_pattern = get_command_pattern(r'author')
+        # \affil (authblk-style affiliation blocks) gets the same
+        # protection as \author: affiliation text is proper-noun /
+        # institution text, not prose, and was the other half of the
+        # reported garbling (e.g. "Diego San UC Engineering, and
+        # Science Computer of Department" for "University of
+        # California San Diego, Department of Computer Science and
+        # Engineering").
+        author_pattern = get_command_pattern(r'author|affil')
         note_pattern = get_command_pattern(r'thanks')
 
         result_tex = ""
@@ -225,7 +248,20 @@ class LatexParser:
                 })
 
             new_block += block[pos:]
-            result_tex += full_tex[last_end:author_match.start()] + new_block
+
+            # Protect the whole \author{...} block (with any \thanks
+            # notes already swapped for their own placeholders above)
+            # from translation.
+            self.caption_count += 1
+            author_placeholder = f"<PLACEHOLDER_CAP_{self.caption_count}>"
+            self.captions_json.append({
+                "placeholder": author_placeholder,
+                "cap_type": "author",
+                "content": new_block,
+                "trans_content": ''
+            })
+
+            result_tex += full_tex[last_end:author_match.start()] + author_placeholder
             last_end = author_match.end()
 
         result_tex += full_tex[last_end:]

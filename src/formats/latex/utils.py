@@ -713,36 +713,92 @@ def fix_author_direction_for_arabic(latex_code: str) -> str:
 
         return None
 
-    def clean_author_content(content):
-        cleaned_lines = []
+    def clean_author_content(content, is_author=False):
+        # Drop genuinely blank lines, but otherwise keep this
+        # \author{...}/\affil{...} argument's own internal structure
+        # (including any "\\" line breaks it contains, e.g. a name
+        # line followed by an affiliation line followed by an email
+        # line) intact as ONE logical entry.
+        non_blank = [line.strip() for line in content.splitlines() if line.strip()]
+        joined = "\n".join(non_blank)
 
-        for line in content.splitlines():
-            stripped = line.strip()
+        if is_acmart or not joined:
+            return joined
 
-            # Remove blank lines only
-            if not stripped:
+        # Multi-author blocks packed into a single \author{...} using
+        # \And / \AND (NeurIPS-style) must keep those tokens literal
+        # and at the top level -- wrapping them inside \beginL/\endL
+        # would break the class's own author-splitting logic. Split on
+        # them first, then protect everything else.
+        segments = re.split(r"(\\A(?:nd|ND))", joined)
+
+        rebuilt = []
+        for segment in segments:
+            if segment in (r"\And", r"\AND"):
+                rebuilt.append(segment)
+                continue
+            if not re.search(r"[A-Za-z]", segment):
+                rebuilt.append(segment)
+                continue
+            stripped_segment = segment.strip()
+            if not stripped_segment:
+                rebuilt.append(segment)
+                continue
+            if stripped_segment.startswith(r"\beginL"):
+                rebuilt.append(segment)
                 continue
 
-            # Preserve author separators exactly
-            if stripped in (r"\And", r"\AND"):
-                cleaned_lines.append(stripped)
-                continue
+            # Wrap the WHOLE segment -- which may itself span several
+            # "\\"-separated lines, e.g. a name, its affiliation and
+            # its email all inside one \affil{...} -- in a single
+            # paragraph-level LTR region (\beginL...\endL), the same
+            # mechanism fix_figure_direction_for_arabic already uses
+            # successfully elsewhere in this file.
+            #
+            # This replaces an earlier approach that wrapped each RAW
+            # SOURCE LINE in its own separate \LR{...}. That approach
+            # had two confirmed failures on a real compile: (1) a
+            # "\\"-separated email line glued to the end of an
+            # institution-name line came out with its own word order
+            # scrambled, because \LR{...} (a single-argument, inline
+            # command) does not reliably survive a hard LaTeX line
+            # break inside its argument; and (2) when several
+            # consecutive \author{...} calls (e.g. four, one per
+            # name) each got their own independent \LR{...} isolate,
+            # authblk concatenated the four isolates together for
+            # \maketitle's typesetting, and the bidi algorithm then
+            # reordered the isolates themselves -- right-to-left --
+            # relative to each other, producing a fully reversed
+            # author list even though each individual name's own word
+            # order stayed correct. \beginL...\endL is a real
+            # paragraph-direction override rather than an inline
+            # isolate box, so it keeps entries in source order.
+            # Layout hack from some sources: runs of \qquad used to push
+            # a name onto the next row of a 2x2 grid. In an Arabic
+            # document that just overflows the page, so drop them; the
+            # preamble's \@author wrapper (minipage) re-wraps the names.
+            stripped_segment = re.sub(
+                r"(?:\\qquad\s*){2,}", "", stripped_segment
+            )
 
-            # IMPORTANT:
-            # Never insert \LR inside acmart \author blocks.
-            if not is_acmart and re.search(r"[A-Za-z]", stripped):
-                if not stripped.startswith(r"\LR{"):
+            # A hard line break (e.g. "Institution \\protect\\\\ \\tt email")
+            # does not keep the LTR run alive on the following line, so
+            # close and reopen it around every break. Confirmed by a
+            # real xelatex compile: otherwise the email line came out
+            # word-reversed ("jmcauley}@eng.ucsd.edu tberg, {bmajumde,").
+            stripped_segment = re.sub(
+                r"(?:\\protect\s*)?\\\\(?:\[[^\]]*\])?",
+                lambda m: r"\endL" + m.group(0) + r"\beginL ",
+                stripped_segment,
+            )
 
-                    # Keep LaTeX line break outside \LR{...}
-                    if stripped.endswith(r"\\"):
-                        text = stripped[:-2].rstrip()
-                        stripped = r"\LR{" + text + r"}\\"
-                    else:
-                        stripped = r"\LR{" + stripped + "}"
+            # Keep a name on one line (the marker is appended by authblk).
+            if is_author and "\\\\" not in stripped_segment:
+                stripped_segment = r"\mbox{" + stripped_segment + "}"
 
-            cleaned_lines.append(stripped)
+            rebuilt.append(r"\beginL " + stripped_segment + r" \endL")
 
-        return "\n".join(cleaned_lines)
+        return "".join(rebuilt)
 
     result = []
     pos = 0
@@ -750,8 +806,12 @@ def fix_author_direction_for_arabic(latex_code: str) -> str:
     # Supports:
     # \author{...}
     # \author[...]{...}
+    # \affil{...} / \affil[...]{...}  -- authblk-style affiliation
+    # blocks get the same LTR wrapping as \author, since they are the
+    # same kind of content (institution names, not prose) and were
+    # left completely unprotected before.
     author_pattern = re.compile(
-        r"\\author(?:\s*\[[^\]]*\])?\s*\{"
+        r"\\(?:author|affil)(?:\s*\[[^\]]*\])?\s*\{"
     )
 
     while True:
@@ -772,7 +832,9 @@ def fix_author_direction_for_arabic(latex_code: str) -> str:
         result.append(latex_code[pos:open_brace + 1])
 
         content = latex_code[open_brace + 1:close_brace]
-        cleaned = clean_author_content(content)
+        cleaned = clean_author_content(
+            content, is_author=latex_code.startswith("\\author", match.start())
+        )
 
         if cleaned:
             result.append("\n" + cleaned + "\n")
@@ -781,6 +843,65 @@ def fix_author_direction_for_arabic(latex_code: str) -> str:
         pos = close_brace + 1
 
     return "".join(result)
+
+
+def fix_outauthor_direction_for_arabic(latex_code: str) -> str:
+    """
+    Some hand-patched ACL/authblk-style templates define their own
+    \\outauthor macro (\\renewcommand\\outauthor{...} or
+    \\newcommand\\outauthor{...}) that typesets authblk's internal
+    \\@author register -- the concatenation of several separate
+    \\author[marker]{...} calls, glued together by \\Authand/\\Authsep
+    -- as one horizontal block (often inside a tabular cell) when
+    \\maketitle runs.
+
+    fix_author_direction_for_arabic wraps each individual
+    \\author{...}/\\affil{...} call's own text in its own
+    \\beginL...\\endL region. That protects each entry's internal word
+    order, but NOT the order the separate entries are placed in on the
+    page: confirmed on a real compile that even with every entry
+    individually protected, four authors still came out in fully
+    reversed order. XeLaTeX fills a horizontal line right-to-left when
+    the surrounding direction is RTL, independent of which direction
+    the text inside each individual piece uses -- so protecting each
+    name does nothing for the order the names are placed in.
+
+    The fix: force the ONE place where the whole concatenated
+    \\@author string actually gets typeset -- inside this macro -- into
+    a single LTR region, so the horizontal layout itself (not just the
+    text within each piece) runs left-to-right.
+    """
+    pattern = re.compile(r"\\(?:renewcommand|newcommand)\s*\\outauthor\s*\{")
+    match = pattern.search(latex_code)
+    if not match:
+        return latex_code
+
+    open_brace = match.end() - 1
+    depth = 0
+    close_brace = None
+    for i in range(open_brace, len(latex_code)):
+        if latex_code[i] == "{" and (i == 0 or latex_code[i - 1] != "\\"):
+            depth += 1
+        elif latex_code[i] == "}" and (i == 0 or latex_code[i - 1] != "\\"):
+            depth -= 1
+            if depth == 0:
+                close_brace = i
+                break
+
+    if close_brace is None:
+        return latex_code
+
+    body = latex_code[open_brace + 1:close_brace]
+
+    if r"\@author" not in body:
+        return latex_code
+    if r"\beginL\@author" in body or r"\beginL \@author" in body:
+        return latex_code  # already wrapped, avoid double-wrapping
+
+    new_body = body.replace(r"\@author", r"\beginL\@author\endL")
+    return latex_code[:open_brace + 1] + new_body + latex_code[close_brace:]
+
+
 # Translate the abstract heading while preserving class-specific front-matter behavior(Updated by Imaan Alkhanen)
 def fix_abstract_heading_for_arabic(latex_code: str) -> str:
     """
@@ -815,77 +936,6 @@ def fix_abstract_heading_for_arabic(latex_code: str) -> str:
             + "\n"
             + latex_code[position:]
         )
-
-    return latex_code
-def fix_acmart_frontmatter_for_arabic(latex_code: str) -> str:
-    """
-    Restore acmart abstract and keywords when the bidi/hyperref
-    maketitle path omits them.
-
-    This fix is applied only to acmart documents.
-    """
-
-    if detect_latex_template(latex_code) != "acmart":
-        return latex_code
-
-    # Avoid applying the patch more than once.
-    if "ArabicLatexTransKeywords" in latex_code:
-        return latex_code
-
-    maketitle_match = re.search(
-        r"\\maketitle\b",
-        latex_code
-    )
-
-    if not maketitle_match:
-        return latex_code
-
-    # Save keywords BEFORE \maketitle, because acmart may clear
-    # \@keywords while processing the title.
-    before_patch = (
-        "\n"
-        "% ArabicLatexTrans: preserve ACM front matter\n"
-        "\\makeatletter\n"
-        "\\let\\ArabicLatexTransKeywords\\@keywords\n"
-        "\\makeatother\n"
-    )
-
-    position = maketitle_match.start()
-
-    latex_code = (
-        latex_code[:position]
-        + before_patch
-        + latex_code[position:]
-    )
-
-    # Find maketitle again because the previous insertion changed offsets.
-    maketitle_match = re.search(
-        r"\\maketitle\b",
-        latex_code
-    )
-
-    if not maketitle_match:
-        return latex_code
-
-    after_patch = (
-        "\n"
-        "% ArabicLatexTrans: restore ACM abstract and keywords\n"
-        "\\makeatletter\n"
-        "\\@mkabstract\n"
-        "\\begingroup\n"
-        "  \\@specialsection{الكلمات المفتاحية}%\n"
-        "  \\noindent\\ArabicLatexTransKeywords\\par\n"
-        "\\endgroup\n"
-        "\\makeatother\n"
-    )
-
-    position = maketitle_match.end()
-
-    latex_code = (
-        latex_code[:position]
-        + after_patch
-        + latex_code[position:]
-    )
 
     return latex_code
 def fix_pdfoutput_for_xelatex(latex_code: str) -> str:
@@ -978,6 +1028,16 @@ def fix_number_direction_for_arabic(latex_code):
         for m in pat.finditer(latex_code):
             protected_spans.append(m.span())
 
+    # Optional arguments of ANY command, e.g. \includegraphics[scale=0.16],
+    # \begin{itemize}[leftmargin=*], \setlength... Wrapping a number in
+    # Unicode isolates there makes LaTeX fail ("Illegal unit of measure"),
+    # which silently drops the figure and prints the bare number ("0.160.16")
+    # in the page text. Confirmed on the real source of arXiv 2304.13157.
+    # \caption[short]{...}: the short form is only used for the list of
+    # figures, so protecting it is harmless.
+    for m in re.finditer(r"\\[a-zA-Z@]+\*?\s*(?:\[[^\]\n]*\]\s*)+", latex_code):
+        protected_spans.append(m.span())
+
     def is_protected(pos):
         return any(start <= pos < end for start, end in protected_spans)
 
@@ -1040,6 +1100,7 @@ def apply_arabic_content_direction_fixes(latex_code):
     latex_code = fix_figure_direction_for_arabic(latex_code)
     latex_code = fix_number_direction_for_arabic(latex_code)
     latex_code = fix_author_direction_for_arabic(latex_code)
+    latex_code = fix_outauthor_direction_for_arabic(latex_code)
     return latex_code
 
 def fix_citation_direction_for_arabic(latex_code):
@@ -1084,6 +1145,7 @@ def add_arabic_package(latex_code):
         latex_code = fix_table_direction_for_arabic(latex_code)
         latex_code = fix_number_direction_for_arabic(latex_code)
         latex_code = fix_author_direction_for_arabic(latex_code)
+        latex_code = fix_outauthor_direction_for_arabic(latex_code)
         latex_code = fix_citation_direction_for_arabic(latex_code)
 
         has_authblk = bool(
@@ -1095,6 +1157,69 @@ def add_arabic_package(latex_code):
 
         authblk_patch = ""
 
+        # acmart defines its OWN, more complex \author command (it
+        # collects multiple \author{...}/\affiliation{...}/\email{...}
+        # calls into its own internal front-matter machinery, used
+        # later by \maketitle for the multi-column title-block layout).
+        # The \let-save/\let-restore of \author around \usepackage{polyglossia}
+        # below exists to protect templates that use the authblk
+        # package (whose \author macro CAN get clobbered by a later
+        # package load) -- acmart never uses authblk and never needed
+        # this. Confirmed by testing: with this \let pair left in for
+        # an acmart document, every piece of text going into the
+        # pipeline was verified correct (right names, right order,
+        # right affiliations/emails, all untranslated as required) up
+        # to this preamble, yet the compiled PDF's title block showed a
+        # garbled, all-caps, reordered author line with affiliations
+        # and emails missing entirely -- the exact look of acmart's
+        # abbreviated "short author" / running-header format being
+        # used in place of its normal title-block layout. Since the
+        # content itself was already confirmed correct, the most
+        # likely explanation is this \let pair interfering with
+        # acmart's own \author bookkeeping. Skipping it for acmart is
+        # the safe, targeted fix: acmart never relied on it anyway.
+        is_acmart_doc = bool(
+            re.search(r"\\documentclass(?:\[[^\]]*\])?\{acmart\}", latex_code)
+        )
+
+        author_let_save = (
+            "" if is_acmart_doc else
+            "\\let\\ArabicLatexTransOriginalAuthor\\author\n"
+        )
+        author_let_restore = (
+            "" if is_acmart_doc else
+            "\\let\\author\\ArabicLatexTransOriginalAuthor\n"
+        )
+
+        # acmart is built on amsart, so loading bidi/polyglossia makes bidi
+        # apply its amsart patch, which overwrites acmart's \maketitle with
+        # amsart's: the whole ACM title block (authors, affiliations,
+        # emails, abstract) vanishes and only an all-caps reversed running
+        # head remains. Confirmed by a real xelatex compile. Save acmart's
+        # \maketitle first and restore it after polyglossia; then typeset
+        # only the authors block left-to-right (names are English).
+        acm_save = (
+            "\\makeatletter\\let\\ArabicLatexTransOrigMaketitle\\maketitle\\makeatother\n"
+            if is_acmart_doc else ""
+        )
+        acm_restore = (
+            # acmart sets the title in a sans/bold face (Linux Biolinum),
+            # which has no Arabic glyphs: the Arabic title printed as black
+            # boxes. Give polyglossia an Arabic sans font.
+            "\\makeatletter\n"
+            "\\let\\maketitle\\ArabicLatexTransOrigMaketitle\n"
+            # With bidi, the \noindent that acmart puts right before
+            # \twocolumn[\box\mktitle@bx] makes the empty paragraph ship a
+            # blank first page (title block pushed to page 2). Remove it.
+            "\\let\\ArabicLatexTransOrigPrintTopMatter\\@printtopmatter\n"
+            "\\def\\@printtopmatter{\\begingroup\\let\\noindent\\relax"
+            "\\ArabicLatexTransOrigPrintTopMatter\\endgroup}\n"
+            "\\let\\ArabicLatexTransOrigMkauthors\\@mkauthors\n"
+            "\\def\\@mkauthors{\\begingroup\\setLTR\\ArabicLatexTransOrigMkauthors\\endgroup}\n"
+            "\\makeatother\n"
+            if is_acmart_doc else ""
+        )
+
         arabic_packages = (
             "\\usepackage{multicol}\n"
             "\\usepackage{fontspec}\n"
@@ -1103,20 +1228,28 @@ def add_arabic_package(latex_code):
              "\\titleformat{\\subsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsection}{1em}{}\n"
              "\\titleformat{\\subsubsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsubsection}{1em}{}\n"
 
-            "\\let\\ArabicLatexTransOriginalAuthor\\author\n"
+            + author_let_save +
             # Preserve the document's original footnote separator before RTL packages load.
             "\\let\\ArabicLatexTransOriginalFootnoteRule\\footnoterule\n"
 
+            + acm_save +
             "\\usepackage{polyglossia}\n"
             "\\setmainlanguage[numerals=maghrib]{arabic}\n"
             "\\setotherlanguage{english}\n"
             "\\newfontfamily\\arabicfont[Script=Arabic,Renderer=HarfBuzz]{Amiri}\n"
             "\\newfontfamily\\arabicfonttt[Script=Arabic]{Amiri}\n"
+            # Sans-serif Arabic (section headings, titles in sans classes such
+            # as acmart): without this polyglossia errors and Arabic glyphs
+            # fall back to a Latin sans font ("Missing character").
+            "\\newfontfamily\\arabicfontsf[Script=Arabic]{Amiri}\n"
+
+            + author_let_restore + acm_restore +
+            # Bibliography stays English / left-to-right.
+            "\\usepackage{etoolbox}\n"
             "\\newcommand\\ArabicLatexTransBibLTR{\\selectlanguage{english}\\ifdefined\\setLR\\setLR\\fi}\n"
             "\\AtBeginDocument{%\n"
             "  \\ifdefined\\thebibliography\\apptocmd{\\thebibliography}{\\ArabicLatexTransBibLTR}{}{}\\fi\n"
             "  \\ifdefined\\AtBeginBibliography\\AtBeginBibliography{\\ArabicLatexTransBibLTR}\\fi}\n"
-            "\\let\\author\\ArabicLatexTransOriginalAuthor\n"
             # Restore the original separator after RTL package initialization.
             # And right-align it when possible; otherwise, retain its original behavior.
             "\\newbox\\ArabicLatexTransRuleBox\n"
@@ -1167,6 +1300,42 @@ def add_arabic_package(latex_code):
             #"\\usepackage{stfloats}\n"
             
         )
+        # authblk documents: the assembled \@author block (all names +
+        # affiliations) must sit in ONE LTR region, otherwise bidi
+        # reverses the order of the names. Per-\author wraps cannot fix
+        # that (verified with real xelatex compiles). The minipage lets
+        # the names wrap into rows like the original 2x2 grid.
+        # Generic title block for every non-acmart class (llncs, article
+        # \and, NeurIPS-style \And, ...): these typeset the author boxes
+        # side by side in a paragraph whose direction is RTL, so the boxes
+        # (and the names in them) come out in reverse order. Typeset the
+        # whole \maketitle left-to-right and put just the Arabic title in
+        # an explicit RTL run. Verified with real xelatex compiles.
+        if not is_acmart_doc:
+            arabic_packages += (
+                "\\makeatletter\n"
+                "\\AtBeginDocument{%\n"
+                "  \\let\\ArabicLatexTransOrigTitle\\@title\n"
+                "  \\def\\@title{\\beginR\\ArabicLatexTransOrigTitle\\endR}%\n"
+                "  \\let\\ArabicLatexTransOrigMaketitle\\maketitle\n"
+                "  \\def\\maketitle{\\begingroup\\setLTR\\ArabicLatexTransOrigMaketitle\\endgroup}%\n"
+                # amsart-family classes print \address/\email at the end of
+                # the document through \@setaddresses.
+                "  \\ifx\\@setaddresses\\@undefined\\else\n"
+                "    \\let\\ArabicLatexTransOrigSetAddresses\\@setaddresses\n"
+                "    \\def\\@setaddresses{\\begingroup\\setLTR\\ArabicLatexTransOrigSetAddresses\\endgroup}%\n"
+                "  \\fi\n"
+                "}\n"
+                "\\makeatother\n"
+            )
+        if re.search(r"\\usepackage(?:\[[^\]]*\])?\{[^}]*authblk[^}]*\}", latex_code):
+            arabic_packages += (
+                "\\makeatletter\n"
+                "\\AtBeginDocument{\\let\\ArabicLatexTransAuthorOrig\\@author\n"
+                "\\def\\@author{\\begin{minipage}{\\textwidth}\\centering"
+                "\\beginL\\ArabicLatexTransAuthorOrig\\endL\\end{minipage}}}\n"
+                "\\makeatother\n"
+            )
         documentclass_pattern = get_command_pattern("documentclass")
         match = documentclass_pattern.search(latex_code)
         begin_doc_match = re.search(r"\\begin\{document\}", latex_code)
@@ -1175,6 +1344,14 @@ def add_arabic_package(latex_code):
             r"(?m)^\s*\\(?:title|author|date)\s*(?:\[[^\]]*\])?\s*\{",
             latex_code
         )
+
+        # Classes such as elsarticle/revtex put \title/\author INSIDE the
+        # document body (\begin{frontmatter}); injecting the preamble there
+        # printed it as page text. Only use the front-matter anchor when it
+        # is in the preamble.
+        if frontmatter_match and begin_doc_match and \
+                frontmatter_match.start() > begin_doc_match.start():
+            frontmatter_match = None
 
         if frontmatter_match:
             position = frontmatter_match.start()
@@ -1206,7 +1383,6 @@ def add_arabic_package(latex_code):
                 + latex_code[position:]
             )
         latex_code = fix_abstract_heading_for_arabic(latex_code)
-        latex_code = fix_acmart_frontmatter_for_arabic(latex_code)
     return latex_code
 
 def find_main_tex_file(dir): 
