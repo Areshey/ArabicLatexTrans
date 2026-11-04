@@ -1123,37 +1123,54 @@ def fix_citation_direction_for_arabic(latex_code):
         return r'\textenglish{' + citation + '}'
 
     return citation_pattern.sub(wrap_citation, latex_code)
-
-def fix_recursive_normalsize(latex_code):
+# Prevent LaTeX from automatically generating and displaying the current date beneath the title and author block.
+def remove_current_date_from_title(latex_code: str) -> str:
     """
-    Remove a self-referential normalsize definition that causes
-    XeLaTeX to exceed its input stack.
-    """
+    Prevent LaTeX from printing the automatically generated/current date
+    beneath the title and author block.
 
-    pattern = re.compile(
-        r"\\expandafter\s*\\def\s*"
-        r"\\expandafter\s*\\normalsize\s*"
-        r"\\expandafter\s*\{"
-        r"\s*\\normalsize\s*"
-        r"\\setlength\s*\\abovedisplayskip\s*\{0pt\}\s*"
-        r"\\setlength\s*\\belowdisplayskip\s*\{2pt\}\s*"
-        r"\}",
-        re.DOTALL,
+    Explicit \date{...} commands are replaced with \date{}. For standard
+    classes that default to \today when no date is supplied, \date{} is
+    inserted immediately before \begin{document}. ACM's publication
+    metadata is left untouched because it is not the standard \date field.
+    """
+    is_acmart = bool(
+        re.search(
+            r"\\documentclass(?:\[[^\]]*\])?\{acmart\}",
+            latex_code
+        )
     )
 
-    return pattern.sub(
-        lambda match: (
-            "\\AtBeginDocument{%\n"
-            "  \\setlength{\\abovedisplayskip}{0pt}%\n"
-            "  \\setlength{\\belowdisplayskip}{2pt}%\n"
-            "}\n"
-        ),
-        latex_code,
+    # Match \date{...}, including nested braces and an optional short form.
+    date_pattern = regex.compile(
+        r"\\date\s*(?:\[[^\]]*\]\s*)?"
+        r"(?P<datearg>\{(?:[^{}]|(?&datearg))*\})",
+        regex.DOTALL
     )
+    latex_code = date_pattern.sub(r"\\date{}", latex_code)
+
+    if not is_acmart:
+        begin_document = re.search(
+            r"\\begin\s*\{\s*document\s*\}",
+            latex_code
+        )
+        if begin_document:
+            preamble = latex_code[:begin_document.start()]
+            # Put the empty date at the end of the preamble so it overrides
+            # any class/template default date such as \today.
+            if not re.search(r"\\date\s*\{\s*\}", preamble):
+                latex_code = (
+                    latex_code[:begin_document.start()]
+                    + "\\date{}\n"
+                    + latex_code[begin_document.start():]
+                )
+
+    return latex_code
+
 
 def add_arabic_package(latex_code):
-    latex_code = fix_recursive_normalsize(latex_code)
-
+    # Remove the generated/current date from the title block.
+    latex_code = remove_current_date_from_title(latex_code)
     if "\\usepackage{polyglossia}" not in latex_code and "\\usepackage{babel}" not in latex_code:
         # Apply content-level fixes to the ORIGINAL document FIRST, before
         # inserting our own preamble below. This ordering is required:
@@ -1248,23 +1265,14 @@ def add_arabic_package(latex_code):
             "\\makeatother\n"
             if is_acmart_doc else ""
         )
-        is_llncs = bool(
-            re.search(
-                r"\\documentclass(?:\[[^\]]*\])?\{llncs\}",
-                latex_code
-            )
-        )
 
-        titlesec_packages = "" if is_llncs else (
-            "\\usepackage{titlesec}\n"
-            "\\titleformat{\\section}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesection}{1em}{}\n"
-            "\\titleformat{\\subsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsection}{1em}{}\n"
-            "\\titleformat{\\subsubsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsubsection}{1em}{}\n"
-        )
         arabic_packages = (
             "\\usepackage{multicol}\n"
             "\\usepackage{fontspec}\n"
-             + titlesec_packages
+             "\\usepackage{titlesec}\n"
+             "\\titleformat{\\section}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesection}{1em}{}\n"
+             "\\titleformat{\\subsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsection}{1em}{}\n"
+             "\\titleformat{\\subsubsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsubsection}{1em}{}\n"
 
             + author_let_save +
             # Preserve the document's original footnote separator before RTL packages load.
