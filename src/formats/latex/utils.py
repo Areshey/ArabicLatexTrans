@@ -1124,7 +1124,36 @@ def fix_citation_direction_for_arabic(latex_code):
 
     return citation_pattern.sub(wrap_citation, latex_code)
 
+def fix_recursive_normalsize(latex_code):
+    """
+    Remove a self-referential normalsize definition that causes
+    XeLaTeX to exceed its input stack.
+    """
+
+    pattern = re.compile(
+        r"\\expandafter\s*\\def\s*"
+        r"\\expandafter\s*\\normalsize\s*"
+        r"\\expandafter\s*\{"
+        r"\s*\\normalsize\s*"
+        r"\\setlength\s*\\abovedisplayskip\s*\{0pt\}\s*"
+        r"\\setlength\s*\\belowdisplayskip\s*\{2pt\}\s*"
+        r"\}",
+        re.DOTALL,
+    )
+
+    return pattern.sub(
+        lambda match: (
+            "\\AtBeginDocument{%\n"
+            "  \\setlength{\\abovedisplayskip}{0pt}%\n"
+            "  \\setlength{\\belowdisplayskip}{2pt}%\n"
+            "}\n"
+        ),
+        latex_code,
+    )
+
 def add_arabic_package(latex_code):
+    latex_code = fix_recursive_normalsize(latex_code)
+
     if "\\usepackage{polyglossia}" not in latex_code and "\\usepackage{babel}" not in latex_code:
         # Apply content-level fixes to the ORIGINAL document FIRST, before
         # inserting our own preamble below. This ordering is required:
@@ -1219,14 +1248,23 @@ def add_arabic_package(latex_code):
             "\\makeatother\n"
             if is_acmart_doc else ""
         )
+        is_llncs = bool(
+            re.search(
+                r"\\documentclass(?:\[[^\]]*\])?\{llncs\}",
+                latex_code
+            )
+        )
 
+        titlesec_packages = "" if is_llncs else (
+            "\\usepackage{titlesec}\n"
+            "\\titleformat{\\section}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesection}{1em}{}\n"
+            "\\titleformat{\\subsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsection}{1em}{}\n"
+            "\\titleformat{\\subsubsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsubsection}{1em}{}\n"
+        )
         arabic_packages = (
             "\\usepackage{multicol}\n"
             "\\usepackage{fontspec}\n"
-             "\\usepackage{titlesec}\n"
-             "\\titleformat{\\section}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesection}{1em}{}\n"
-             "\\titleformat{\\subsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsection}{1em}{}\n"
-             "\\titleformat{\\subsubsection}{\\normalfont\\large\\bfseries\\raggedleft}{\\thesubsubsection}{1em}{}\n"
+             + titlesec_packages
 
             + author_let_save +
             # Preserve the document's original footnote separator before RTL packages load.
